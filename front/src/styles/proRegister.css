@@ -1,0 +1,67 @@
+.proRegister form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.proRegister input {
+  background-color: #84a7f6;
+  border: none;
+  border-radius: 5px;
+  padding: 1rem;
+  width: 60%;
+}
+
+.proRegister input::placeholder {
+  font-family: "More sugar";
+  font-size: 1rem;
+  color: #fff8e3;
+}
+
+.proRegister label {
+  margin-top: 1rem;
+  text-align: left;
+  width: 65%;
+  color: #84a7f6;
+}
+
+.proRegister h1 {
+  color: #f68484;
+  font-size: 2rem;
+  font-weight: 400;
+  text-align: center;
+  width: 40%;
+  margin: auto;
+  margin-top: 2rem;
+}
+
+.proRegister button {
+  background-color: #84a7f6;
+  border: none;
+  font-family: "More sugar";
+  color: #fff8e3;
+  font-size: 1rem;
+  border-radius: 5px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+  margin-top: 2rem;
+}
+
+.proRegister button:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.proRegister select {
+  background-color: #84a7f6;
+  border: none;
+  border-radius: 5px;
+  font-family: "More sugar";
+  width: 65%;
+  color: white;
+  padding: 1rem;
+  font-size: 1rem;
+}

@@ -1,0 +1,35 @@
+@font-face {
+  font-family: "More Sugar";
+  src: url("./fonts/more-sugar.regular\ \(1\).ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "More Sugar";
+  src: url("./fonts/more-sugar.thin\ \(1\).ttf") format("truetype");
+  font-weight: 100; /* ou le poids de police approprié pour thin */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "More Sugar";
+  src: url("./fonts/more-sugar.extras.ttf") format("truetype");
+  font-weight: 800; /* ou le poids de police approprié pour extra */
+  font-style: oblique;
+}
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fff8e3;
+  font-family: "More Sugar";
+  font-size: 16px;
+  line-height: 1.6;
+  height: 100%;
+}

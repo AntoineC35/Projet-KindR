@@ -1,0 +1,82 @@
+.searchBar {
+  list-style: none;
+  background-color: #f3d7ca;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.searchBar em {
+  font-size: 2rem;
+  padding-top: 0.5rem;
+}
+
+.bloc-top {
+  background-color: #f68484;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 15px;
+  border-radius: 15px;
+  cursor: pointer;
+  position: relative;
+  font-family: "More sugar";
+  border: none;
+  width: 30%;
+}
+
+.bloc-top h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.bloc-top em {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.bloc-links {
+  position: absolute;
+  top: 20%;
+  left: 10px;
+  width: 30%;
+  background-color: #f68484;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1001;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+  transition: var(--speed) ease;
+}
+
+.bloc-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.bloc-links li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.bloc-links li:hover {
+  background-color: #f3d7ca;
+  color: black;
+}
+
+.bloc-links.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: var(--speed) ease;
+}
+
+.bloc-top.active .bloc-links {
+  display: block;
+}

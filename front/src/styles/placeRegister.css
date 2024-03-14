@@ -1,0 +1,140 @@
+.proRegister form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.proRegister input {
+  background-color: #84a7f6;
+  border: none;
+  border-radius: 5px;
+  padding: 1rem;
+  width: 60%;
+}
+
+.proRegister input::placeholder {
+  font-family: "More sugar";
+  font-size: 1rem;
+  color: #fff8e3;
+}
+
+.proRegister label {
+  margin-top: 1rem;
+  text-align: left;
+  width: 65%;
+  color: #84a7f6;
+}
+
+.proRegister h2 {
+  color: #f68484;
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-align: center;
+  width: 60%;
+  margin: auto;
+  margin-top: 0;
+}
+
+.proRegister button {
+  background-color: #84a7f6;
+  border: none;
+  font-family: "More sugar";
+  color: #fff8e3;
+  font-size: 1rem;
+  border-radius: 5px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+  margin-top: 2rem;
+}
+
+.proRegister button:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.proRegister select {
+  background-color: #84a7f6;
+  border: none;
+  border-radius: 5px;
+  font-family: "More sugar";
+  width: 65%;
+  color: white;
+  padding: 1rem;
+  font-size: 1rem;
+}
+
+.proRegister fieldset {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 40px;
+  grid-row-gap: 2px;
+  border: none;
+  margin: auto;
+}
+
+.proRegister .container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 0;
+  cursor: pointer;
+  font-size: 1rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin: auto;
+}
+
+.proRegister .container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.proRegister .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #fff8e3;
+  border-radius: 5px;
+  border: 3px solid #84a7f6;
+}
+
+.proRegister .container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.proRegister .container input:checked ~ .checkmark {
+  background-color: #84a7f6;
+}
+
+.proRegister .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.proRegister .container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.proRegister .container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}

@@ -1,0 +1,135 @@
+.header {
+  display: flex;
+  position: sticky;
+  top: 0;
+  background-color: #fff8e3;
+  z-index: 1003;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.headerLogo {
+  margin-top: 10px;
+  width: 40%;
+  transform: rotate(-15deg);
+}
+
+.header em {
+  padding: 0;
+  border: 0;
+  text-align: center;
+  font-family: "More sugar";
+}
+
+.header .red {
+  background-color: #f68484;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  color: #fff;
+  padding: 15px 15px;
+  font-size: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  border-radius: 15px;
+  transform: rotate(-15deg);
+  transition: 1s;
+  text-decoration: none;
+  margin-top: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.header .green {
+  background-color: #9cdbc8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  color: #fff;
+  padding: 15px 15px;
+  font-size: 1.8rem;
+  text-align: center;
+  cursor: pointer;
+  max-width: 20px;
+  max-height: 20px;
+  border-radius: 15px;
+  transform: rotate(15deg);
+  transition: 1s;
+  text-decoration: none;
+  margin-top: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.header .blue {
+  background-color: #84a7f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  color: #fff;
+  padding: 10px 15px;
+  padding-bottom: 20px;
+  font-size: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  max-width: 20px;
+  max-height: 20px;
+  border-radius: 15px;
+  transform: rotate(-15deg);
+  transition: 1s;
+  text-decoration: none;
+  margin-top: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.header .yellow {
+  background-color: #f6cc84;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  color: #fff;
+  padding: 10px 15px;
+  padding-bottom: 20px;
+  font-size: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  max-width: 20px;
+  max-height: 20px;
+  border-radius: 15px;
+  transform: rotate(15deg);
+  transition: 1s;
+  text-decoration: none;
+  margin-top: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.header .logout {
+  background-color: #bd84f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  color: #fff;
+  padding: 10px 15px;
+  padding-bottom: 20px;
+  font-size: 2rem;
+  text-align: center;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  border-radius: 15px;
+  transform: rotate(-15deg);
+  transition: 1s;
+  text-decoration: none;
+  margin-top: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.header .nav:hover {
+  transform: rotate(-25deg) scale(1.1);
+}

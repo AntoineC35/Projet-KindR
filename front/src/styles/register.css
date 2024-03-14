@@ -1,0 +1,38 @@
+.register {
+  text-align: center;
+  height: 100vh;
+}
+
+.register a {
+  text-decoration: none;
+  margin: auto;
+  border-radius: 31px;
+  padding: 0.3rem;
+  margin-bottom: 2rem;
+  min-width: 50%;
+}
+
+.register article {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: space-between;
+  width: 100%;
+}
+
+.register a {
+  background-color: #bd84f6;
+  max-width: 50%;
+  color: #fff8e3;
+  font-size: 2rem;
+}
+
+/* .register em {
+} */
+
+@media only screen and (max-width: 767px) {
+  .register img {
+    padding-top: 2rem;
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,43 @@
+.avatar section {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 10px;
+  justify-content: center;
+}
+
+.avatar-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.avatar-grid img.selected {
+  border: 2px solid #84a7f6;
+}
+
+.avatar button {
+  margin: auto;
+  max-width: 60%;
+  background-color: #84a7f6;
+  border: none;
+  font-family: "More sugar";
+  color: #fff8e3;
+  font-size: 1rem;
+  border-radius: 5px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+  margin-top: 2rem;
+}
+
+.avatar h2 {
+  color: #f68484;
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-align: center;
+  width: 60%;
+  margin: auto;
+  margin-top: 2rem;
+}
