@@ -1,5 +1,4 @@
 import { useDispatch, useSelector } from "react-redux";
-import { selectCurrentUser } from "../reducers/authUser.reducer";
 import { selectPros } from "../reducers/users.reducer";
 import { useParams } from "react-router-dom";
 import Calendar from "./Calendar";
@@ -8,7 +7,6 @@ import { useEffect } from "react";
 
 const Disponibility = () => {
   const dispatch = useDispatch();
-  const currentUser = useSelector(selectCurrentUser);
   const pros = useSelector(selectPros);
   const { pro_id } = useParams();
   useEffect(() => {

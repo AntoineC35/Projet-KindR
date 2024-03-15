@@ -5,11 +5,9 @@ import {
   selectIsLoggedIn,
 } from "../reducers/authUser.reducer";
 import "../styles/register.css";
-import Logo from "./Logo";
 
 const Register = () => {
   const loggedIn = useSelector(selectIsLoggedIn);
-  const user = useSelector(selectCurrentUser);
 
   if (loggedIn) {
     return <Navigate to="/home" />;

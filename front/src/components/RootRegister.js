@@ -6,7 +6,7 @@ const RootRegister = () => {
   return (
     <>
       <HeaderRegister />
-      <main class="main">
+      <main className="main">
         <Outlet />
       </main>
       <Footer />

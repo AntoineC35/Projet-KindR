@@ -20,10 +20,10 @@
   padding: 10px 15px;
   border-radius: 15px;
   cursor: pointer;
-  position: relative;
   font-family: "More sugar";
   border: none;
   width: 30%;
+  position: relative;
 }
 
 .bloc-top h3 {
@@ -38,9 +38,6 @@
 }
 
 .bloc-links {
-  position: absolute;
-  top: 20%;
-  left: 10px;
   width: 30%;
   background-color: #f68484;
   color: white;
@@ -51,6 +48,49 @@
   visibility: hidden;
   transform: translateY(-20px);
   transition: var(--speed) ease;
+}
+
+.dropdown-1 {
+  position: absolute;
+  top: 18%;
+  left: 10px;
+}
+
+.dropdown-2 {
+  position: absolute;
+  top: 18%;
+}
+
+.dropdown-3 {
+  position: absolute;
+  top: 18%;
+  right: 10px;
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+.dropdown-3 input {
+  font-family: "More sugar";
+  background-color: #bd84f6;
+  border: none;
+  color: white;
+  text-align: center;
+}
+.dropdown-3 input:focus {
+  border-color: black;
+}
+
+.dropdown-3 button {
+  background-color: #bd84f6;
+  color: white;
+  font-family: "More sugar";
+  margin: auto;
+  border: none;
+  border-radius: 5px;
+}
+
+.dropdown-3 button:hover {
+  text-decoration: underline;
 }
 
 .bloc-links ul {

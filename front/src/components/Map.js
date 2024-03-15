@@ -14,7 +14,7 @@ function Map() {
       currentUser.address.location.long,
       currentUser.address.location.lat,
     ],
-    zoom: 600,
+    zoom: 10000,
   });
   const [isMapVisible, setIsMapVisible] = useState(false);
 

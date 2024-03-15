@@ -29,7 +29,7 @@ const ActiviteDetails = () => {
           <p>{selectedPost.date}</p>
           <p>{selectedPost.category.type}</p>
           <p>{selectedPost.address}</p>
-          <a target="_blank" href={selectedPost.link}>
+          <a target="_blank" rel="noreferrer" href={selectedPost.link}>
             En savoir plus
           </a>
         </article>

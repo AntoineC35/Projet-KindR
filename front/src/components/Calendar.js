@@ -1,13 +1,9 @@
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import listPlugin from "@fullcalendar/list";
-import { useSelector } from "react-redux";
-import { selectCurrentUser } from "../reducers/authUser.reducer";
 import { useState } from "react";
 
 const Calendar = ({ pro }) => {
-  const currentUser = useSelector(selectCurrentUser);
-
   const getRandomName = () => {
     const names = [
       "Alice",

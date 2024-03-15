@@ -91,7 +91,7 @@ const Search = () => {
   return (
     <section className="search">
       <div className="searchBar" ref={menuRef}>
-        <button onClick={handleDropDown1} className="bloc-top">
+        <button onClick={handleDropDown1} className="bloc-top top-1">
           <em>%</em>
           <h3>Ou ?</h3>
         </button>
@@ -143,7 +143,7 @@ const Search = () => {
             </ul>
           </div>
         )}
-        <button onClick={handleDropDown2} className="bloc-top">
+        <button onClick={handleDropDown2} className="bloc-top top-2">
           <em>&</em>
           <h3>Quoi ?</h3>
         </button>
@@ -153,9 +153,7 @@ const Search = () => {
               <li
                 onClick={() => handleRoleChange("assmat")}
                 style={{
-                  fontWeight: selectedRoles.includes("assmat")
-                    ? "bold"
-                    : "normal",
+                  color: selectedRoles.includes("assmat") ? "white" : "grey",
                 }}
               >
                 Assistant(e) Maternel(le)
@@ -163,9 +161,9 @@ const Search = () => {
               <li
                 onClick={() => handleRoleChange("creche_public")}
                 style={{
-                  fontWeight: selectedRoles.includes("creche_public")
-                    ? "bold"
-                    : "normal",
+                  color: selectedRoles.includes("creche_public")
+                    ? "white"
+                    : "grey",
                 }}
               >
                 Crèche Municipale
@@ -193,7 +191,7 @@ const Search = () => {
             </ul>
           </div>
         )}
-        <button onClick={handleDropDown3} className="bloc-top">
+        <button onClick={handleDropDown3} className="bloc-top top-3">
           <em>[</em>
           <h3>Quand ?</h3>
         </button>

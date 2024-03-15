@@ -1,12 +1,7 @@
-import { NavLink } from "react-router-dom";
 import Logo from "./Logo";
 
 const HeaderRegister = () => {
-  return (
-    <NavLink to="/home">
-      <Logo />
-    </NavLink>
-  );
+  return <Logo />;
 };
 
 export default HeaderRegister;

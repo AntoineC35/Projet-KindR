@@ -55,7 +55,7 @@ const ParentRegister = () => {
   }
 
   return (
-    <section class="parentRegister">
+    <section className="parentRegister">
       <h1>Création de compte</h1>
       <form onSubmit={handleSubmit}>
         <label># Prénom</label>

@@ -34,6 +34,7 @@ const CalendarEdit = () => {
 
   const handleEventClick = (info) => {
     console.log("Event clicked:", info.event);
+    setCalendarEvents(info.event);
   };
 
   return (

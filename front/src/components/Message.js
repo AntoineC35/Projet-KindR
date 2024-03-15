@@ -4,15 +4,18 @@ import {
   selectCurrentUser,
   selectIsLoggedIn,
 } from "../reducers/authUser.reducer";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { getConversation, startConversation } from "../actions/message.action";
-import { useParams, Navigate } from "react-router-dom";
+import { useParams, Navigate, useNavigate, Link } from "react-router-dom";
 import { selectedConversation } from "../reducers/message.reducer";
 import { getPros } from "../actions/users.action";
 import { selectPros } from "../reducers/users.reducer";
 import { getCSRFToken } from "../actions/authUser.action";
+import "../styles/message.css";
+import he from "he";
 
 const Message = () => {
+  const conversationRef = useRef(null);
   const loggedIn = useSelector(selectIsLoggedIn);
   const dispatch = useDispatch();
   const pros = useSelector(selectPros);
@@ -22,6 +25,14 @@ const Message = () => {
   const selectedPro = pros && pros.find((pro) => pro.id === Number(pro_id));
   const selectedConv = useSelector(selectedConversation);
   const csrf_token = useSelector(selectCSRFToken);
+  const navigate = useNavigate();
+
+  const scrollToBottom = () => {
+    conversationRef.current.scrollTop = conversationRef.current.scrollHeight;
+  };
+  const goBack = () => {
+    navigate(-1);
+  };
 
   useEffect(() => {
     if (pro_id && currentUser && currentUser["id"]) {
@@ -30,9 +41,8 @@ const Message = () => {
         let searchParam = new FormData();
         searchParam.append("user2_id", pro_id);
         searchParam.append("user1_id", currentUser["id"]);
-        if (!selectedConv || !selectedConv.messages) {
-          dispatch(getConversation(searchParam));
-        }
+
+        dispatch(getConversation(searchParam));
       });
     }
   }, [dispatch, pro_id, currentUser, selectedConv]);
@@ -46,6 +56,7 @@ const Message = () => {
     newMessage.append("user2_id", pro_id);
     dispatch(startConversation(newMessage));
     setMessageContent("");
+    scrollToBottom();
   };
 
   if (!loggedIn) {
@@ -53,42 +64,89 @@ const Message = () => {
   }
 
   return (
-    <>
+    <section className="messages">
       {selectedPro ? (
-        <h2>Welcome to the conversation with {selectedPro.lastname}</h2>
+        <section className="message-header">
+          <button onClick={goBack}>
+            <em>=</em>
+          </button>
+          <figure>
+            <img
+              src={selectedPro.avatar.avatar_url}
+              alt={selectedPro.avatar.avatar_alt}
+            />
+          </figure>
+          <h3>
+            {selectedPro.firstname} {selectedPro.lastname}
+          </h3>
+          <Link className="detail-button" to={`/details/${selectedPro.id}`}>
+            Voir Profil
+          </Link>
+        </section>
       ) : (
-        <p>No professional found with the specified ID.</p>
+        <p>Pas d'utlilisateur trouvé avec cet ID.</p>
       )}
-      {selectedConv && selectedConv.messages ? (
-        selectedConv.messages.length > 0 ? (
-          <div>
-            {selectedConv.messages.map((message) => (
-              <p key={message.id}>
-                {message && message.user_id === currentUser["id"] ? (
-                  <span className="userMessage">{message.content}</span>
+      <section className="message-block">
+        {selectedConv && selectedConv.messages ? (
+          selectedConv.messages.length > 0 ? (
+            <div className="message-conversation" ref={conversationRef}>
+              {selectedConv.messages.map((message) =>
+                message.user_id === currentUser["id"] ? (
+                  <span key={message.id} className="userMessage">
+                    <p>{he.decode(message.content)}</p>
+                    <figure>
+                      <img
+                        src={currentUser.avatar.avatar_url}
+                        alt={currentUser.avatar.avatar_alt}
+                      ></img>
+                    </figure>
+                  </span>
                 ) : (
-                  <span>{message.content}</span>
-                )}
-              </p>
-            ))}
-          </div>
+                  <span key={message.id} className="otherMessage">
+                    <figure>
+                      <img
+                        src={selectedPro.avatar.avatar_url}
+                        alt={selectedPro.avatar.avatar_alt}
+                      ></img>
+                    </figure>
+                    <p>{he.decode(message.content)}</p>
+                  </span>
+                )
+              )}
+            </div>
+          ) : (
+            <p>No messages in the conversation yet!</p>
+          )
         ) : (
-          <p>No messages in the conversation yet!</p>
-        )
-      ) : (
-        <h4>La conversation n'a pas démarré avec</h4>
-      )}
-      <form onSubmit={handleSubmit}>
-        <label>
-          votre message :
+          <p>
+            Démarré la conversation ?<br></br> Envoyer votre premier message
+          </p>
+        )}
+
+        <form className="message-submit" onSubmit={handleSubmit}>
+          <figure>
+            <img
+              src={currentUser.avatar.avatar_url}
+              alt={currentUser.avatar.avatar}
+            ></img>
+          </figure>
           <textarea
+            placeholder="votre message ..."
             value={messageContent}
             onChange={(e) => setMessageContent(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" && !e.shiftKey) {
+                e.preventDefault();
+                handleSubmit(e);
+              }
+            }}
           />
-        </label>
-        <button type="submit">Envoyer Message</button>
-      </form>
-    </>
+          <button type="submit">
+            <em>#</em>
+          </button>
+        </form>
+      </section>
+    </section>
   );
 };
 
