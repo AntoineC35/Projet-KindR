@@ -7,6 +7,7 @@ class ConversationController extends AbstractController
     private ConversationManager $cm;
     private MessageManager $mm;
     private UserManager $um;
+    private AvatarManager $avm;
 
     public function __construct()
     {
@@ -14,6 +15,7 @@ class ConversationController extends AbstractController
         $this->cm = new ConversationManager();
         $this->mm = new MessageManager();
         $this->um = new UserManager();
+        $this->avm = new AvatarManager();
     }
 
     public function getAllConversationByUser_id($postData) {
@@ -25,7 +27,15 @@ class ConversationController extends AbstractController
     
             foreach($conversations as $conversation) {
                 $user1 = $this->um->findById($conversation->getUser1_id());
+                $avatar = $this->avm->findByUserId($user1->getId());
+				if ($avatar !== null) {
+					$user1->setAvatar($avatar);
+				}
                 $user2 = $this->um->findById($conversation->getUser2_id());
+                $avatar2 = $this->avm->findByUserId($user2->getId());
+				if ($avatar2 !== null) {
+					$user2->setAvatar($avatar2);
+				}
                 $messages = $this->mm->findAllbyConversation($conversation);
                 $messagesArray = [];
     

@@ -26,10 +26,30 @@ const Message = () => {
   const selectedConv = useSelector(selectedConversation);
   const csrf_token = useSelector(selectCSRFToken);
   const navigate = useNavigate();
+  const [scrolledToBottom, setScrolledToBottom] = useState(true);
+
+  useEffect(() => {
+    if (scrolledToBottom && conversationRef.current) {
+      scrollToBottom();
+    }
+  }, [selectedConv, scrolledToBottom]);
+
+  const handleScroll = () => {
+    if (conversationRef.current) {
+      const container = conversationRef.current;
+      const isScrolledToBottom =
+        container.scrollHeight - container.clientHeight <=
+        container.scrollTop + 1;
+      setScrolledToBottom(isScrolledToBottom);
+    }
+  };
 
   const scrollToBottom = () => {
-    conversationRef.current.scrollTop = conversationRef.current.scrollHeight;
+    if (conversationRef.current) {
+      conversationRef.current.scrollTop = conversationRef.current.scrollHeight;
+    }
   };
+
   const goBack = () => {
     navigate(-1);
   };
@@ -45,7 +65,7 @@ const Message = () => {
         dispatch(getConversation(searchParam));
       });
     }
-  }, [dispatch, pro_id, currentUser, selectedConv]);
+  }, [dispatch, pro_id, currentUser]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -89,7 +109,11 @@ const Message = () => {
       <section className="message-block">
         {selectedConv && selectedConv.messages ? (
           selectedConv.messages.length > 0 ? (
-            <div className="message-conversation" ref={conversationRef}>
+            <div
+              className="message-conversation"
+              ref={conversationRef}
+              onScroll={handleScroll}
+            >
               {selectedConv.messages.map((message) =>
                 message.user_id === currentUser["id"] ? (
                   <span key={message.id} className="userMessage">
@@ -115,7 +139,7 @@ const Message = () => {
               )}
             </div>
           ) : (
-            <p>No messages in the conversation yet!</p>
+            <p>Pas de messages dans cette conversation !</p>
           )
         ) : (
           <p>
