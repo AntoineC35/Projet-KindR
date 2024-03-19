@@ -1,9 +1,6 @@
 import { useSelector } from "react-redux";
 import { Navigate, NavLink } from "react-router-dom";
-import {
-  selectCurrentUser,
-  selectIsLoggedIn,
-} from "../reducers/authUser.reducer";
+import { selectIsLoggedIn } from "../reducers/authUser.reducer";
 import "../styles/register.css";
 
 const Register = () => {

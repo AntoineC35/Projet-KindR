@@ -1,0 +1,43 @@
+.activites {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.activites select {
+  background-color: #84a7f6;
+  border: none;
+  border-radius: 5px;
+  font-family: "More sugar";
+  width: 100%;
+  color: white;
+  padding: 1rem;
+  font-size: 1rem;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+.posts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.activites form {
+  margin: auto;
+}
+
+.back {
+  font-family: "More sugar";
+  background-color: #f68484;
+  border: none;
+  width: 15%;
+  color: white;
+  font-size: 1.5rem;
+  border-radius: 15px;
+  position: absolute;
+  top: 130px;
+  left: 15px;
+}

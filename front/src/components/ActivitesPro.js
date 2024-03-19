@@ -1,13 +1,7 @@
 const ActivitesPro = ({ pro }) => {
   return (
     <>
-      <table border="1">
-        <thead>
-          <tr>
-            <th>Critère</th>
-            <th>Disponible</th>
-          </tr>
-        </thead>
+      <table className="table-profil">
         <tbody>
           <tr>
             <td>Ludothèques</td>

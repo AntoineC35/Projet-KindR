@@ -27,8 +27,9 @@
   font-size: 2rem;
 }
 
-/* .register em {
-} */
+.register .logo {
+  margin-top: 200px;
+}
 
 @media only screen and (max-width: 767px) {
   .register img {

@@ -20,7 +20,7 @@ const Message = () => {
   const dispatch = useDispatch();
   const pros = useSelector(selectPros);
   const [messageContent, setMessageContent] = useState("");
-  const { pro_id } = useParams();
+  const { pro_id } = useParams(); //recupère l'id de l'utilisateur a allez chercher dans les conversations
   const currentUser = useSelector(selectCurrentUser);
   const selectedPro = pros && pros.find((pro) => pro.id === Number(pro_id));
   const selectedConv = useSelector(selectedConversation);

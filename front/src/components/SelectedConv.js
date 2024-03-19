@@ -8,10 +8,13 @@ import {
 } from "../reducers/authUser.reducer";
 import { Link } from "react-router-dom";
 import he from "he";
-import { startConversation } from "../actions/message.action";
+import {
+  getAllConversations,
+  startConversation,
+} from "../actions/message.action";
 import { getCSRFToken } from "../actions/authUser.action";
 
-const SelectedConv = ({ userId }) => {
+const SelectedConv = ({ userId, setSelectedConversation }) => {
   const conversationRef = useRef(null);
   const dispatch = useDispatch();
   const currentUser = useSelector(selectCurrentUser);
@@ -76,16 +79,26 @@ const SelectedConv = ({ userId }) => {
     newMessage.append("csrf_token", csrf_token);
     newMessage.append("user1_id", currentUser["id"]);
     newMessage.append("user2_id", userId);
-    dispatch(startConversation(newMessage));
-    setMessageContent("");
-    scrollToBottom();
+    dispatch(startConversation(newMessage)).then((e) => {
+      if (currentUser && currentUser["id"]) {
+        let searchParam = new FormData();
+        searchParam.append("user_id", currentUser["id"]);
+        dispatch(getAllConversations(searchParam));
+      }
+      setMessageContent("");
+      scrollToBottom();
+    });
   };
 
+  function handleResetSelectedConv() {
+    setSelectedConversation(null);
+  }
+
   return (
-    <section className="messages">
+    <section className="messages mobile">
       {selectedPro ? (
         <section className="message-header">
-          <button>
+          <button onClick={handleResetSelectedConv}>
             <em>=</em>
           </button>
           <figure>
@@ -170,19 +183,6 @@ const SelectedConv = ({ userId }) => {
       </section>
     </section>
   );
-
-  // return (
-  //   <section className="selected">
-  //     <h1>Selected Conversation</h1>
-  //     {selectedConversation && (
-  //       <>
-  //         {selectedConversation.messages.map((message) => (
-  //           <p key={message.id}>{message.content}</p>
-  //         ))}
-  //       </>
-  //     )}
-  //   </section>
-  // );
 };
 
 export default SelectedConv;

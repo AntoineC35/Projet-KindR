@@ -8,6 +8,7 @@ import { useState } from "react";
 import Presentation from "./Presentation";
 import Environnement from "./Environnement";
 import ActivitesPro from "./ActivitesPro";
+import "../styles/profil.css";
 
 const Profil = () => {
   const loggedIn = useSelector(selectIsLoggedIn);
@@ -30,15 +31,38 @@ const Profil = () => {
   return (
     <>
       {currentUser ? (
-        <section>
-          <h1>{currentUser.lastname}</h1>
-          <h2>{currentUser.firstname}</h2>
-          <p>{currentUser.address.address}</p>
-          <p>{currentUser.address.postal_code}</p>
-          <p>{currentUser.address.city}</p>
+        <section className="profil">
+          <figure className="avatar">
+            <img
+              src={currentUser.avatar.avatar_url}
+              alt={currentUser.avatar.avatar_alt}
+            />
+          </figure>
+          <h1 className="lastname">{currentUser.lastname}</h1>
+          <h2 className="firstname">{currentUser.firstname}</h2>
+          <p className="role">{currentUser.role}</p>
+
+          <p className="address">
+            <em>%</em>
+            {currentUser.address.address}
+            <br></br>
+            {currentUser.address.postal_code} {currentUser.address.city}
+          </p>
           {currentUser.role !== "parent" && currentUser.role !== "admin" && (
-            <div>
-              <ul>
+            <>
+              <Link
+                className="button-message"
+                to={`/message/${currentUser.id}`}
+              >
+                <em>9</em>Message
+              </Link>
+              <Link
+                className="button-dispo"
+                to={`/disponibility/${currentUser.id}`}
+              >
+                <em>*</em>Dispo
+              </Link>
+              <ul className="button-choices">
                 <li onClick={() => handleTabClick("presentation")}>
                   Présentation
                 </li>
@@ -48,13 +72,12 @@ const Profil = () => {
                 <li onClick={() => handleTabClick("activites")}>Activités</li>
               </ul>
               {selectedTab && tabComponents[selectedTab]}
-            </div>
+            </>
           )}
         </section>
       ) : (
         <p>No professional found with the specified ID.</p>
       )}
-      <Link to="/home">Back to home</Link>
     </>
   );
 };

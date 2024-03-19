@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import Presentation from "./Presentation";
 import ActivitesPro from "./ActivitesPro";
 import Environnement from "./Environnement";
+import "../styles/profil.css";
 
 const Details = () => {
   const dispatch = useDispatch();
@@ -31,30 +32,53 @@ const Details = () => {
   return (
     <>
       {selectedPro ? (
-        <section>
-          <h1>{selectedPro.lastname}</h1>
-          <h2>{selectedPro.firstname}</h2>
-          <p>{selectedPro.address.address}</p>
-          <p>{selectedPro.address.postal_code}</p>
-          <p>{selectedPro.address.city}</p>
-          <div>
-            <ul>
-              <li onClick={() => handleTabClick("presentation")}>
-                Présentation
-              </li>
-              <li onClick={() => handleTabClick("environnement")}>
-                Environnement
-              </li>
-              <li onClick={() => handleTabClick("activites")}>Activités</li>
-            </ul>
+        <section className="profil">
+          <figure className="avatar">
+            <img
+              src={selectedPro.avatar.avatar_url}
+              alt={selectedPro.avatar.avatar_alt}
+            />
+          </figure>
+          <h1 className="lastname">{selectedPro.lastname}</h1>
+          <h2 className="firstname">{selectedPro.firstname}</h2>
+          <p className="role">{selectedPro.role}</p>
 
-            {selectedTab && tabComponents[selectedTab]}
-          </div>
+          <p className="address">
+            <em>%</em>
+            {selectedPro.address.address}
+            <br></br>
+            {selectedPro.address.postal_code} {selectedPro.address.city}
+          </p>
+          {selectedPro.role !== "parent" && selectedPro.role !== "admin" && (
+            <>
+              <Link
+                className="button-message"
+                to={`/message/${selectedPro.id}`}
+              >
+                <em>9</em>Message
+              </Link>
+              <Link
+                className="button-dispo"
+                to={`/disponibility/${selectedPro.id}`}
+              >
+                <em>*</em>Dispo
+              </Link>
+              <ul className="button-choices">
+                <li onClick={() => handleTabClick("presentation")}>
+                  Présentation
+                </li>
+                <li onClick={() => handleTabClick("environnement")}>
+                  Environnement
+                </li>
+                <li onClick={() => handleTabClick("activites")}>Activités</li>
+              </ul>
+              {selectedTab && tabComponents[selectedTab]}
+            </>
+          )}
         </section>
       ) : (
         <p>No professional found with the specified ID.</p>
       )}
-      <Link to="/home">Back to home</Link>
     </>
   );
 };

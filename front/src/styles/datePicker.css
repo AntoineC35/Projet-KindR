@@ -1,0 +1,10 @@
+.datePicker {
+  display: flex;
+  flex-direction: space-between;
+  width: 100%;
+}
+
+.datePicker input {
+  font-size: 1.2rem;
+  border-radius: 15px;
+}

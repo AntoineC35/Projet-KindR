@@ -1,36 +1,39 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { getProsByDate } from "../actions/users.action";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import "../styles/datePicker.css";
 
 const DateSelectionSearch = () => {
-  const [selectedDate, setSelectedDate] = useState("");
+  const [selectedDate, setSelectedDate] = useState(null);
   const dispatch = useDispatch();
 
-  const handleChange = (e) => {
-    setSelectedDate(e.target.value);
+  const handleChange = (date) => {
+    setSelectedDate(date);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Date sélectionnée :", selectedDate);
-    const chosenDate = new FormData();
-    chosenDate.append("chosen_date", selectedDate);
-    dispatch(getProsByDate(chosenDate));
-    console.log(chosenDate);
+    if (selectedDate) {
+      const chosenDate = new FormData();
+      chosenDate.append("chosen_date", selectedDate.toISOString());
+      dispatch(getProsByDate(chosenDate));
+    }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="datePicker" onSubmit={handleSubmit}>
       <label>
-        Sélectionnez une date :
-        <input
-          type="date"
-          value={selectedDate}
+        <DatePicker
+          selected={selectedDate}
           onChange={handleChange}
+          dateFormat="dd/MM/yyyy"
+          minDate={new Date()}
           required
         />
       </label>
-      <button type="submit">Envoyer</button>
+      <button type="submit">Rechercher</button>
     </form>
   );
 };

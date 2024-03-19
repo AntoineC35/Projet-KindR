@@ -22,16 +22,21 @@ const Search = () => {
   ]);
   const handleDropDown1 = () => {
     setIsDropDownOpen1(!isDropDownOpen1);
+    setIsDropDownOpen2(false);
+    setIsDropDownOpen3(false);
   };
 
   const handleDropDown2 = () => {
     setIsDropDownOpen2(!isDropDownOpen2);
+    setIsDropDownOpen1(false);
+    setIsDropDownOpen3(false);
   };
 
   const handleDropDown3 = () => {
     setIsDropDownOpen3(!isDropDownOpen3);
+    setIsDropDownOpen1(false);
+    setIsDropDownOpen2(false);
   };
-
   let menuRef = useRef(null);
 
   useEffect(() => {
@@ -90,117 +95,110 @@ const Search = () => {
 
   return (
     <section className="search">
-      <div className="searchBar" ref={menuRef}>
-        <button onClick={handleDropDown1} className="bloc-top top-1">
+      <ul className="searchBar" ref={menuRef}>
+        <li onClick={handleDropDown1} className="bloc-top top-1">
           <em>%</em>
           <h3>Ou ?</h3>
-        </button>
-        {isDropDownOpen1 && (
-          <div className="bloc-links dropdown-1">
-            <ul>
-              <li
-                onClick={() => handleLocationSearch(1)}
-                style={{
-                  textDecoration: selectedDistance === 1 ? "underline" : "none",
-                }}
-              >
-                <span>1 km</span>
-              </li>
-              <li
-                onClick={() => handleLocationSearch(2)}
-                style={{
-                  textDecoration: selectedDistance === 2 ? "underline" : "none",
-                }}
-              >
-                <span>2 km</span>
-              </li>
-              <li
-                onClick={() => handleLocationSearch(5)}
-                style={{
-                  textDecoration: selectedDistance === 5 ? "underline" : "none",
-                }}
-              >
-                <span>5 km</span>
-              </li>
-              <li
-                onClick={() => handleLocationSearch(10)}
-                style={{
-                  textDecoration:
-                    selectedDistance === 10 ? "underline" : "none",
-                }}
-              >
-                <span>10 km</span>
-              </li>
-              <li
-                onClick={() => handleLocationSearch(20)}
-                style={{
-                  textDecoration:
-                    selectedDistance === 20 ? "underline" : "none",
-                }}
-              >
-                <span>20 km</span>
-              </li>
-            </ul>
-          </div>
-        )}
-        <button onClick={handleDropDown2} className="bloc-top top-2">
+        </li>
+
+        <ul className="bloc-links dropdown-1">
+          <li
+            onClick={() => handleLocationSearch(1)}
+            style={{
+              textDecoration: selectedDistance === 1 ? "underline" : "none",
+            }}
+          >
+            <span>1 km</span>
+          </li>
+          <li
+            onClick={() => handleLocationSearch(2)}
+            style={{
+              textDecoration: selectedDistance === 2 ? "underline" : "none",
+            }}
+          >
+            <span>2 km</span>
+          </li>
+          <li
+            onClick={() => handleLocationSearch(5)}
+            style={{
+              textDecoration: selectedDistance === 5 ? "underline" : "none",
+            }}
+          >
+            <span>5 km</span>
+          </li>
+          <li
+            onClick={() => handleLocationSearch(10)}
+            style={{
+              textDecoration: selectedDistance === 10 ? "underline" : "none",
+            }}
+          >
+            <span>10 km</span>
+          </li>
+          <li
+            onClick={() => handleLocationSearch(20)}
+            style={{
+              textDecoration: selectedDistance === 20 ? "underline" : "none",
+            }}
+          >
+            <span>20 km</span>
+          </li>
+        </ul>
+
+        <li onClick={handleDropDown2} className="bloc-top top-2">
           <em>&</em>
           <h3>Quoi ?</h3>
-        </button>
-        {isDropDownOpen2 && (
-          <div className="bloc-links dropdown-2">
-            <ul>
-              <li
-                onClick={() => handleRoleChange("assmat")}
-                style={{
-                  color: selectedRoles.includes("assmat") ? "white" : "grey",
-                }}
-              >
-                Assistant(e) Maternel(le)
-              </li>
-              <li
-                onClick={() => handleRoleChange("creche_public")}
-                style={{
-                  color: selectedRoles.includes("creche_public")
-                    ? "white"
-                    : "grey",
-                }}
-              >
-                Crèche Municipale
-              </li>
-              <li
-                onClick={() => handleRoleChange("creche_privee")}
-                style={{
-                  fontWeight: selectedRoles.includes("creche_privee")
-                    ? "bold"
-                    : "normal",
-                }}
-              >
-                Crèche Privée
-              </li>
-              <li
-                onClick={() => handleRoleChange("babysitting")}
-                style={{
-                  fontWeight: selectedRoles.includes("babysitting")
-                    ? "bold"
-                    : "normal",
-                }}
-              >
-                Baby Sitting
-              </li>
-            </ul>
-          </div>
-        )}
-        <button onClick={handleDropDown3} className="bloc-top top-3">
+        </li>
+
+        <ul className="bloc-links dropdown-2">
+          <li
+            onClick={() => handleRoleChange("assmat")}
+            style={{
+              color: selectedRoles.includes("assmat") ? "white" : "grey",
+            }}
+          >
+            Assistant(e) Maternel(le)
+          </li>
+          <li
+            onClick={() => handleRoleChange("creche_public")}
+            style={{
+              color: selectedRoles.includes("creche_public") ? "white" : "grey",
+            }}
+          >
+            Crèche Municipale
+          </li>
+          <li
+            onClick={() => handleRoleChange("creche_privee")}
+            style={{
+              fontWeight: selectedRoles.includes("creche_privee")
+                ? "bold"
+                : "normal",
+            }}
+          >
+            Crèche Privée
+          </li>
+          <li
+            onClick={() => handleRoleChange("babysitting")}
+            style={{
+              fontWeight: selectedRoles.includes("babysitting")
+                ? "bold"
+                : "normal",
+            }}
+          >
+            Baby Sitting
+          </li>
+        </ul>
+
+        <li onClick={handleDropDown3} className="bloc-top top-3">
           <em>[</em>
           <h3>Quand ?</h3>
-        </button>
-        {isDropDownOpen3 && (
-          <div className="bloc-links dropdown-3">
+        </li>
+
+        <ul className="bloc-links dropdown-3">
+          <li>
             <DateSelectionSearch />
-          </div>
-        )}
-      </div>
+          </li>
+        </ul>
+      </ul>
       <Map />
       <HomeCard selectedRoles={selectedRoles} />
     </section>

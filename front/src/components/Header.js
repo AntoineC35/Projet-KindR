@@ -17,29 +17,38 @@ const Header = () => {
   return (
     <nav className="header">
       <Logo />
-      <NavLink className="red nav" to="/messages">
-        <em>_</em>
-      </NavLink>
-      <NavLink className="green nav" to="/profil">
-        <em>^</em>
-      </NavLink>
-      <NavLink className="blue nav" to="/activites">
-        <em>#</em>
-      </NavLink>
-      <NavLink className="yellow nav" to="/about">
-        <em>/</em>
-      </NavLink>
-      {currentUser && currentUser.role === "admin" ? (
-        <NavLink to="/posts_manager">Post Managers</NavLink>
-      ) : null}
-      {!connected ? (
-        <NavLink to="/reg/sign_in">Sign In</NavLink>
-      ) : (
-        <p className="logout" onClick={handleLogout}>
+      <ul>
+        <li>
           {" "}
-          <em>&gt;</em>{" "}
-        </p>
-      )}
+          <NavLink className="red nav" to="/messages">
+            <em>_</em>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink className="green nav" to="/profil">
+            <em>^</em>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink className="blue nav" to="/activites">
+            <em>#</em>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink className="yellow nav" to="/about">
+            <em>/</em>
+          </NavLink>
+        </li>
+        <li>
+          {!connected ? (
+            <NavLink to="/reg/sign_in">Sign In</NavLink>
+          ) : (
+            <button className="logout" onClick={handleLogout}>
+              <em>&gt;</em>
+            </button>
+          )}
+        </li>
+      </ul>
     </nav>
   );
 };

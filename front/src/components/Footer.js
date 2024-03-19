@@ -1,4 +1,5 @@
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import "../styles/footer.css";
 
 const Footer = () => {
   const navigate = useNavigate();
@@ -12,9 +13,16 @@ const Footer = () => {
   };
 
   return (
-    <footer>
-      <button onClick={goBack}>Back</button>
-      <button onClick={goForward}>Forward</button>
+    <footer className="footer">
+      <ul>
+        <li>
+          <NavLink to="/about">Mentions Légales</NavLink>
+        </li>
+        <li>
+          <NavLink to="/about">Politique de Confidentialité</NavLink>
+        </li>
+      </ul>
+      <p>© 2024 Antoine Cormier - Tous droits réservés</p>
     </footer>
   );
 };

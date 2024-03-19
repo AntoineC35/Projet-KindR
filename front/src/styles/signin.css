@@ -65,3 +65,9 @@
   padding: 1rem;
   font-size: 1rem;
 }
+
+.header .logo {
+  margin-top: 10px;
+  width: 80%;
+  transform: rotate(15);
+}

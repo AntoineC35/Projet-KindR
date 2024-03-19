@@ -1,0 +1,44 @@
+.activiteDetails {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: #f3d7ca;
+  border-radius: 15px;
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.activiteDetails img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+.activiteDetails h2 {
+  color: #bd84f6;
+  margin-bottom: 0;
+  margin-top: 50px;
+}
+
+.activiteDetails .address {
+  width: 50%;
+  align-self: center;
+}
+
+.activiteDetails .link {
+  background-color: #bd84f6;
+  color: white;
+  width: 50%;
+  margin: 10px auto;
+  border-radius: 15px;
+  font-size: 1.5rem;
+  text-decoration: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.activiteDetails .content {
+  background-color: #fff8e3;
+  margin: 10px;
+  border-radius: 15px;
+}
