@@ -4,6 +4,8 @@ import { useSelector } from "react-redux";
 import { selectPros } from "../reducers/users.reducer";
 import { selectCurrentUser } from "../reducers/authUser.reducer";
 import "../styles/map.css";
+import { Link } from "react-router-dom";
+import { Icon } from "leaflet";
 
 function Map() {
   const pros = useSelector(selectPros);
@@ -14,9 +16,9 @@ function Map() {
       currentUser.address.location.long,
       currentUser.address.location.lat,
     ],
-    zoom: 10000,
+    zoom: 13,
   });
-  const [isMapVisible, setIsMapVisible] = useState(false);
+  const [isMapVisible, setIsMapVisible] = useState(true);
 
   const handleToggleMap = () => {
     setIsMapVisible(!isMapVisible);
@@ -29,12 +31,34 @@ function Map() {
           proMarker.address.location.long,
           proMarker.address.location.lat,
         ],
-        popUp: proMarker.lastname,
+        popUp: (
+          <div className="popup-content">
+            <img src={proMarker.avatar.avatar_url} alt="Avatar" />
+            <h2>
+              {proMarker.firstname} {proMarker.lastname}
+            </h2>
+            <Link className="details-button" to={`/details/${proMarker.id}`}>
+              Détails
+            </Link>
+          </div>
+        ),
       }));
 
       setGeocodePros(updatedGeocodePros);
     }
   }, [pros]);
+
+  const customMarkerIconBlue = new Icon({
+    iconUrl: process.env.PUBLIC_URL + "/img/marker-blue.png",
+    iconSize: [40, 50],
+    iconAnchor: [15, 30],
+  });
+
+  const customMarkerIconRed = new Icon({
+    iconUrl: process.env.PUBLIC_URL + "/img/marker-red.png",
+    iconSize: [40, 50],
+    iconAnchor: [15, 30],
+  });
 
   const markers = [
     {
@@ -60,12 +84,20 @@ function Map() {
             url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
           {geocodePros.map((proMarker, index) => (
-            <Marker key={index} position={proMarker.geocode}>
+            <Marker
+              key={index}
+              position={proMarker.geocode}
+              icon={customMarkerIconBlue}
+            >
               <Popup>{proMarker.popUp}</Popup>
             </Marker>
           ))}
           {markers.map((marker, index) => (
-            <Marker key={index} position={marker.geocode}>
+            <Marker
+              key={index}
+              position={marker.geocode}
+              icon={customMarkerIconRed}
+            >
               <Popup>{marker.popUp}</Popup>
             </Marker>
           ))}

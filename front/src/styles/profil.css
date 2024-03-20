@@ -4,15 +4,6 @@
   display: grid;
   grid-template-columns: 0.7fr 1fr;
   grid-template-rows: 0.9fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 3.6fr;
-  gap: 0px 0px;
-  grid-template-areas:
-    "avatar name"
-    "avatar lastname"
-    "avatar role"
-    "avatar messagebutton"
-    "address dispobutton"
-    "choicebutton choicebutton"
-    "table table";
   width: 95%;
   height: 85vh;
   margin: 20px auto;
@@ -113,4 +104,19 @@ table tr:not(:last-child) {
 
 .table-profil td:nth-child(2) {
   text-align: center;
+}
+
+@media only screen and (min-width: 1024px) {
+  .profil img {
+    width: 60%;
+  }
+  .address {
+    font-size: 1.5rem;
+  }
+  .lastname {
+    font-size: 3rem;
+  }
+  .firstname {
+    font-size: 2.5rem;
+  }
 }

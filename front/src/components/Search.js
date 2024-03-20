@@ -195,7 +195,7 @@ const Search = () => {
 
         <ul className="bloc-links dropdown-3">
           <li>
-            <DateSelectionSearch />
+            <DateSelectionSearch setIsDropDownOpen3={setIsDropDownOpen3} />
           </li>
         </ul>
       </ul>

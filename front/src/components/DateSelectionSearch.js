@@ -5,7 +5,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "../styles/datePicker.css";
 
-const DateSelectionSearch = () => {
+const DateSelectionSearch = ({ setIsDropDownOpen3 }) => {
   const [selectedDate, setSelectedDate] = useState(null);
   const dispatch = useDispatch();
 
@@ -19,6 +19,7 @@ const DateSelectionSearch = () => {
       const chosenDate = new FormData();
       chosenDate.append("chosen_date", selectedDate.toISOString());
       dispatch(getProsByDate(chosenDate));
+      setIsDropDownOpen3(false);
     }
   };
 
@@ -31,6 +32,7 @@ const DateSelectionSearch = () => {
           dateFormat="dd/MM/yyyy"
           minDate={new Date()}
           required
+          placeholderText="Choississez une date"
         />
       </label>
       <button type="submit">Rechercher</button>

@@ -70,7 +70,7 @@ const SelectedConv = ({ userId, setSelectedConversation }) => {
 
   useEffect(() => {
     dispatch(getCSRFToken());
-  }, []);
+  }, [dispatch]);
 
   const handleSubmit = (e) => {
     e.preventDefault();

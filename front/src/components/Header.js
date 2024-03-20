@@ -1,13 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { logout } from "../actions/authUser.action";
-import { selectCurrentUser } from "../reducers/authUser.reducer";
 import "../styles/header.css";
 import Logo from "./Logo";
 
 const Header = () => {
   const connected = useSelector((state) => state.authUserReducer.connected);
-  const currentUser = useSelector(selectCurrentUser);
   const dispatch = useDispatch();
 
   function handleLogout() {

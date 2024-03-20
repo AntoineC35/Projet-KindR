@@ -7,6 +7,7 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
+  overflow: hidden;
 }
 
 .header .logo {
@@ -160,4 +161,19 @@
 .header p {
   padding: 0;
   margin: 0;
+}
+
+@media only screen and (min-width: 1024px) {
+  .header .logo {
+    transform: rotate(-15deg) scale(0.8);
+  }
+
+  .header ul {
+    transform: scale(1.5);
+    align-items: center;
+  }
+
+  .header {
+    justify-content: space-evenly;
+  }
 }

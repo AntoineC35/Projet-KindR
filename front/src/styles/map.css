@@ -21,3 +21,41 @@
   border-radius: 15px;
   border: none;
 }
+
+.popup-content {
+  display: flex;
+  font-size: 0.8rem;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: "More sugar";
+  align-items: center;
+}
+
+.popup-content img {
+  margin: auto;
+  width: 50%;
+  background-color: #f6cc84;
+  border-radius: 50px;
+}
+
+.popup-content h2 {
+  margin: 0;
+}
+
+.details-button {
+  font-size: 1rem;
+  justify-self: center;
+  background-color: #bd84f6;
+  color: white;
+  text-decoration: none;
+  padding: 0.6rem;
+  border-radius: 15px;
+}
+
+.popup-content a {
+  color: white;
+}
+
+.leaflet-popup-close-button a {
+  font-family: "More sugar";
+}

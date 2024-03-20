@@ -27,6 +27,7 @@ const Message = () => {
   const csrf_token = useSelector(selectCSRFToken);
   const navigate = useNavigate();
   const [scrolledToBottom, setScrolledToBottom] = useState(true);
+  const [isMessageEmpty, setIsMessageEmpty] = useState(true);
 
   useEffect(() => {
     if (scrolledToBottom && conversationRef.current) {
@@ -69,14 +70,22 @@ const Message = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newMessage = new FormData();
-    newMessage.append("content", messageContent);
-    newMessage.append("csrf_token", csrf_token);
-    newMessage.append("user1_id", currentUser["id"]);
-    newMessage.append("user2_id", pro_id);
-    dispatch(startConversation(newMessage));
-    setMessageContent("");
-    scrollToBottom();
+    if (!isMessageEmpty) {
+      const newMessage = new FormData();
+      newMessage.append("content", messageContent);
+      newMessage.append("csrf_token", csrf_token);
+      newMessage.append("user1_id", currentUser["id"]);
+      newMessage.append("user2_id", pro_id);
+      dispatch(startConversation(newMessage));
+      setMessageContent("");
+      setIsMessageEmpty(true);
+      scrollToBottom();
+    }
+  };
+
+  const handleChange = (e) => {
+    setMessageContent(e.target.value);
+    setIsMessageEmpty(e.target.value.trim() === "");
   };
 
   if (!loggedIn) {
@@ -157,7 +166,7 @@ const Message = () => {
           <textarea
             placeholder="votre message ..."
             value={messageContent}
-            onChange={(e) => setMessageContent(e.target.value)}
+            onChange={handleChange}
             onKeyDown={(e) => {
               if (e.key === "Enter" && !e.shiftKey) {
                 e.preventDefault();
@@ -165,7 +174,7 @@ const Message = () => {
               }
             }}
           />
-          <button type="submit">
+          <button type="submit" disabled={isMessageEmpty}>
             <em>#</em>
           </button>
         </form>

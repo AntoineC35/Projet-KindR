@@ -1,0 +1,9 @@
+.calendar {
+  height: 80vh;
+  margin-top: 2rem;
+}
+
+.fc-event-main-frame {
+  font-size: 0.6rem;
+  height: 15px;
+}

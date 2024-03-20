@@ -1,17 +1,7 @@
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "../styles/footer.css";
 
 const Footer = () => {
-  const navigate = useNavigate();
-
-  const goBack = () => {
-    navigate(-1);
-  };
-
-  const goForward = () => {
-    navigate(+1);
-  };
-
   return (
     <footer className="footer">
       <ul>

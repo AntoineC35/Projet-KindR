@@ -20,6 +20,7 @@
     "figure name-block"
     "figure content";
   background-color: #bd84f6;
+  cursor: pointer;
 }
 
 .figure {

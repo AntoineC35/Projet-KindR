@@ -66,7 +66,7 @@ const AvatarRegister = () => {
               src={url}
               alt={`avatar-${index}`}
               onClick={() => handleImageClick(url)}
-              className={formData.avatar_url === url ? "selected" : ""}
+              className={formData.avatar_url === url ? "select" : ""}
             />
           ))}
         </section>
