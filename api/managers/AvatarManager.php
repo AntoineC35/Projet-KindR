@@ -31,7 +31,11 @@ class AvatarManager extends AbstractManager {
 
     }
 
-    public function deleteAvatar($user_id) {
-
+    public function deleteAvatar(Avatar $avatar) {
+        $query = $this->db->prepare("DELETE FROM avatar WHERE id = :avatar_id");
+        $parameters = [
+            "avatar_id" => $avatar->getId()
+        ];
+        $query->execute($parameters);
     }
 }

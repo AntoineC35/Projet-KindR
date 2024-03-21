@@ -50,10 +50,7 @@ const Profil = () => {
           </p>
           {currentUser.role !== "parent" && currentUser.role !== "admin" && (
             <>
-              <Link
-                className="button-message"
-                to={`/message/${currentUser.id}`}
-              >
+              <Link className="button-message" to={`/messages`}>
                 <em>9</em>Message
               </Link>
               <Link

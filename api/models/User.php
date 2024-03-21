@@ -11,6 +11,7 @@ class User {
     private ?Address $address = null;
     private ?int $availableSlot = null;
     private ?Avatar $avatar = null;
+    private array $conversations = [];
     public function __construct(private string $firstname, private string $lastname, private string $email, private string $password, private string $role)
     {
         
@@ -60,6 +61,9 @@ class User {
         }
         if ($this->avatar !== null) {
             $userArray["avatar"] = $this->avatar->toArray();
+        }
+        if ($this->conversations !== null) {
+            $userArray["conversations"] = $this->conversations;
         }
     
         return $userArray;
@@ -423,6 +427,30 @@ class User {
     public function setAvatar($avatar)
     {
         $this->avatar = $avatar;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of conversations
+     *
+     * @return  mixed
+     */
+    public function getConversations()
+    {
+        return $this->conversations;
+    }
+
+    /**
+     * Set the value of conversations
+     *
+     * @param   mixed  $conversations  
+     *
+     * @return  self
+     */
+    public function setConversations($conversations)
+    {
+        $this->conversations = $conversations;
 
         return $this;
     }

@@ -53,11 +53,16 @@ class PostManager extends AbstractManager {
         return $posts;
     }
 
-    public function editPost($post) {
+    public function deletePost($post) {
+        $query = $this->db->prepare("DELETE FROM posts WHERE id = :post_id");
+        $parameters = [
+            "post_id" => $post->getId()
+        ];
+        $query->execute($parameters);
 
     }
 
-    public function deleterPost ($post) {
+    public function editPost ($post) {
 
     }
 }

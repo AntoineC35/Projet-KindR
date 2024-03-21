@@ -1,7 +1,11 @@
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "../styles/footer.css";
 
 const Footer = () => {
+  const [fontFamily, setFontFamily] = useState("More sugar");
+  const [fontSize, setFontSize] = useState(16);
+
   return (
     <footer className="footer">
       <ul>
@@ -11,8 +15,33 @@ const Footer = () => {
         <li>
           <NavLink to="/about">Politique de Confidentialité</NavLink>
         </li>
+        <li>
+          <select
+            value={fontFamily}
+            onChange={(e) => setFontFamily(e.target.value)}
+          >
+            <option value="More sugar">Classique</option>
+            <option value="serif">Serif</option>
+            <option value="monospace">Monospace</option>
+          </select>
+        </li>
+        <li>
+          <input
+            type="range"
+            min="10"
+            max="24"
+            value={fontSize}
+            onChange={(e) => setFontSize(parseInt(e.target.value))}
+          />
+        </li>
       </ul>
       <p>© 2024 Antoine Cormier - Tous droits réservés</p>
+      <style>{`
+        body {
+          font-family: ${fontFamily};
+          font-size: ${fontSize}px;
+        }
+      `}</style>
     </footer>
   );
 };

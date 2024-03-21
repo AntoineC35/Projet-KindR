@@ -59,3 +59,7 @@
 .leaflet-popup-close-button a {
   font-family: "More sugar";
 }
+
+.leaflet-popup-content-wrapper {
+  background-color: #fff8e3;
+}

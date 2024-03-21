@@ -31,6 +31,7 @@ import Message from "./components/Message";
 import Disponibility from "./components/Disponibility";
 import PostsManager from "./components/PostsManager";
 import ActiviteDetails from "./components/ActiviteDetails";
+import Administration from "./components/Administration";
 
 function App() {
   const router = createBrowserRouter(
@@ -53,6 +54,7 @@ function App() {
           <Route path="message/:pro_id" element={<Message />} />
           <Route path="disponibility/:pro_id" element={<Disponibility />} />
           <Route path="posts_manager" element={<PostsManager />} />
+          <Route path="admin" element={<Administration />} />
         </Route>
         <Route path="reg" element={<RootRegister />}>
           <Route

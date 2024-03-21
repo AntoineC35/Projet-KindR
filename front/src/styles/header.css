@@ -35,8 +35,8 @@
   font-size: 1.5rem;
   text-align: center;
   cursor: pointer;
-  width: 20px;
-  height: 20px;
+  width: 1.2rem;
+  height: 1.2rem;
   border-radius: 15px;
   transform: rotate(-15deg);
   transition: 1s;
@@ -56,8 +56,8 @@
   font-size: 1.8rem;
   text-align: center;
   cursor: pointer;
-  max-width: 20px;
-  max-height: 20px;
+  max-width: 1.2rem;
+  max-height: 1.2rem;
   border-radius: 15px;
   transform: rotate(15deg);
   transition: 1s;
@@ -164,16 +164,24 @@
 }
 
 @media only screen and (min-width: 1024px) {
+  .first {
+    width: 15rem;
+    margin-top: 0;
+  }
+
   .header .logo {
-    transform: rotate(-15deg) scale(0.8);
+    max-width: 100%;
+    transform: rotate(-10deg);
+    padding: 0;
   }
 
   .header ul {
-    transform: scale(1.5);
+    transform: scale(1.2);
     align-items: center;
   }
 
   .header {
     justify-content: space-evenly;
+    height: 7vh;
   }
 }

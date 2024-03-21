@@ -29,7 +29,7 @@ class CategoryManager extends AbstractManager {
         }
     }
 
-    public function createCategory($category) {
+    public function createCategory(Category $category) {
         $query = $this->db->prepare('INSERT INTO categories VALUES(null, :type, :description)');
         $parameters = [
             "type" => $category->getType(),
@@ -38,5 +38,13 @@ class CategoryManager extends AbstractManager {
         $query->execute($parameters);
         $lastId = $this->db->lastInsertId();
         return $this->findById($lastId);
+    }
+
+    public function deleteCategory(Category $category) {
+        $query = $this->db->prepare("DELETE FROM category WHERE id = :category_id");
+        $parameters = [
+            "category_id" => $category->getId()
+        ];
+        $query->execute($parameters);
     }
 }

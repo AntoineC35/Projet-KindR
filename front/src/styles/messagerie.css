@@ -8,18 +8,12 @@
   border-radius: 15px;
   margin: 1rem;
   height: 10vh;
-}
-
-.conversation {
-  display: grid;
   grid-template-columns: 0.6fr 1.4fr;
   grid-template-rows: 1fr 1fr;
-  gap: 0px 0px;
   grid-auto-flow: row;
   grid-template-areas:
     "figure name-block"
     "figure content";
-  background-color: #bd84f6;
   cursor: pointer;
 }
 
@@ -48,4 +42,39 @@
 .content {
   grid-area: content;
   margin: 0;
+}
+
+@media only screen and (min-width: 1024px) {
+  .messagerie {
+    margin-right: auto;
+    overflow-y: auto;
+    height: 80vh;
+    width: 20rem;
+    background-color: #f3d7ca;
+    border-radius: 40px;
+    margin-top: 20px;
+  }
+  .messagerie::-webkit-scrollbar {
+    display: none;
+  }
+
+  .mobile {
+    margin-left: 20px;
+  }
+  .conversation {
+    height: auto;
+    background-color: #f3d7ca;
+  }
+
+  .conversation h3 {
+    color: #bd84f6;
+  }
+
+  .conversation h1 {
+    color: #bd84f6;
+  }
+
+  .selected-conversation {
+    background-color: #fff8e3;
+  }
 }

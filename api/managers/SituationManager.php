@@ -75,7 +75,11 @@ class SituationManager extends AbstractManager {
     }
 
     public function deleteSituation(Situation $situation) {
-
+        $query = $this->db->prepare("DELETE FROM situation WHERE id = :situation_id");
+        $parameters = [
+            "situation_id" => $situation->getId()
+        ];
+        $query->execute($parameters);
     }
 
     public function editSituation(Situation $situation) {

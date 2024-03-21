@@ -47,6 +47,7 @@ const Header = () => {
           )}
         </li>
       </ul>
+      <NavLink to="/admin">Admin</NavLink>
     </nav>
   );
 };

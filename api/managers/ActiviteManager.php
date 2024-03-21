@@ -47,6 +47,10 @@ class ActiviteManager extends AbstractManager
     }
 
     public function deleteActivite(Activite $activite) {
-        
+        $query = $this->db->prepare("DELETE FROM activites WHERE id = :activite_id");
+        $parameters = [
+            "activite_id" => $activite->getId()
+        ];
+        $query->execute($parameters);
     }
 }

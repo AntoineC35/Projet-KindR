@@ -46,7 +46,7 @@ const Messages = () => {
   }
 
   return (
-    <>
+    <section className="messagerie-desktop">
       {selectedConversation ? (
         <SelectedConv
           userId={selectedConversation}
@@ -57,13 +57,17 @@ const Messages = () => {
       <section
         className={`messagerie ${selectedConversation ? "selected" : ""}`}
       >
-        <h1>Boite de réception</h1>
+        <h1>Discussions</h1>
         {conversations ? (
           conversations.map((conversation) =>
             conversation.user1["id"] === currentUser["id"] ? (
               <article
                 key={conversation.id}
-                className="conversation"
+                className={`conversation ${
+                  selectedConversation === conversation.user2["id"]
+                    ? "selected-conversation"
+                    : ""
+                }`}
                 onClick={() => handeClick(conversation.user2["id"])}
               >
                 <figure className="figure">
@@ -87,7 +91,11 @@ const Messages = () => {
             ) : (
               <article
                 key={conversation.id}
-                className="conversation"
+                className={`conversation ${
+                  selectedConversation === conversation.user1["id"]
+                    ? "selected-conversation"
+                    : ""
+                }`}
                 onClick={() => handeClick(conversation.user1["id"])}
               >
                 <figure className="figure">
@@ -114,7 +122,7 @@ const Messages = () => {
           <p>Aucune conversation en cours !</p>
         )}
       </section>{" "}
-    </>
+    </section>
   );
 };
 

@@ -3,6 +3,9 @@ import {
   GET_USERS,
   SEARCH_AROUND,
   GET_PROS_BY_DATE,
+  DELETE_USER,
+  EDIT_PASSWORD,
+  EDIT_USER,
 } from "../actions/users.action";
 
 const initialState = {};
@@ -17,9 +20,16 @@ export default function usersReducer(state = initialState, action) {
       return action.payload;
     case SEARCH_AROUND:
       return action.payload;
+    case DELETE_USER:
+      return action.payload;
+    case EDIT_PASSWORD:
+      return action.payload;
+    case EDIT_USER:
+      return action.payload;
     default:
       return state;
   }
 }
 
 export const selectPros = (state) => state.usersReducer.pros;
+export const selectUsers = (state) => state.usersReducer.users;

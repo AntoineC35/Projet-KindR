@@ -176,3 +176,30 @@
 .messages {
   margin-top: 20px;
 }
+
+@media only screen and (min-width: 1024px) {
+  .messagerie-desktop {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  .mobile {
+    width: 80%;
+  }
+  .message-header figure {
+    width: 10%;
+  }
+  .message-block figure {
+    width: 10%;
+  }
+  .message-submit {
+    justify-content: space-evenly;
+  }
+
+  .message-block {
+    background-color: #fff8e3;
+  }
+
+  .message-header button {
+    display: none;
+  }
+}

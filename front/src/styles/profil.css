@@ -87,6 +87,7 @@
   color: white;
   border-radius: 15px;
   padding: 0.5rem;
+  cursor: pointer;
 }
 .table-profil {
   grid-area: 7 / 1 / 8 / 3;

@@ -66,7 +66,11 @@ class ConversationManager extends AbstractManager {
 
     public function deleteConversation(Conversation $conversation) 
     {
-
+        $query = $this->db->prepare("DELETE FROM conversation WHERE id = :conversation_id");
+        $parameters = [
+            "conversation_id" => $conversation->getId()
+        ];
+        $query->execute($parameters);
     }
 
 

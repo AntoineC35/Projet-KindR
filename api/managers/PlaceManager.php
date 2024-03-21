@@ -94,7 +94,11 @@ class PlaceManager extends AbstractManager {
     }
 
     public function deletePlace(Place $place) {
-
+        $query = $this->db->prepare("DELETE FROM place WHERE id = :place_id");
+        $parameters = [
+            "place_id" => $place->getId()
+        ];
+        $query->execute($parameters);
     }
 
     public function editPlace(Place $place) {

@@ -150,41 +150,41 @@ const Search = () => {
         </li>
 
         <ul className="bloc-links dropdown-2">
-          <li
-            onClick={() => handleRoleChange("assmat")}
-            style={{
-              color: selectedRoles.includes("assmat") ? "white" : "grey",
-            }}
-          >
-            Assistant(e) Maternel(le)
+          <li>
+            <input
+              type="checkbox"
+              id="assmat"
+              checked={selectedRoles.includes("assmat")}
+              onChange={() => handleRoleChange("assmat")}
+            />
+            <label htmlFor="assmat">Assistant(e) Maternel(le)</label>
           </li>
-          <li
-            onClick={() => handleRoleChange("creche_public")}
-            style={{
-              color: selectedRoles.includes("creche_public") ? "white" : "grey",
-            }}
-          >
-            Crèche Municipale
+          <li>
+            <input
+              type="checkbox"
+              id="creche_public"
+              checked={selectedRoles.includes("creche_public")}
+              onChange={() => handleRoleChange("creche_public")}
+            />
+            <label htmlFor="creche_public">Crèche Municipale</label>
           </li>
-          <li
-            onClick={() => handleRoleChange("creche_privee")}
-            style={{
-              fontWeight: selectedRoles.includes("creche_privee")
-                ? "bold"
-                : "normal",
-            }}
-          >
-            Crèche Privée
+          <li>
+            <input
+              type="checkbox"
+              id="creche_privee"
+              checked={selectedRoles.includes("creche_privee")}
+              onChange={() => handleRoleChange("creche_privee")}
+            />
+            <label htmlFor="creche_privee">Crèche Privée</label>
           </li>
-          <li
-            onClick={() => handleRoleChange("babysitting")}
-            style={{
-              fontWeight: selectedRoles.includes("babysitting")
-                ? "bold"
-                : "normal",
-            }}
-          >
-            Baby Sitting
+          <li>
+            <input
+              type="checkbox"
+              id="babysitting"
+              checked={selectedRoles.includes("babysitting")}
+              onChange={() => handleRoleChange("babysitting")}
+            />
+            <label htmlFor="babysitting">Baby Sitting</label>
           </li>
         </ul>
 

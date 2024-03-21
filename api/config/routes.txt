@@ -2,6 +2,9 @@
 /CSRFToken AuthController:getCSRFToken
 /create_user AuthController:createUser
 /update_user/* UserController:findById
+/delete_user UserController:deleteUser
+/edit_password UserController:editUserPassword
+/edit_user UserController:editUser
 /sign_in AuthController:signIn
 /logout AuthController:logout
 /create_address AddressController:createAddress

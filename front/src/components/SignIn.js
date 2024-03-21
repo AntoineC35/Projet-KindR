@@ -61,7 +61,7 @@ const SignIn = () => {
           onChange={handleChange}
           required
         />
-        <button type="submit">Soumettre</button>
+        <button type="submit">Connexion</button>
       </form>
     </section>
   );

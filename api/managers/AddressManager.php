@@ -39,7 +39,11 @@ class AddressManager extends AbstractManager {
     }
 
     public function deleteAddress(Address $address) {
-
+        $query = $this->db->prepare("DELETE FROM address WHERE id = :address_id");
+        $parameters = [
+            "address_id" => $address->getId()
+        ];
+        $query->execute($parameters);
     }
     
     public function editAddress(Address $address) {

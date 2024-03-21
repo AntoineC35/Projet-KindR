@@ -40,6 +40,11 @@ class MessageManager extends AbstractManager {
     }
 
     public function deleteMessage(Message $message) {
+        $query = $this->db->prepare("DELETE FROM messages WHERE id = :message_id");
+        $parameters = [
+            "message_id" => $message->getId()
+        ];
+        $query->execute($parameters);
 
     }
 

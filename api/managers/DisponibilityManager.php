@@ -39,8 +39,15 @@ class DisponibilityManager extends AbstractManager {
         return $newDisponibility;
     }
 
-    public function deleteDisponibility(Disponibility $disponibility) {
-
+    public function deleteDisponibility(array $disponibilities) {
+        foreach($disponibilities as $disponibility) {
+            $query = $this->db->prepare("DELETE FROM disponibility WHERE id = :disponibility_id");
+            $parameters = [
+                "disponibility_id" => $disponibility["id"]
+            ];
+            $query->execute($parameters);
+        }
+        
     }
 
     public function editDisponibility(Disponibility $disponibility) {

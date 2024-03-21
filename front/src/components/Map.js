@@ -89,7 +89,7 @@ function Map() {
               position={proMarker.geocode}
               icon={customMarkerIconBlue}
             >
-              <Popup>{proMarker.popUp}</Popup>
+              <Popup className="custom-popup">{proMarker.popUp}</Popup>
             </Marker>
           ))}
           {markers.map((marker, index) => (
