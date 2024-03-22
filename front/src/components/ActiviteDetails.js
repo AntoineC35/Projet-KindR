@@ -1,14 +1,14 @@
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { selectPosts } from "../reducers/post.reducer";
 import { useEffect } from "react";
 import { getCategories, getPosts } from "../actions/post.action";
 import he from "he";
 import "../styles/activiteDetails.css";
+import Navigation from "./Navigation";
 
 const ActiviteDetails = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   function formatDate(dateString) {
     const options = { day: "numeric", month: "long", year: "numeric" };
@@ -23,19 +23,13 @@ const ActiviteDetails = () => {
 
   const posts = useSelector(selectPosts);
 
-  const goBack = () => {
-    navigate(-1);
-  };
-
   const { activite_id } = useParams();
   const selectedPost =
     posts && posts.find((post) => post.id === Number(activite_id));
 
   return (
     <>
-      <button className="back" onClick={goBack}>
-        <em>=</em>
-      </button>
+      <Navigation />
       {selectedPost ? (
         <article className="activiteDetails">
           <h2>{he.decode(selectedPost.title)}</h2>

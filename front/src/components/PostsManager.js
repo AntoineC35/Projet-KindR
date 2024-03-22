@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { selectCSRFToken } from "../reducers/authUser.reducer";
 import { getCSRFToken } from "../actions/authUser.action";
 import PostCard from "./PostCard";
+import "../styles/postManager.css";
 
 const PostsManager = () => {
   const dispatch = useDispatch();
@@ -65,7 +66,7 @@ const PostsManager = () => {
 
   return (
     <>
-      <section>
+      <section className="post-manager">
         <h2>Ajouter un nouvel article</h2>
         <form onSubmit={handleSubmit}>
           <label htmlFor="title">Titre :</label>
@@ -100,14 +101,14 @@ const PostsManager = () => {
           ></textarea>
 
           <label htmlFor="address">Adresse :</label>
-          <textarea
+          <input
             id="address"
             name="address"
             value={formData.address}
             onChange={handleChange}
             required
             maxLength="255"
-          ></textarea>
+          ></input>
 
           <label htmlFor="category">Catégorie :</label>
           <select
@@ -161,7 +162,9 @@ const PostsManager = () => {
           <button type="submit">Ajouter l'article</button>
         </form>
       </section>
-      <PostCard />
+      <section className="PostCard-edit">
+        <PostCard />
+      </section>
     </>
   );
 };

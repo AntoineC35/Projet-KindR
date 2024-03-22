@@ -107,7 +107,15 @@ table tr:not(:last-child) {
   text-align: center;
 }
 
+.selectedTab {
+  text-decoration: underline;
+}
+
 @media only screen and (min-width: 1024px) {
+  .profil {
+    width: 50%;
+  }
+
   .profil img {
     width: 60%;
   }

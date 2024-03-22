@@ -7,6 +7,7 @@ import Presentation from "./Presentation";
 import ActivitesPro from "./ActivitesPro";
 import Environnement from "./Environnement";
 import "../styles/profil.css";
+import Navigation from "./Navigation";
 
 const Details = () => {
   const dispatch = useDispatch();
@@ -31,6 +32,7 @@ const Details = () => {
 
   return (
     <>
+      <Navigation />
       {selectedPro ? (
         <section className="profil">
           <figure className="avatar">
@@ -64,13 +66,28 @@ const Details = () => {
                 <em>*</em>Dispo
               </Link>
               <ul className="button-choices">
-                <li onClick={() => handleTabClick("presentation")}>
+                <li
+                  className={
+                    selectedTab === "presentation" ? "selectedTab" : null
+                  }
+                  onClick={() => handleTabClick("presentation")}
+                >
                   Présentation
                 </li>
-                <li onClick={() => handleTabClick("environnement")}>
+                <li
+                  className={
+                    selectedTab === "environnement" ? "selectedTab" : null
+                  }
+                  onClick={() => handleTabClick("environnement")}
+                >
                   Environnement
                 </li>
-                <li onClick={() => handleTabClick("activites")}>Activités</li>
+                <li
+                  className={selectedTab === "activites" ? "selectedTab" : null}
+                  onClick={() => handleTabClick("activites")}
+                >
+                  Activités
+                </li>
               </ul>
               {selectedTab && tabComponents[selectedTab]}
             </>

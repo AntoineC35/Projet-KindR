@@ -1,0 +1,57 @@
+.post-manager {
+  margin: auto;
+  width: 80%;
+  background-color: #f3d7ca;
+  text-align: center;
+  border-radius: 15px;
+}
+
+.post-manager form {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+  width: 80%;
+  margin: auto;
+}
+
+.post-manager label {
+  margin: 0.5rem;
+}
+
+.post-manager input,
+.post-manager select {
+  padding: 0.5rem;
+  border-radius: 15px;
+  font-family: "More sugar";
+  padding: 1rem;
+  font-size: 1rem;
+}
+
+.post-manager textarea {
+  height: 15rem;
+  resize: vertical;
+  border-radius: 15px;
+  font-family: "More sugar";
+  padding: 1rem;
+  font-size: 1rem;
+}
+
+.post-manager button {
+  background-color: #9cdbc8;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  border-radius: 15px;
+  font-family: "More sugar";
+  padding: 1rem;
+  font-size: 2rem;
+}
+
+.PostCard-edit {
+  display: flex;
+  justify-content: center;
+}
+
+.PostCard-edit article {
+  margin: 1rem;
+}

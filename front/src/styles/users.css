@@ -1,0 +1,48 @@
+.button-delete {
+  background-color: #f68484;
+  color: white;
+  border-radius: 15px;
+  padding: 0.5rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+.button-edit {
+  background-color: #f6cc84;
+  font-family: "More Sugar";
+  border-radius: 15px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.button-password {
+  background-color: #9cdbc8;
+  font-family: "More Sugar";
+  border-radius: 15px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.administration input,
+.administration select {
+  font-family: "More sugar";
+  border-radius: 15px;
+  font-size: 1rem;
+}
+
+.filter {
+  margin: auto;
+  font-size: 2rem;
+}
+.table-user {
+  background-color: #f3d7ca;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space-evenly;
+  border-radius: 15px;
+}
+
+.table-user h2 {
+  text-align: center;
+}

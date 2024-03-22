@@ -9,6 +9,7 @@ import Presentation from "./Presentation";
 import Environnement from "./Environnement";
 import ActivitesPro from "./ActivitesPro";
 import "../styles/profil.css";
+import Navigation from "./Navigation";
 
 const Profil = () => {
   const loggedIn = useSelector(selectIsLoggedIn);
@@ -30,6 +31,7 @@ const Profil = () => {
 
   return (
     <>
+      <Navigation />
       {currentUser ? (
         <section className="profil">
           <figure className="avatar">
@@ -60,13 +62,28 @@ const Profil = () => {
                 <em>*</em>Dispo
               </Link>
               <ul className="button-choices">
-                <li onClick={() => handleTabClick("presentation")}>
+                <li
+                  className={
+                    selectedTab === "presentation" ? "selectedTab" : null
+                  }
+                  onClick={() => handleTabClick("presentation")}
+                >
                   Présentation
                 </li>
-                <li onClick={() => handleTabClick("environnement")}>
+                <li
+                  className={
+                    selectedTab === "environnement" ? "selectedTab" : null
+                  }
+                  onClick={() => handleTabClick("environnement")}
+                >
                   Environnement
                 </li>
-                <li onClick={() => handleTabClick("activites")}>Activités</li>
+                <li
+                  className={selectedTab === "activites" ? "selectedTab" : null}
+                  onClick={() => handleTabClick("activites")}
+                >
+                  Activités
+                </li>
               </ul>
               {selectedTab && tabComponents[selectedTab]}
             </>

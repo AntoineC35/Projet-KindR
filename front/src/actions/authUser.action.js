@@ -32,10 +32,14 @@ export const loginUser = (data) => {
           localStorage.setItem("connected", true);
         } else {
           console.error("Login failed:", payload.message);
+
+          throw new Error(payload.message);
         }
       })
       .catch((error) => {
         console.error("Login error:", error);
+
+        throw error;
       });
   };
 };

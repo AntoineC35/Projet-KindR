@@ -3,9 +3,11 @@ import { NavLink } from "react-router-dom";
 import { logout } from "../actions/authUser.action";
 import "../styles/header.css";
 import Logo from "./Logo";
+import { selectCurrentUser } from "../reducers/authUser.reducer";
 
 const Header = () => {
   const connected = useSelector((state) => state.authUserReducer.connected);
+  const currentUser = useSelector(selectCurrentUser);
   const dispatch = useDispatch();
 
   function handleLogout() {
@@ -23,9 +25,15 @@ const Header = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink className="green nav" to="/profil">
-            <em>^</em>
-          </NavLink>
+          {currentUser && currentUser.role === "admin" ? (
+            <NavLink className="admin" to="/admin">
+              Admin
+            </NavLink>
+          ) : (
+            <NavLink className="green nav" to="/profil">
+              <em>^</em>
+            </NavLink>
+          )}
         </li>
         <li>
           <NavLink className="blue nav" to="/activites">
@@ -47,7 +55,6 @@ const Header = () => {
           )}
         </li>
       </ul>
-      <NavLink to="/admin">Admin</NavLink>
     </nav>
   );
 };

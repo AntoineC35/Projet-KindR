@@ -16,23 +16,30 @@ const Footer = () => {
           <NavLink to="/about">Politique de Confidentialité</NavLink>
         </li>
         <li>
-          <select
-            value={fontFamily}
-            onChange={(e) => setFontFamily(e.target.value)}
-          >
-            <option value="More sugar">Classique</option>
-            <option value="serif">Serif</option>
-            <option value="monospace">Monospace</option>
-          </select>
-        </li>
-        <li>
-          <input
-            type="range"
-            min="10"
-            max="24"
-            value={fontSize}
-            onChange={(e) => setFontSize(parseInt(e.target.value))}
-          />
+          Accesibilité{" "}
+          <ul>
+            <li>
+              <label>Typo</label>
+              <select
+                value={fontFamily}
+                onChange={(e) => setFontFamily(e.target.value)}
+              >
+                <option value="More sugar">Classique</option>
+                <option value="serif">Serif</option>
+                <option value="monospace">Monospace</option>
+              </select>
+            </li>
+            <li>
+              <label>Taille texte</label>
+              <input
+                type="range"
+                min="10"
+                max="30"
+                value={fontSize}
+                onChange={(e) => setFontSize(parseInt(e.target.value))}
+              />
+            </li>
+          </ul>
         </li>
       </ul>
       <p>© 2024 Antoine Cormier - Tous droits réservés</p>

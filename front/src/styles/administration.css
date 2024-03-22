@@ -1,0 +1,21 @@
+.administration-button button {
+  background-color: #bd84f6;
+  border-radius: 15px;
+  padding: 1rem;
+  font-family: "More sugar";
+  font-size: 1rem;
+  color: white;
+  margin: auto;
+  border: none;
+  cursor: pointer;
+}
+
+.administration-button button:disabled {
+  background-color: grey;
+  cursor: not-allowed;
+}
+
+.administration-button {
+  display: flex;
+  margin-top: 0.5rem;
+}

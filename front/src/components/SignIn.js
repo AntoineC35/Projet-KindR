@@ -8,6 +8,7 @@ const SignIn = () => {
   const dispatch = useDispatch();
   const csrf_token = useSelector((state) => state.authUserReducer.csrf_token);
   const loggedIn = useSelector(selectIsLoggedIn);
+  const [errorMessage, setErrorMessage] = useState();
 
   useEffect(() => {
     dispatch(getCSRFToken());
@@ -31,7 +32,9 @@ const SignIn = () => {
     newFormData.append("csrf_token", csrf_token);
     newFormData.append("password", formData.password);
     newFormData.append("email", formData.email);
-    dispatch(loginUser(newFormData));
+    dispatch(loginUser(newFormData)).catch((error) => {
+      setErrorMessage(error.message);
+    });
   };
 
   if (loggedIn) {
@@ -61,6 +64,7 @@ const SignIn = () => {
           onChange={handleChange}
           required
         />
+        {errorMessage && <p>{errorMessage}</p>}
         <button type="submit">Connexion</button>
       </form>
     </section>
