@@ -63,3 +63,7 @@
 .leaflet-popup-content-wrapper {
   background-color: #fff8e3;
 }
+
+.toggleMap {
+  cursor: pointer;
+}

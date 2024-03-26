@@ -52,7 +52,7 @@ const ProRegister = () => {
     return <Navigate to="/reg/address_register" />;
   }
   if (loggedIn && user.address) {
-    return <Navigate to="/home" />;
+    return <Navigate to="/" />;
   }
 
   return (
@@ -99,6 +99,8 @@ const ProRegister = () => {
           name="password"
           placeholder="Mot de passe"
           required
+          title="Le mot de passe doit contenir au moins un chiffre, une lettre majuscule, une lettre minuscule, un caractère spécial et être d'au moins 8 caractères de longueur."
+          pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$"
           value={formData.password}
           onChange={(e) =>
             setFormData({ ...formData, password: e.target.value })

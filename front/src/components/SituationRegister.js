@@ -65,7 +65,7 @@ const SituationRegister = () => {
     return <Navigate to="/register" />;
   }
   if (user.situation) {
-    return <Navigate to="/reg/disponibility_register" />;
+    return <Navigate to="/disponibility_register" />;
   }
   return (
     <section className="proRegister">

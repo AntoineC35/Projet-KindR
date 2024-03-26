@@ -61,7 +61,7 @@ const ActiviteRegister = () => {
     return <Navigate to="/register" />;
   }
   if (user.role === "parent") {
-    return <Navigate to="/home" />;
+    return <Navigate to="/" />;
   }
   if (user.activite && user.role !== "parent") {
     return <Navigate to="/reg/situation_register" />;

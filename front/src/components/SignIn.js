@@ -38,7 +38,7 @@ const SignIn = () => {
   };
 
   if (loggedIn) {
-    return <Navigate to="/home" />;
+    return <Navigate to="/" />;
   }
 
   return (

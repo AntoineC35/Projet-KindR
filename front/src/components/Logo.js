@@ -3,7 +3,7 @@ import "../styles/logo.css";
 
 const Logo = () => {
   return (
-    <NavLink className="first" to="/home">
+    <NavLink className="first" to="/">
       <img
         className="logo"
         src={process.env.PUBLIC_URL + "/img/kindrlogo.png"}

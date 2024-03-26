@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.10a4c866.css",
+    "main.js": "/static/js/main.ef9bc1a7.js",
+    "static/media/more-sugar.extras.ttf": "/static/media/more-sugar.extras.3b3152e4fab934301029.ttf",
+    "static/media/more-sugar.thin (1).ttf": "/static/media/more-sugar.thin (1).d3d455c8722031d5d420.ttf",
+    "static/media/more-sugar.regular (1).ttf": "/static/media/more-sugar.regular (1).a447f1f6ea779d9f4a99.ttf",
+    "index.html": "/index.html",
+    "main.10a4c866.css.map": "/static/css/main.10a4c866.css.map",
+    "main.ef9bc1a7.js.map": "/static/js/main.ef9bc1a7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.10a4c866.css",
+    "static/js/main.ef9bc1a7.js"
+  ]
+}

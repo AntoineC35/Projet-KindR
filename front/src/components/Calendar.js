@@ -16,17 +16,16 @@ const Calendar = ({ pro }) => {
       // Ajoutez les créneaux occupés à la liste des événements
       pro.disponibility.forEach((slot) => {
         const event = {
-          title: "Occupé", // Titre de l'événement
-          start: slot.start_datetime, // Date de début du créneau
-          end: slot.end_datetime, // Date de fin du créneau
-          backgroundColor: "#F68484", // Couleur de fond de l'événement
-          borderColor: "#F68484", // Couleur de la bordure de l'événement
-          editable: false, // Empêche l'édition de l'événement
+          title: "Occupé",
+          start: slot.start_datetime,
+          end: slot.end_datetime,
+          backgroundColor: "#F68484",
+          borderColor: "#F68484",
+          editable: false,
         };
         allEvents.push(event);
       });
 
-      // Obtenez la date d'aujourd'hui
       const today = new Date();
       // Obtenez la fin de l'année en cours
       const endOfYear = new Date(today.getFullYear(), 11, 31);
@@ -35,12 +34,12 @@ const Calendar = ({ pro }) => {
       if (pro.availableSlot > 0) {
         for (let i = 0; i < 3; i++) {
           const event = {
-            title: "Disponible", // Titre de l'événement
-            start: format(today, "yyyy-MM-dd"), // Date de début du créneau (aujourd'hui)
-            end: format(endOfYear, "yyyy-MM-dd"), // Date de fin du créneau (fin de l'année)
-            backgroundColor: "#66BB6A", // Couleur de fond de l'événement
-            borderColor: "#66BB6A", // Couleur de la bordure de l'événement
-            editable: false, // Empêche l'édition de l'événement
+            title: "Disponible",
+            start: format(today, "yyyy-MM-dd"),
+            end: format(endOfYear, "yyyy-MM-dd"),
+            backgroundColor: "#66BB6A",
+            borderColor: "#66BB6A",
+            editable: false,
           };
           allEvents.push(event);
         }

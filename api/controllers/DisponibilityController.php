@@ -35,5 +35,18 @@ class DisponibilityController extends AbstractController
             $this->render(["success"=> false, "message" => "Token validation failed"]);
         }
     }
+
+    public function deleteDisponibilitySlot($post) {
+        if ($this->tokenManager->validateCSRFToken($post["csrf_token"])) {
+            $slotToDelete = $this->dm->findById($post["disponibility_id"]);
+            if ($slotToDelete != null) {
+            $this->dm->deleteOneDisponibility($slotToDelete);
+        } else {
+            $this->render(["error-message" => "Disponibilité inconnu"]);
+        } 
+        }else {
+            $this->render(["error-message" => "Token validation failed"]);
+    }
+}
     
 }

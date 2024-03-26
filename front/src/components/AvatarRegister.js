@@ -46,7 +46,7 @@ const AvatarRegister = () => {
     return <Navigate to="/reg/place_register" />;
   }
   if (user.avatar && user.role === "parent") {
-    return <Navigate to="/home" />;
+    return <Navigate to="/" />;
   }
 
   const handleImageClick = (avatarUrl) => {

@@ -1,9 +1,6 @@
-import { useSelector } from "react-redux";
-import { NavLink, useNavigate } from "react-router-dom";
-import { selectCurrentUser } from "../reducers/authUser.reducer";
+import { useNavigate } from "react-router-dom";
 
 const Navigation = () => {
-  const currentUser = useSelector(selectCurrentUser);
   const navigate = useNavigate();
   const goBack = () => {
     navigate(-1);

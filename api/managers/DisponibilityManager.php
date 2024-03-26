@@ -18,6 +18,18 @@ class DisponibilityManager extends AbstractManager {
         return $disponibilitiesArray;
     }
 
+    public function findById(int $id) : Disponibility{
+        $query = $this->db->prepare('SELECT * FROM disponibility WHERE id = :id');
+        $parameters = [
+            "id" => $id
+        ];
+        $query->execute($parameters);
+        $disponibility = $query->fetch(PDO::FETCH_ASSOC);
+        $newDisponibility = new Disponibility($disponibility["user_id"], $disponibility["start_datetime"], $disponibility["end_datetime"]);
+            $newDisponibility->setId($disponibility["id"]);
+            return $newDisponibility;
+    }
+
     public function createDisponibility(Disponibility $disponibility) : Disponibility {
         $query = $this->db->prepare('INSERT INTO disponibility VALUES(null, :user_id, :start_datetime, :end_datetime)');
         $parameters = [
@@ -39,7 +51,7 @@ class DisponibilityManager extends AbstractManager {
         return $newDisponibility;
     }
 
-    public function deleteDisponibility(array $disponibilities) {
+    public function deleteDisponibility(array $disponibilities) : void{
         foreach($disponibilities as $disponibility) {
             $query = $this->db->prepare("DELETE FROM disponibility WHERE id = :disponibility_id");
             $parameters = [
@@ -48,6 +60,14 @@ class DisponibilityManager extends AbstractManager {
             $query->execute($parameters);
         }
         
+    }
+
+    public function deleteOneDisponibility(Disponibility $disponibility) : void {
+        $query = $this->db->prepare("DELETE FROM disponibility WHERE id = :disponibility_id");
+        $parameters = [
+            "disponibility_id" => $disponibility->getId()
+        ];
+        $query->execute($parameters);
     }
 
     public function editDisponibility(Disponibility $disponibility) {

@@ -20,7 +20,7 @@ const Administration = () => {
   }
 
   if (currentUser && currentUser.role !== "admin") {
-    return <Navigate to="/home" />;
+    return <Navigate to="/" />;
   }
 
   const handleShowUsers = () => {

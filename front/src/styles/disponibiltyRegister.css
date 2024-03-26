@@ -1,0 +1,48 @@
+.table-dispo {
+  background-color: bisque;
+  border-radius: 15px;
+  margin: auto;
+  margin-top: 1rem;
+  padding: 1rem;
+}
+
+.table-dispo tr {
+  height: 1rem;
+}
+
+.table-dispo input {
+  font-family: "More sugar";
+  margin: 1rem;
+  border-radius: 15px;
+  padding: 0.5rem;
+}
+
+.button-dispo-delete {
+  font-family: "More sugar";
+  background-color: #f68484;
+  color: white;
+  border-radius: 15px;
+  padding: 0.5rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+.button-dispo-add {
+  background-color: #9cdbc8;
+  font-family: "More Sugar";
+  border-radius: 15px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.button-dispo-home {
+  background-color: #bd84f6;
+  font-family: "More Sugar";
+  border-radius: 15px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+  padding: 1rem;
+  margin: auto;
+}

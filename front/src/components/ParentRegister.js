@@ -51,14 +51,14 @@ const ParentRegister = () => {
     return <Navigate to="/reg/address_register" />;
   }
   if (loggedIn && user.address) {
-    return <Navigate to="/home" />;
+    return <Navigate to="/" />;
   }
 
   return (
     <section className="parentRegister">
       <h1>Création de compte</h1>
       <form onSubmit={handleSubmit}>
-        <label># Prénom</label>
+        <label>Prénom</label>
         <input
           type="text"
           name="firstname"
@@ -70,7 +70,7 @@ const ParentRegister = () => {
           }
         />
 
-        <label># Nom:</label>
+        <label>Nom:</label>
         <input
           required
           type="text"
@@ -82,7 +82,7 @@ const ParentRegister = () => {
           }
         />
 
-        <label># Email</label>
+        <label>Email</label>
         <input
           required
           type="email"
@@ -92,19 +92,21 @@ const ParentRegister = () => {
           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
         />
 
-        <label># Mot de passe:</label>
+        <label>Mot de passe:</label>
         <input
           required
           type="password"
           name="password"
           placeholder="Mot de passe"
           value={formData.password}
+          title="Le mot de passe doit contenir au moins un chiffre, une lettre majuscule, une lettre minuscule, un caractère spécial et être d'au moins 8 caractères de longueur."
+          pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$"
           onChange={(e) =>
             setFormData({ ...formData, password: e.target.value })
           }
         />
 
-        <label># Vérifier le mot de passe:</label>
+        <label>Vérifier le mot de passe:</label>
         <input
           required
           type="password"

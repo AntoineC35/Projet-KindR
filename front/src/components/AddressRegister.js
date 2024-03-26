@@ -58,7 +58,7 @@ const AddressRegister = () => {
 
           return dispatch(createAddress(newFormData));
         } else {
-          setErrorMessage("erreur de saisie d'adresse");
+          setErrorMessage("Désole nous n'avons pas pu trouver votre adresse");
         }
       })
       .then((res) => {
@@ -88,7 +88,8 @@ const AddressRegister = () => {
           {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
           <label htmlFor="address">Adresse:</label>
           <input
-            pattern="^[a-zA-Z\u00C0-\u017F0-9\s]+$"
+            pattern="[a-zA-Z0-9\s]+"
+            title="L'adresse ne doit contenir que des lettres, des chiffres et des espaces."
             type="text"
             name="address"
             value={formData.address}

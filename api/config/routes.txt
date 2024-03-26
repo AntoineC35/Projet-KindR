@@ -22,4 +22,5 @@
 /start_conversation ConversationController:startConversation
 /get_conversation ConversationController:getConversationByUsers
 /create_disponibility_slot DisponibilityController:createDisponibilitySlot
+/delete_disponibility_slot DisponibilityController:deleteDisponibilitySlot
 /get_pros_by_date UserController:findProByDispo

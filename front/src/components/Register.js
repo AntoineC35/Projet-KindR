@@ -7,7 +7,7 @@ const Register = () => {
   const loggedIn = useSelector(selectIsLoggedIn);
 
   if (loggedIn) {
-    return <Navigate to="/home" />;
+    return <Navigate to="/" />;
   }
 
   return (

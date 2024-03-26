@@ -32,17 +32,19 @@ import Disponibility from "./components/Disponibility";
 import PostsManager from "./components/PostsManager";
 import ActiviteDetails from "./components/ActiviteDetails";
 import Administration from "./components/Administration";
+import AboutUnregister from "./components/AboutUnregister";
 
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements([
       <>
         <Route path="/" element={<Root />}>
-          <Route path="home" element={<Home />} />
+          <Route index element={<Home />} />
 
           <Route path="sign_in" element={<SignIn />} />
 
           <Route path="about" element={<About />} />
+          <Route path="about/:option" element={<About />} />
           <Route path="messages" element={<Messages />} />
           <Route path="activites" element={<Activites />} />
           <Route
@@ -55,11 +57,15 @@ function App() {
           <Route path="disponibility/:pro_id" element={<Disponibility />} />
           <Route path="posts_manager" element={<PostsManager />} />
           <Route path="admin" element={<Administration />} />
-        </Route>
-        <Route path="reg" element={<RootRegister />}>
           <Route
             path="disponibility_register"
             element={<DisponibilityRegister />}
+          />
+        </Route>
+        <Route path="reg" element={<RootRegister />}>
+          <Route
+            path="about-unregister/:option"
+            element={<AboutUnregister />}
           />
           <Route path="parent_register" element={<ParentRegister />} />
           <Route path="pro_register" element={<ProRegister />} />

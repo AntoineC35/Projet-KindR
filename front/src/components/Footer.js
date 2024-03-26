@@ -1,19 +1,36 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "../styles/footer.css";
+import { useSelector } from "react-redux";
+import { selectIsLoggedIn } from "../reducers/authUser.reducer";
 
 const Footer = () => {
   const [fontFamily, setFontFamily] = useState("More sugar");
   const [fontSize, setFontSize] = useState(16);
+  const loggedIn = useSelector(selectIsLoggedIn);
 
   return (
     <footer className="footer">
       <ul>
         <li>
-          <NavLink to="/about">Mentions Légales</NavLink>
+          {!loggedIn ? (
+            <NavLink to="/reg/about-unregister/mentions">
+              Mentions Légales
+            </NavLink>
+          ) : (
+            <NavLink to="/about/mentions">Mentions Légales</NavLink>
+          )}
         </li>
         <li>
-          <NavLink to="/about">Politique de Confidentialité</NavLink>
+          {!loggedIn ? (
+            <NavLink to="/reg/about-unregister/politique">
+              Politique de Confidentialité
+            </NavLink>
+          ) : (
+            <NavLink to="/about/politique">
+              Politique de Confidentialité
+            </NavLink>
+          )}
         </li>
         <li>
           Accesibilité{" "}

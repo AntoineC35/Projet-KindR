@@ -4,6 +4,7 @@ import listPlugin from "@fullcalendar/list";
 import { useSelector } from "react-redux";
 import { selectCurrentUser } from "../reducers/authUser.reducer";
 import { useState } from "react";
+import "../styles/calendar.css";
 
 const CalendarEdit = () => {
   const currentUser = useSelector(selectCurrentUser);
@@ -28,29 +29,26 @@ const CalendarEdit = () => {
       title: getRandomName(),
       start: disponibility.start_datetime,
       end: disponibility.end_datetime,
+      backgroundColor: "#F68484",
+      borderColor: "#F68484",
       color: "#3a87ad",
     }))
   );
-
-  const handleEventClick = (info) => {
-    console.log("Event clicked:", info.event);
-    setCalendarEvents(info.event);
-  };
 
   return (
     <FullCalendar
       plugins={[dayGridPlugin, listPlugin]}
       headerToolbar={{
-        left: "prev,next today",
+        left: "prev,next",
         center: "title",
-        right: "dayGridMonth,timeGridWeek,timeGridDay,listMonth",
+        right: "today",
       }}
       initialView="dayGridMonth"
       events={calendarEvents}
-      eventClick={handleEventClick}
       views={{
         listMonth: { buttonText: "Liste mois" },
       }}
+      height="auto"
     />
   );
 };
