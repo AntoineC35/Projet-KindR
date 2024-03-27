@@ -1,5 +1,5 @@
 .postCard {
-  background-color: #f3d7ca;
+  background-color: var(--pink-pale);
   width: 45%;
   height: 30vh;
   border-radius: 15px;
@@ -37,7 +37,7 @@
   grid-area: 1 / 1 / 2 / 3;
   margin: 0;
   text-align: center;
-  color: #bd84f6;
+  color: var(--purple);
 }
 .infos .type {
   grid-area: 2 / 1 / 3 / 3;
@@ -55,7 +55,7 @@
 .infos .button {
   grid-area: 4 / 1 / 5 / 3;
   margin: auto;
-  background-color: #bd84f6;
+  background-color: var(--purple);
   color: white;
   text-decoration: none;
   padding: 1rem;
@@ -68,7 +68,7 @@
 
 @media only screen and (min-width: 1024px) {
   .postCard {
-    background-color: #f3d7ca;
+    background-color: var(--pink-pale);
     width: 20%;
     height: 25vh;
     border-radius: 15px;

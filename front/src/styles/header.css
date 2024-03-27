@@ -2,7 +2,7 @@
   display: flex;
   position: sticky;
   top: 0;
-  background-color: #fff8e3;
+  background-color: var(--beige);
   z-index: 1003;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-bottom-left-radius: 15px;
@@ -25,7 +25,7 @@
 }
 
 .header .red {
-  background-color: #f68484;
+  background-color: var(--red);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -45,7 +45,7 @@
 }
 
 .header .green {
-  background-color: #9cdbc8;
+  background-color: var(--green);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -66,7 +66,7 @@
 }
 
 .header .blue {
-  background-color: #84a7f6;
+  background-color: var(--blue);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -87,7 +87,7 @@
 }
 
 .header .yellow {
-  background-color: #f6cc84;
+  background-color: var(--yellow);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -108,7 +108,7 @@
 }
 
 .header .logout {
-  background-color: #bd84f6;
+  background-color: var(--purple);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -164,7 +164,7 @@
 }
 
 .return-button {
-  background-color: #84a7f6;
+  background-color: var(--blue);
   border: none;
   font-family: "More sugar";
   color: white;
@@ -177,7 +177,7 @@
 }
 
 .admin {
-  background-color: #9cdbc8;
+  background-color: var(--green);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -216,6 +216,5 @@
 
   .header {
     justify-content: space-evenly;
-    height: 7vh;
   }
 }

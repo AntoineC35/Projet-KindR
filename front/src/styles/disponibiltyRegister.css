@@ -19,7 +19,7 @@
 
 .button-dispo-delete {
   font-family: "More sugar";
-  background-color: #f68484;
+  background-color: var(--red);
   color: white;
   border-radius: 15px;
   padding: 0.5rem;
@@ -28,7 +28,7 @@
 }
 
 .button-dispo-add {
-  background-color: #9cdbc8;
+  background-color: var(--green);
   font-family: "More Sugar";
   border-radius: 15px;
   font-size: 1.2rem;
@@ -36,7 +36,7 @@
 }
 
 .button-dispo-home {
-  background-color: #bd84f6;
+  background-color: var(--purple);
   font-family: "More Sugar";
   border-radius: 15px;
   font-size: 1.2rem;

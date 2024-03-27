@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.5239d3ba.css",
-    "main.js": "/static/js/main.d806d448.js",
+    "main.css": "/static/css/main.6a0e9412.css",
+    "main.js": "/static/js/main.6727c863.js",
     "static/media/more-sugar.extras.ttf": "/static/media/more-sugar.extras.3b3152e4fab934301029.ttf",
     "static/media/more-sugar.thin (1).ttf": "/static/media/more-sugar.thin (1).d3d455c8722031d5d420.ttf",
     "static/media/more-sugar.regular (1).ttf": "/static/media/more-sugar.regular (1).a447f1f6ea779d9f4a99.ttf",
     "index.html": "/index.html",
-    "main.5239d3ba.css.map": "/static/css/main.5239d3ba.css.map",
-    "main.d806d448.js.map": "/static/js/main.d806d448.js.map"
+    "main.6a0e9412.css.map": "/static/css/main.6a0e9412.css.map",
+    "main.6727c863.js.map": "/static/js/main.6727c863.js.map"
   },
   "entrypoints": [
-    "static/css/main.5239d3ba.css",
-    "static/js/main.d806d448.js"
+    "static/css/main.6a0e9412.css",
+    "static/js/main.6727c863.js"
   ]
 }

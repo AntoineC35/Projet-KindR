@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   text-align: center;
-  background-color: #f3d7ca;
+  background-color: var(--pink-pale);
   border-radius: 15px;
   margin-top: 20px;
   margin-left: 10px;
@@ -15,7 +15,7 @@
 }
 
 .activiteDetails h2 {
-  color: #bd84f6;
+  color: var(--purple);
   margin-bottom: 0;
   margin-top: 50px;
 }
@@ -26,7 +26,7 @@
 }
 
 .activiteDetails .link {
-  background-color: #bd84f6;
+  background-color: var(--purple);
   color: white;
   width: 50%;
   margin: 10px auto;
@@ -38,7 +38,7 @@
 }
 
 .activiteDetails .content {
-  background-color: #fff8e3;
+  background-color: var(--beige);
   margin: 10px;
   border-radius: 15px;
 }

@@ -2,12 +2,12 @@
   text-align: center;
   font-size: 2rem;
   margin: 0;
-  color: #bd84f6;
+  color: var(--purple);
 }
 
 .conversation {
   display: grid;
-  background-color: #bd84f6;
+  background-color: var(--purple);
   border-radius: 15px;
   margin: 1rem;
   height: 10vh;
@@ -30,7 +30,7 @@
 }
 
 .figure img {
-  background-color: #f6cc84;
+  background-color: var(--yellow);
   border-radius: 50px;
   height: 5rem;
 }
@@ -53,7 +53,7 @@
     overflow-y: auto;
     height: 80vh;
     width: 20rem;
-    background-color: #f3d7ca;
+    background-color: var(--pink-pale);
     border-radius: 40px;
     margin-top: 20px;
   }
@@ -66,18 +66,18 @@
   }
   .conversation {
     height: auto;
-    background-color: #f3d7ca;
+    background-color: var(--pink-pale);
   }
 
   .conversation h3 {
-    color: #bd84f6;
+    color: var(--purple);
   }
 
   .conversation h1 {
-    color: #bd84f6;
+    color: var(--purple);
   }
 
   .selected-conversation {
-    background-color: #fff8e3;
+    background-color: var(--beige);
   }
 }

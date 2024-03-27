@@ -6,7 +6,7 @@
 }
 
 .proRegister input {
-  background-color: #84a7f6;
+  background-color: var(--blue);
   border: none;
   border-radius: 5px;
   padding: 1rem;
@@ -16,18 +16,18 @@
 .proRegister input::placeholder {
   font-family: "More sugar";
   font-size: 1rem;
-  color: #fff8e3;
+  color: var(--beige);
 }
 
 .proRegister label {
   margin-top: 1rem;
   text-align: left;
   width: 65%;
-  color: #84a7f6;
+  color: var(--blue);
 }
 
 .proRegister h2 {
-  color: #f68484;
+  color: var(--red);
   font-size: 1.5rem;
   font-weight: 400;
   text-align: center;
@@ -37,10 +37,10 @@
 }
 
 .proRegister button {
-  background-color: #84a7f6;
+  background-color: var(--blue);
   border: none;
   font-family: "More sugar";
-  color: #fff8e3;
+  color: var(--beige);
   font-size: 1rem;
   border-radius: 5px;
   padding-top: 1rem;
@@ -56,7 +56,7 @@
 }
 
 .proRegister select {
-  background-color: #84a7f6;
+  background-color: var(--blue);
   border: none;
   border-radius: 5px;
   font-family: "More sugar";
@@ -104,9 +104,9 @@
   left: 0;
   height: 25px;
   width: 25px;
-  background-color: #fff8e3;
+  background-color: var(--beige);
   border-radius: 5px;
-  border: 3px solid #84a7f6;
+  border: 3px solid var(--blue);
 }
 
 .proRegister .container:hover input ~ .checkmark {
@@ -114,7 +114,7 @@
 }
 
 .proRegister .container input:checked ~ .checkmark {
-  background-color: #84a7f6;
+  background-color: var(--blue);
 }
 
 .proRegister .checkmark:after {

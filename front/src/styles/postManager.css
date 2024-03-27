@@ -1,7 +1,7 @@
 .post-manager {
   margin: auto;
   width: 80%;
-  background-color: #f3d7ca;
+  background-color: var(--pink-pale);
   text-align: center;
   border-radius: 15px;
 }
@@ -38,7 +38,7 @@
 }
 
 .post-manager button {
-  background-color: #9cdbc8;
+  background-color: var(--green);
   margin-top: 1rem;
   padding: 0.5rem;
   border-radius: 15px;

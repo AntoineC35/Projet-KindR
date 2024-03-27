@@ -6,7 +6,7 @@
 }
 
 .card {
-  background-color: #f3d7ca;
+  background-color: var(--pink-pale);
   padding: 10px;
   border-radius: 30px;
   max-width: 40%;
@@ -32,12 +32,12 @@
   width: 80%;
   height: 100%;
   border-radius: 50px;
-  background-color: #f6cc84;
+  background-color: var(--yellow);
 }
 
 .details {
   font-size: 0.8rem;
-  background-color: #bd84f6;
+  background-color: var(--purple);
   border-radius: 15px;
   text-align: center;
   color: white;
@@ -50,7 +50,7 @@
 
 .message {
   font-size: 2rem;
-  background-color: #9cdbc8;
+  background-color: var(--green);
   border-radius: 15px;
   text-align: center;
   color: white;
@@ -62,7 +62,7 @@
 
 .disponibilty {
   font-size: 0.8rem;
-  background-color: #84a7f6;
+  background-color: var(--blue);
   border-radius: 15px;
   text-align: center;
   color: white;
@@ -77,12 +77,12 @@
   grid-area: 1 / 1 / 4 /2;
 }
 .div2 {
-  color: #bd84f6;
+  color: var(--purple);
   margin: 0;
   grid-area: 1 / 2 / 2 / 3;
 }
 .div3 {
-  color: #bd84f6;
+  color: var(--purple);
   margin: 0;
   grid-area: 2 / 2 / 3 / 3;
 }
@@ -95,7 +95,7 @@
   align-self: center;
   margin: 0;
   font-size: 0.8rem;
-  color: #84a7f6;
+  color: var(--blue);
   grid-area: 4 / 1 / 5 / 2;
 }
 .div6 {
@@ -103,7 +103,7 @@
   padding: 0.5rem;
 }
 .div7 {
-  color: #84a7f6;
+  color: var(--blue);
   grid-area: 5 / 1 / 6 / 3;
 }
 .div8 {

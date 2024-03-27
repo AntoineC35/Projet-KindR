@@ -7,7 +7,7 @@
 }
 
 .activites select {
-  background-color: #84a7f6;
+  background-color: var(--blue);
   border: none;
   border-radius: 5px;
   font-family: "More sugar";
@@ -31,7 +31,7 @@
 
 .back {
   font-family: "More sugar";
-  background-color: #f68484;
+  background-color: var(--red);
   border: none;
   width: 15%;
   color: white;

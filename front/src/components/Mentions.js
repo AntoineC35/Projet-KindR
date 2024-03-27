@@ -23,8 +23,13 @@ const Mentions = () => {
       </section>
       <section>
         <h2>Hébergement</h2>
-        <p>Ce site web est hébergé par [Nom de l'hébergeur].</p>
-        <p>Adresse : [Adresse de l'hébergeur]</p>
+        <p>Ce site web est hébergé par Hostinger.</p>
+        <p>
+          Adresse :{" "}
+          <a href="https://www.hostinger.fr/" target="_blank" rel="noreferrer">
+            https://www.hostinger.fr/
+          </a>
+        </p>
       </section>
       <section>
         <h2>Propriété intellectuelle</h2>

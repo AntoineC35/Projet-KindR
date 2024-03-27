@@ -11,7 +11,7 @@
 }
 
 .toggleMap {
-  background-color: #f68484;
+  background-color: var(--red);
   font-family: "More sugar";
   color: white;
   font-size: 1rem;
@@ -34,7 +34,7 @@
 .popup-content img {
   margin: auto;
   width: 50%;
-  background-color: #f6cc84;
+  background-color: var(--yellow);
   border-radius: 50px;
 }
 
@@ -45,7 +45,7 @@
 .details-button {
   font-size: 1rem;
   justify-self: center;
-  background-color: #bd84f6;
+  background-color: var(--purple);
   color: white;
   text-decoration: none;
   padding: 0.6rem;
@@ -61,7 +61,7 @@
 }
 
 .leaflet-popup-content-wrapper {
-  background-color: #fff8e3;
+  background-color: var(--beige);
 }
 
 .toggleMap {

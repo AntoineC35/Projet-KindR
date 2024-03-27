@@ -19,16 +19,16 @@
 }
 
 .avatar-grid img.select {
-  border: 2px solid #84a7f6;
+  border: 2px solid var(--blue);
 }
 
 .avatar button {
   margin: auto;
   max-width: 60%;
-  background-color: #84a7f6;
+  background-color: var(--blue);
   border: none;
   font-family: "More sugar";
-  color: #fff8e3;
+  color: var(--beige);
   font-size: 1rem;
   border-radius: 5px;
   padding-top: 1rem;
@@ -40,7 +40,7 @@
 }
 
 .avatar h2 {
-  color: #f68484;
+  color: var(--red);
   font-size: 1.5rem;
   font-weight: 400;
   text-align: center;

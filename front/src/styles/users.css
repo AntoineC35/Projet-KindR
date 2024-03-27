@@ -1,5 +1,5 @@
 .button-delete {
-  background-color: #f68484;
+  background-color: var(--red);
   color: white;
   border-radius: 15px;
   padding: 0.5rem;
@@ -8,7 +8,7 @@
 }
 
 .button-edit {
-  background-color: #f6cc84;
+  background-color: var(--yellow);
   font-family: "More Sugar";
   border-radius: 15px;
   font-size: 1.2rem;
@@ -16,7 +16,7 @@
 }
 
 .button-password {
-  background-color: #9cdbc8;
+  background-color: var(--green);
   font-family: "More Sugar";
   border-radius: 15px;
   font-size: 1.2rem;
@@ -35,7 +35,7 @@
   font-size: 2rem;
 }
 .table-user {
-  background-color: #f3d7ca;
+  background-color: var(--pink-pale);
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -1,6 +1,6 @@
 .searchBar {
   list-style: none;
-  background-color: #f3d7ca;
+  background-color: var(--pink-pale);
   display: flex;
   justify-content: space-around;
   padding: 10px;
@@ -25,7 +25,7 @@
 }
 
 .bloc-top {
-  background-color: #f68484;
+  background-color: var(--red);
   color: white;
   display: flex;
   align-items: center;
@@ -52,7 +52,7 @@
 
 .bloc-links {
   width: 100%;
-  background-color: #f68484;
+  background-color: var(--red);
   color: white;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -96,7 +96,7 @@
 
 .dropdown-3 input {
   font-family: "More sugar";
-  background-color: #bd84f6;
+  background-color: var(--purple);
   border: none;
   color: white;
   text-align: center;
@@ -106,7 +106,7 @@
 }
 
 .dropdown-3 button {
-  background-color: #bd84f6;
+  background-color: var(--purple);
   color: white;
   font-family: "More sugar";
   margin: auto;
@@ -132,12 +132,12 @@
 }
 
 .bloc-links li:hover {
-  background-color: #f3d7ca;
+  background-color: var(--pink-pale);
   color: black;
 }
 
 .dropdown-3 li:hover {
-  background-color: #f68484;
+  background-color: var(--red);
 }
 
 @media only screen and (min-width: 1024px) {
@@ -183,7 +183,7 @@ input[type="checkbox"] + label:before {
 }
 
 input[type="checkbox"]:checked + label:before {
-  background-color: #84a7f6;
+  background-color: var(--blue);
 }
 
 input[type="checkbox"] + label {
@@ -196,5 +196,5 @@ input[type="checkbox"] + label:after {
 }
 
 input[type="checkbox"] + label:hover:before {
-  border-color: #84a7f6;
+  border-color: var(--blue);
 }

@@ -6,7 +6,7 @@
 }
 
 .proRegister input {
-  background-color: #84a7f6;
+  background-color: var(--blue);
   border: none;
   border-radius: 5px;
   padding: 1rem;
@@ -23,7 +23,7 @@
   margin-top: 1rem;
   text-align: left;
   width: 65%;
-  color: #84a7f6;
+  color: var(--blue);
 }
 
 .proRegister h1 {
@@ -37,7 +37,7 @@
 }
 
 .proRegister button {
-  background-color: #84a7f6;
+  background-color: var(--blue);
   border: none;
   font-family: "More sugar";
   color: #fff8e3;
@@ -56,7 +56,7 @@
 }
 
 .proRegister select {
-  background-color: #84a7f6;
+  background-color: var(--blue);
   border: none;
   border-radius: 5px;
   font-family: "More sugar";

@@ -12,7 +12,6 @@ export const getCSRFToken = () => {
     return axios
       .get(apiUrl + "CSRFToken", { withCredentials: true })
       .then((res) => {
-        const csrfToken = res.data.data.csrf_token;
         dispatch({
           type: GET_CSRF_TOKEN,
           payload: res.data.data,

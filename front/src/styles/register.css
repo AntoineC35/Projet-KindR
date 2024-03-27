@@ -10,8 +10,8 @@
   padding: 0.3rem;
   margin-bottom: 2rem;
   width: 50%;
-  background-color: #bd84f6;
-  color: #fff8e3;
+  background-color: var(--purple);
+  color: var(--beige);
   font-size: 2rem;
 }
 

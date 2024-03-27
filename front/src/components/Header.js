@@ -19,37 +19,42 @@ const Header = () => {
       <Logo />
       <ul>
         <li>
-          {" "}
-          <NavLink className="red nav" to="/messages">
+          <NavLink className="red nav" to="/messages" title="Messages">
             <em>_</em>
           </NavLink>
         </li>
         <li>
           {currentUser && currentUser.role === "admin" ? (
-            <NavLink className="admin" to="/admin">
+            <NavLink className="admin" to="/admin" title="Admin">
               Admin
             </NavLink>
           ) : (
-            <NavLink className="green nav" to="/profil">
+            <NavLink className="green nav" to="/profil" title="Profil">
               <em>^</em>
             </NavLink>
           )}
         </li>
         <li>
-          <NavLink className="blue nav" to="/activites">
+          <NavLink className="blue nav" to="/activites" title="Activités">
             <em>#</em>
           </NavLink>
         </li>
         <li>
-          <NavLink className="yellow nav" to="/about">
+          <NavLink className="yellow nav" to="/about" title="À propos">
             <em>/</em>
           </NavLink>
         </li>
         <li>
           {!connected ? (
-            <NavLink to="/reg/sign_in">Sign In</NavLink>
+            <NavLink to="/reg/sign_in" title="Se connecter">
+              Sign In
+            </NavLink>
           ) : (
-            <button className="logout" onClick={handleLogout}>
+            <button
+              className="logout"
+              onClick={handleLogout}
+              title="Déconnexion"
+            >
               <em>&gt;</em>
             </button>
           )}
@@ -58,4 +63,5 @@ const Header = () => {
     </nav>
   );
 };
+
 export default Header;

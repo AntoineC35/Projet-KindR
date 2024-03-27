@@ -1,5 +1,5 @@
 .administration-button button {
-  background-color: #bd84f6;
+  background-color: var(--purple);
   border-radius: 15px;
   padding: 1rem;
   font-family: "More sugar";

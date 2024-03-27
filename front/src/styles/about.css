@@ -7,7 +7,7 @@
 }
 
 .button_choices {
-  background-color: #f3d7ca;
+  background-color: var(--pink-pale);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -18,7 +18,7 @@
 }
 
 .button_choices li {
-  background-color: #f68484;
+  background-color: var(--red);
   margin: 10px;
   padding: 0.6rem;
   border-radius: 15px;
