@@ -7,7 +7,9 @@ export const DELETE_DISPONIBILITY_SLOT = "DELETE_DISPONIBILITY_SLOT";
 export const createDisponibilitySlot = (data) => {
   return (dispatch) => {
     return axios
-      .post(apiUrl + "create_disponibility_slot", data)
+      .post(apiUrl + "create_disponibility_slot", data, {
+        withCredentials: true,
+      })
       .then((res) => {
         dispatch({ type: CREATE_DISPONIBILITY_SLOT, payload: res.data });
       });
@@ -17,7 +19,9 @@ export const createDisponibilitySlot = (data) => {
 export const deleteDisponibilitySlot = (data) => {
   return (dispatch) => {
     return axios
-      .post(apiUrl + "delete_disponibility_slot", data)
+      .post(apiUrl + "delete_disponibility_slot", data, {
+        withCredentials: true,
+      })
       .then((res) => {
         dispatch({ type: DELETE_DISPONIBILITY_SLOT, payload: res.data });
       });

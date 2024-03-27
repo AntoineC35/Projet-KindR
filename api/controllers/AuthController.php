@@ -22,21 +22,22 @@ class AuthController extends AbstractController
 		$this->avm = new AvatarManager();
     }
 
-    public function appendToSessionCSRF(string $content)
-    {
-        $sessionFile = "config/fakeSession.json";
-        $existingContent = file_get_contents($sessionFile);
-        $data = json_decode($existingContent, true);
-        $data["csrf_token"] = json_decode($content, true);
-        $updatedContent = json_encode($data);
-        file_put_contents($sessionFile, $updatedContent);
-    }
+    // public function appendToSessionCSRF(string $content)
+    // {
+    //     $sessionFile = "config/fakeSession.json";
+    //     $existingContent = file_get_contents($sessionFile);
+    //     $data = json_decode($existingContent, true);
+    //     $data["csrf_token"] = json_decode($content, true);
+    //     $updatedContent = json_encode($data);
+    //     file_put_contents($sessionFile, $updatedContent);
+    // }
 
     public function getCSRFToken() {
         $this->render(["data" => $_SESSION]);
     }
 
     public function createUser(array $post) {
+       
         if ($this->tokenManager->validateCSRFToken($post["csrf_token"])) {
             if ($post["password"] !== $post["verify_password"]) {
                 $this->render(["success"=> false, "message" => "Password does not match"]);
@@ -54,6 +55,7 @@ class AuthController extends AbstractController
                     );
                     
                     $newNewUser = $this->um->createUser($newUser);
+                    $_SESSION["user"] = $newNewUser;
         
                     $this->saveUserToSession(json_encode($newNewUser->toArray()));
         
@@ -111,7 +113,7 @@ class AuthController extends AbstractController
                 $this->render(["connected"=> false, "message" => "Email and password are required"]);
             }
         } else {
-            $this->render(["connected"=> false, "message" => "Token validation failed"]);
+            $this->render(["connected"=> false, "message" => "Token validation failed", "token" => $_SESSION["csrf_token"]]);
         }
     }
     

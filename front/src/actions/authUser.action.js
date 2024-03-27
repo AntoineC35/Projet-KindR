@@ -9,21 +9,23 @@ export const UPDATE_USER = "UPDATE_USER";
 
 export const getCSRFToken = () => {
   return (dispatch) => {
-    return axios.get(apiUrl + "CSRFToken").then((res) => {
-      dispatch({
-        type: GET_CSRF_TOKEN,
-        payload: res.data.data.session_user,
+    return axios
+      .get(apiUrl + "CSRFToken", { withCredentials: true })
+      .then((res) => {
+        const csrfToken = res.data.data.csrf_token;
+        dispatch({
+          type: GET_CSRF_TOKEN,
+          payload: res.data.data,
+        });
       });
-    });
   };
 };
 
 export const loginUser = (data) => {
   return (dispatch) => {
     return axios
-      .post(apiUrl + "sign_in", data)
+      .post(apiUrl + "sign_in", data, { withCredentials: true })
       .then((res) => {
-        console.log(res);
         const payload = res.data;
 
         if (payload.connected) {
@@ -32,13 +34,11 @@ export const loginUser = (data) => {
           localStorage.setItem("connected", true);
         } else {
           console.error("Login failed:", payload.message);
-
           throw new Error(payload.message);
         }
       })
       .catch((error) => {
         console.error("Login error:", error);
-
         throw error;
       });
   };
@@ -46,28 +46,34 @@ export const loginUser = (data) => {
 
 export const createUser = (data) => {
   return (dispatch) => {
-    return axios.post(apiUrl + "create_user", data).then((res) => {
-      dispatch({ type: CREATE_USER, payload: res.data });
-      saveUserToLocalStorage(res.data.data);
-      localStorage.setItem("connected", true);
-    });
+    return axios
+      .post(apiUrl + "create_user", data, { withCredentials: true })
+      .then((res) => {
+        dispatch({ type: CREATE_USER, payload: res.data });
+        saveUserToLocalStorage(res.data.data);
+        localStorage.setItem("connected", true);
+      });
   };
 };
 
 export const updateUser = (data) => {
   return (dispatch) => {
-    return axios.get(apiUrl + "update_user/" + data).then((res) => {
-      dispatch({ type: UPDATE_USER, payload: res.data });
-      saveUserToLocalStorage(res.data.data);
-    });
+    return axios
+      .get(apiUrl + "update_user/" + data, { withCredentials: true })
+      .then((res) => {
+        dispatch({ type: UPDATE_USER, payload: res.data });
+        saveUserToLocalStorage(res.data.data);
+      });
   };
 };
 
 export const logout = () => {
   return (dispatch) => {
-    return axios.get(apiUrl + "logout").then((res) => {
-      dispatch({ type: LOG_OUT, payload: res.data });
-    });
+    return axios
+      .get(apiUrl + "logout", { withCredentials: true })
+      .then((res) => {
+        dispatch({ type: LOG_OUT, payload: res.data });
+      });
   };
 };
 

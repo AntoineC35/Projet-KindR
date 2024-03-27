@@ -29,8 +29,10 @@ export const getLocation = (data) => {
 
 export const createAddress = (data) => {
   return (dispatch) => {
-    return axios.post(apiUrl + "create_address", data).then((res) => {
-      dispatch({ type: CREATE_ADDRESS, payload: res.data });
-    });
+    return axios
+      .post(apiUrl + "create_address", data, { withCredentials: true })
+      .then((res) => {
+        dispatch({ type: CREATE_ADDRESS, payload: res.data });
+      });
   };
 };

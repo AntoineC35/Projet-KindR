@@ -1,6 +1,11 @@
 <?php
-// charge l'autoload de composer
 session_start();
+
+header("Access-Control-Allow-Headers: Authorization, Content-Type");
+header("Access-Control-Allow-Origin: https://projet-kindr.kindr.fr");
+header("Access-Control-Allow-Credentials: true");
+header('content-type: application/json; charset=utf-8');
+
 require "vendor/autoload.php";
 require "autoload.php";
 
@@ -8,11 +13,16 @@ require "autoload.php";
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
-if (!isset($_SESSION['session_user']->csrf_token)) {
+if (!isset($_SESSION["csrf_token"])) {
     $newInstanceCSRFController = new CSRFTokenManager();
-    $newAuthController = new AuthController();
-    $newAuthController->appendToSessionCSRF(json_encode($newInstanceCSRFController->generateCSRFToken()));
+    $_SESSION["csrf_token"] = $newInstanceCSRFController->generateCSRFToken();
 }
+
+// if (!isset($_SESSION['session_user']->csrf_token)) {
+//     $newInstanceCSRFController = new CSRFTokenManager();
+//     $newAuthController = new AuthController();
+//     $newAuthController->appendToSessionCSRF(json_encode($newInstanceCSRFController->generateCSRFToken()));
+// }
 
 
 try {
