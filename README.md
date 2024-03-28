@@ -61,6 +61,49 @@ https://www.figma.com/file/qSxwGDjPQ633nppuZj51N2/Projet-KindR?type=design&node-
 
 Un mockup de la base de données est disponible à cette adresse : [Mockup Base de Données](https://drive.google.com/file/d/1akZaywG4sc42WeO0IHhNpzVOLUTYykvH/view?usp=sharing).
 
+## Technologies Utilisées
+
+### Frontend :
+
+- **Node.js** : v20.11.1
+- **React.js** : Bibliothèque JavaScript pour la création d'interfaces utilisateur.
+- **React Redux** : Bibliothèque pour la gestion de l'état de l'application dans React.
+- **React Router** : Bibliothèque pour la gestion des routes dans une application React.
+- **Axios** : Bibliothèque pour effectuer des requêtes HTTP depuis le navigateur ou Node.js.
+- **he** : Bibliothèque JavaScript pour décoder les entités HTML dans les chaînes.
+- **Leaflet** : Bibliothèque JavaScript open-source pour afficher des cartes interactives.
+- **OpenStreetMap** : Projet de cartographie collaborative pour créer une carte du monde libre.
+
+### Backend :
+
+- **PHP** : v8.1.27 Langage de programmation côté serveur.
+- **vlucas/phpdotenv** : Bibliothèque PHP pour charger les variables d'environnement à partir d'un fichier .env.
+
+### Bibliothèques Additionnelles :
+
+#### Frontend :
+
+- **React Redux** : Bibliothèque pour la gestion de l'état de l'application dans React (v9.1.0).
+- **React Router Dom** : Bibliothèque pour la gestion des routes dans une application React (v6.22.2).
+- **Axios** : Bibliothèque pour effectuer des requêtes HTTP depuis le navigateur ou Node.js (v1.6.7).
+- **he** : Bibliothèque JavaScript pour décoder les entités HTML dans les chaînes (v1.2.0).
+- **Leaflet** : Bibliothèque JavaScript open-source pour afficher des cartes interactives (v1.9.4).
+- **@fullcalendar/core** : Bibliothèque JavaScript pour créer des calendriers (v6.1.11).
+- **@fullcalendar/daygrid** : Plugin pour afficher une vue de grille journalière dans FullCalendar (v6.1.11).
+- **@fullcalendar/react** : Adaptateur React pour FullCalendar (v6.1.11).
+- **@redux-devtools/extension** : Outil de développement pour Redux (v3.3.0).
+- **@reduxjs/toolkit** : Boîte à outils officielle de Redux (v2.2.1).
+- **fullcalendar** : Bibliothèque JavaScript pour créer des calendriers (v6.1.11).
+- **react** : Bibliothèque JavaScript pour la création d'interfaces utilisateur (v18.2.0).
+- **react-dom** : Interface DOM pour React (v18.2.0).
+- **react-datepicker** : Composant de date et d'heure pour React (v6.4.0).
+- **react-leaflet** : Composant React pour Leaflet (v4.2.1).
+- **react-redux** : Bibliothèque pour la gestion de l'état de l'application dans React (v9.1.0).
+- **react-scripts** : Scripts pour créer des applications React (v5.0.1).
+- **redux** : Bibliothèque JavaScript pour la gestion de l'état de l'application (v5.0.1).
+- **web-vitals** : Bibliothèque pour la collecte de métriques de performance web (v2.1.4).
+
+
 ## Contributions
 
 Les contributions au projet sont les bienvenues. Pour contribuer, veuillez suivre les étapes suivantes :
