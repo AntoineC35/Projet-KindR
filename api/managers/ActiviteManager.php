@@ -12,6 +12,8 @@ class ActiviteManager extends AbstractManager
             $newActivite = new Activite($activite["user_id"], $activite["game_space"], $activite["library"], $activite["show"], $activite["pool"],  $activite["playground"], $activite["walk"], $activite["cinema"], $activite["collective_playspace"]);
             $newActivite->setId($activite["id"]);
             return $newActivite;
+        } else {
+            return null;
         }
     }
 
