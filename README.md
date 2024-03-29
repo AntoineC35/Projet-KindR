@@ -49,13 +49,20 @@ https://www.figma.com/file/qSxwGDjPQ633nppuZj51N2/Projet-KindR?type=design&node-
 
 5. Copiez le fichier `.env.example` et renommez-le en `.env`. Mettez à jour ce fichier avec vos informations personnelles.
 
-6. Lancez l'application frontend :
+6. Assurez-vous d'ajuster le fichier `.htaccess` et l'en-tête `index.php` (header CORS) pour autoriser les CORS avec votre adresse d'API (locale ou hébergée).
+
+7. Modifiez le fichier `data` dans le dossier `front` pour remplacer `apiURL` par le routage de votre API.
+
+8. Si vous rencontrez des problèmes de CORS en local, vous pouvez utiliser cette extension pour votre navigateur : [Access-Control-Allow-Origin](https://mybrowseraddon.com/access-control-allow-origin.html).
+
+9. Lancez l'application frontend :
 
     ```
     npm start
     ```
 
-7. Démarrez le serveur backend (avec Docker, WAMP ou une autre configuration selon vos besoins).
+10. Démarrez le serveur backend (avec Docker, WAMP ou une autre configuration selon vos besoins).
+
 
 ## Base de Données
 
