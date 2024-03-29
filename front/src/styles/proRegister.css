@@ -16,18 +16,18 @@
 .proRegister input::placeholder {
   font-family: "More sugar";
   font-size: 1rem;
-  color: #fff8e3;
+  color: var(--text-beige);
 }
 
 .proRegister label {
   margin-top: 1rem;
   text-align: left;
   width: 65%;
-  color: var(--blue);
+  color: var(--text-blue);
 }
 
 .proRegister h1 {
-  color: #f68484;
+  color: var(--text-red);
   font-size: 2rem;
   font-weight: 400;
   text-align: center;
@@ -40,7 +40,7 @@
   background-color: var(--blue);
   border: none;
   font-family: "More sugar";
-  color: #fff8e3;
+  color: var(--text-beige);
   font-size: 1rem;
   border-radius: 5px;
   padding-top: 1rem;
@@ -61,7 +61,7 @@
   border-radius: 5px;
   font-family: "More sugar";
   width: 65%;
-  color: white;
+  color: var(--text-white);
   padding: 1rem;
   font-size: 1rem;
 }

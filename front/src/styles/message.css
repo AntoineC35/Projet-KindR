@@ -4,7 +4,7 @@
   justify-content: space-evenly;
   margin: 0;
   align-items: center;
-  color: white;
+  color: var(--text-white);
   border-radius: 10px;
 }
 
@@ -27,7 +27,7 @@
 
 .message-header button {
   background-color: var(--red);
-  color: white;
+  color: var(--text-white);
   border: none;
   font-family: "More sugar";
   font-size: 2rem;
@@ -43,7 +43,7 @@
   background-color: var(--purple);
   border-radius: 15px;
   padding: 1rem;
-  color: white;
+  color: var(--text-white);
   text-decoration: none;
 }
 
@@ -92,12 +92,12 @@
   width: 80%;
   font-size: 1rem;
   font-family: "More sugar";
-  color: white;
+  color: var(--text-white);
   height: 2.5rem;
   align-self: center;
 }
 .message-submit textarea::placeholder {
-  color: white;
+  color: var(--text-white);
   font-size: 1.5rem;
 }
 .message-submit button {
@@ -105,7 +105,7 @@
   border: none;
   font-size: 1.5rem;
   border-radius: 15px;
-  color: white;
+  color: var(--text-white);
   font-family: "More sugar";
   width: 20%;
   margin: 10px;
@@ -138,7 +138,7 @@
 .userMessage p {
   padding: 0.5rem;
   border-radius: 15px;
-  color: white;
+  color: var(--text-white);
   background-color: var(--green);
 }
 
@@ -155,7 +155,7 @@
 .otherMessage p {
   padding: 0.5rem;
   border-radius: 15px;
-  color: white;
+  color: var(--text-white);
   background-color: var(--purple);
 }
 

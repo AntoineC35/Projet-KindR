@@ -20,7 +20,7 @@
 .button-dispo-delete {
   font-family: "More sugar";
   background-color: var(--red);
-  color: white;
+  color: var(--text-white);
   border-radius: 15px;
   padding: 0.5rem;
   text-align: center;
@@ -42,7 +42,7 @@
   font-size: 1.2rem;
   cursor: pointer;
   text-decoration: none;
-  color: white;
+  color: var(--text-white);
   padding: 1rem;
   margin: auto;
 }

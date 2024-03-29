@@ -1,4 +1,4 @@
-:root {
+body {
   --pink-pale: #f3d7ca;
   --red: #f68484;
   --blue: #84a7f6;
@@ -6,6 +6,16 @@
   --purple: #bd84f6;
   --yellow: #f6cc84;
   --beige: #fff8e3;
+  --black: black;
+  --text-white: white;
+  --text-black: black;
+  --text-red: #f68484;
+  --text-blue: #84a7f6;
+  --text-green: #9cdbc8;
+  --text-yellow: #f6cc84;
+  --text-purple: #bd84f6;
+  --text-beige: #fff8e3;
+  --text-pink-pale: #f3d7ca;
 }
 
 .App {
@@ -31,7 +41,6 @@ body {
 .footer {
   flex-shrink: 0;
 }
-
 .leaflet-container {
   height: 50vh;
   width: 50%;

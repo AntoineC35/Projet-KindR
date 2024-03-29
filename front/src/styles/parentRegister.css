@@ -16,18 +16,18 @@
 .parentRegister input::placeholder {
   font-family: "More sugar";
   font-size: 1rem;
-  color: var(--beige);
+  color: var(--text-beige);
 }
 
 .parentRegister label {
   margin-top: 1rem;
   text-align: left;
   width: 65%;
-  color: var(--blue);
+  color: var(--text-blue);
 }
 
 .parentRegister h1 {
-  color: var(--red);
+  color: var(--text-red);
   font-size: 2rem;
   font-weight: 400;
   text-align: center;
@@ -40,7 +40,7 @@
   background-color: var(--blue);
   border: none;
   font-family: "More sugar";
-  color: var(--beige);
+  color: var(--text-beige);
   font-size: 1rem;
   border-radius: 5px;
   padding-top: 1rem;

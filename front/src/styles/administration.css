@@ -4,7 +4,7 @@
   padding: 1rem;
   font-family: "More sugar";
   font-size: 1rem;
-  color: white;
+  color: var(--text-white);
   margin: auto;
   border: none;
   cursor: pointer;

@@ -23,14 +23,14 @@
   padding: 0.6rem;
   border-radius: 15px;
   max-width: 40%;
-  color: white;
+  color: var(--text-white);
   align-self: center;
   cursor: pointer;
 }
 
 .button_choices a {
   text-decoration: none;
-  color: white;
+  color: var(--text-white);
 }
 
 .active {

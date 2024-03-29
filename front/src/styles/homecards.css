@@ -13,7 +13,6 @@
   display: grid;
   grid-template-columns: 60% 40%;
   grid-template-rows: 30px 30px 30px 100px 50px 100px;
-  max-height: 45vh;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   text-align: center;
@@ -40,7 +39,7 @@
   background-color: var(--purple);
   border-radius: 15px;
   text-align: center;
-  color: white;
+  color: var(--text-white);
   text-decoration: none;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -53,7 +52,7 @@
   background-color: var(--green);
   border-radius: 15px;
   text-align: center;
-  color: white;
+  color: var(--text-white);
   text-decoration: none;
   max-width: 50px;
   max-height: 50px;
@@ -65,7 +64,7 @@
   background-color: var(--blue);
   border-radius: 15px;
   text-align: center;
-  color: white;
+  color: var(--text-white);
   text-decoration: none;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -77,25 +76,29 @@
   grid-area: 1 / 1 / 4 /2;
 }
 .div2 {
-  color: var(--purple);
+  color: var(--text-purple);
+  font-size: 100%;
   margin: 0;
   grid-area: 1 / 2 / 2 / 3;
+  white-space: nowrap;
 }
 .div3 {
-  color: var(--purple);
+  color: var(--text-purple);
   margin: 0;
   grid-area: 2 / 2 / 3 / 3;
+  white-space: nowrap;
 }
 .div4 {
-  font-size: 0.8rem;
+  font-size: 75%;
   margin: 0;
   grid-area: 3 / 2 / 4 / 3;
+  white-space: nowrap;
 }
 .div5 {
   align-self: center;
   margin: 0;
   font-size: 0.8rem;
-  color: var(--blue);
+  color: var(--text-blue);
   grid-area: 4 / 1 / 5 / 2;
 }
 .div6 {
@@ -103,7 +106,7 @@
   padding: 0.5rem;
 }
 .div7 {
-  color: var(--blue);
+  color: var(--text-blue);
   grid-area: 5 / 1 / 6 / 3;
 }
 .div8 {
@@ -113,7 +116,7 @@
   grid-area: 6 / 2 / 7 / 3;
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 700px) {
   .card {
     width: 20%;
   }

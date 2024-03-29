@@ -21,6 +21,10 @@ const Footer = () => {
     setTextColor(color);
   };
 
+  const handleFontSizeChange = (size) => {
+    setFontSize(size);
+  };
+
   return (
     <footer className="footer">
       <ul>
@@ -68,13 +72,52 @@ const Footer = () => {
               </li>
               <li>
                 <label>Taille texte</label>
-                <input
-                  type="range"
-                  min="10"
-                  max="30"
-                  value={fontSize}
-                  onChange={(e) => setFontSize(parseInt(e.target.value))}
-                />
+                <ul>
+                  <li>
+                    <label>
+                      <input
+                        type="radio"
+                        value={10}
+                        checked={fontSize === 10}
+                        onChange={() => handleFontSizeChange(10)}
+                      />
+                      Small 10px
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input
+                        type="radio"
+                        value={16}
+                        checked={fontSize === 16}
+                        onChange={() => handleFontSizeChange(16)}
+                      />
+                      Normal 16px
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input
+                        type="radio"
+                        value={20}
+                        checked={fontSize === 20}
+                        onChange={() => handleFontSizeChange(20)}
+                      />
+                      Medium 20px
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input
+                        type="radio"
+                        value={25}
+                        checked={fontSize === 25}
+                        onChange={() => handleFontSizeChange(25)}
+                      />
+                      Big 25px
+                    </label>
+                  </li>
+                </ul>
               </li>
               <li>
                 <label>Couleur</label>
@@ -90,6 +133,7 @@ const Footer = () => {
                   <option value="purple">Violet</option>
                   <option value="yellow">Jaune</option>
                   <option value="beige">Beige</option>
+                  <option value="black">Noir</option>
                 </select>
               </li>
               <li>
@@ -113,7 +157,15 @@ const Footer = () => {
           font-family: ${fontFamily};
           font-size: ${fontSize}px;
           ${colorScheme !== "default" ? `--beige: var(--${colorScheme});` : ""}
-          ${textColor !== "default" ? `color: ${textColor};` : ""}
+          ${textColor !== "default" ? `--text-white: ${textColor};` : ""}
+          ${textColor !== "default" ? `--text-black: ${textColor};` : ""}
+          ${textColor !== "default" ? `--text-red: ${textColor};` : ""}
+          ${textColor !== "default" ? `--text-blue: ${textColor};` : ""}
+          ${textColor !== "default" ? `--text-green: ${textColor};` : ""}
+          ${textColor !== "default" ? `--text-yellow: ${textColor};` : ""}
+          ${textColor !== "default" ? `--text-purple: ${textColor};` : ""}
+          ${textColor !== "default" ? `--text-beige: ${textColor};` : ""}
+          ${textColor !== "default" ? `--text-pink-pale: ${textColor};` : ""}
         }
       `}</style>
     </footer>

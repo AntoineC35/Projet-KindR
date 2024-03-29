@@ -12,7 +12,7 @@
   border-radius: 5px;
   font-family: "More sugar";
   width: 100%;
-  color: white;
+  color: var(--text-white);
   padding: 1rem;
   font-size: 1rem;
   margin: auto;
@@ -34,7 +34,7 @@
   background-color: var(--red);
   border: none;
   width: 15%;
-  color: white;
+  color: var(--text-white);
   font-size: 1.5rem;
   border-radius: 15px;
   position: absolute;

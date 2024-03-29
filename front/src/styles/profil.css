@@ -28,23 +28,23 @@
   grid-area: 1 / 2 / 2 / 3;
   margin: 0;
   align-self: end;
-  color: var(--purple);
+  color: var(--text-purple);
 }
 .firstname {
   grid-area: 2 / 2 / 3 / 3;
   margin: 0;
-  color: var(--purple);
+  color: var(--text-purple);
 }
 .role {
   margin: 0;
   font-size: 1.2rem;
   grid-area: 3 / 2 / 4 / 3;
-  color: var(--blue);
+  color: var(--text-blue);
 }
 
 .address {
   grid-area: 4 / 1 / 6 / 2;
-  color: var(--blue);
+  color: var(--text-blue);
 }
 
 .button-message {
@@ -57,7 +57,7 @@
   padding: 0.5rem 0.2rem;
   font-size: 1.2rem;
   border-radius: 15px;
-  color: white;
+  color: var(--text-white);
   text-decoration: none;
 }
 .button-dispo {
@@ -70,7 +70,7 @@
   padding: 0.5rem 0.2rem;
   font-size: 1.2rem;
   border-radius: 15px;
-  color: white;
+  color: var(--text-white);
   text-decoration: none;
 }
 .button-choices {
@@ -83,7 +83,7 @@
 
 .button-choices li {
   background-color: var(--purple);
-  color: white;
+  color: var(--text-white);
   border-radius: 15px;
   padding: 0.5rem;
   cursor: pointer;
@@ -93,7 +93,7 @@
   background-color: #f5eee6;
   border-radius: 15px;
   margin: 20px;
-  color: #84a7f6;
+  color: var(--text-blue);
   border-collapse: collapse;
   text-align: center;
 }

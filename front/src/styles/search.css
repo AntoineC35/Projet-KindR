@@ -26,7 +26,7 @@
 
 .bloc-top {
   background-color: var(--red);
-  color: white;
+  color: var(--text-white);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -53,7 +53,7 @@
 .bloc-links {
   width: 100%;
   background-color: var(--red);
-  color: white;
+  color: var(--text-white);
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   z-index: 1001;
@@ -98,7 +98,7 @@
   font-family: "More sugar";
   background-color: var(--purple);
   border: none;
-  color: white;
+  color: var(--text-white);
   text-align: center;
 }
 .dropdown-3 input:focus {
@@ -107,7 +107,7 @@
 
 .dropdown-3 button {
   background-color: var(--purple);
-  color: white;
+  color: var(--text-white);
   font-family: "More sugar";
   margin: auto;
   border: none;
@@ -133,7 +133,7 @@
 
 .bloc-links li:hover {
   background-color: var(--pink-pale);
-  color: black;
+  color: var(--text-black);
 }
 
 .dropdown-3 li:hover {
@@ -158,7 +158,7 @@
   }
 
   .datePicker input::placeholder {
-    color: white;
+    color: var(--text-white);
   }
 
   .dropdown-3 button {
@@ -177,7 +177,7 @@ input[type="checkbox"] + label:before {
   display: inline-block;
   width: 16px;
   height: 16px;
-  border: 2px solid white;
+  border: 2px solid var(--text-white);
   border-radius: 3px;
   margin-right: 10px;
 }

@@ -8,14 +8,14 @@
 @font-face {
   font-family: "More Sugar";
   src: url("./fonts/more-sugar.thin\ \(1\).ttf") format("truetype");
-  font-weight: 100; /* ou le poids de police approprié pour thin */
+  font-weight: 100;
   font-style: normal;
 }
 
 @font-face {
   font-family: "More Sugar";
   src: url("./fonts/more-sugar.extras.ttf") format("truetype");
-  font-weight: 800; /* ou le poids de police approprié pour extra */
+  font-weight: 800;
   font-style: oblique;
 }
 
