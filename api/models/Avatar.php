@@ -7,7 +7,7 @@ class Avatar {
         
     }
 
-    public function toArray()
+    public function toArray() :array
     {
         return [
             "id" => $this->id,
@@ -22,7 +22,7 @@ class Avatar {
      *
      * @return  mixed
      */
-    public function getId()
+    public function getId() :int
     {
         return $this->id;
     }
@@ -34,7 +34,7 @@ class Avatar {
      *
      * @return  self
      */
-    public function setId($id)
+    public function setId(int $id) :self
     {
         $this->id = $id;
 
@@ -46,7 +46,7 @@ class Avatar {
      *
      * @return  mixed
      */
-    public function getUser_id()
+    public function getUser_id() :int
     {
         return $this->user_id;
     }
@@ -58,7 +58,7 @@ class Avatar {
      *
      * @return  self
      */
-    public function setUser_id($user_id)
+    public function setUser_id(int $user_id) :self
     {
         $this->user_id = $user_id;
 
@@ -70,7 +70,7 @@ class Avatar {
      *
      * @return  mixed
      */
-    public function getAvatar_url()
+    public function getAvatar_url() :string
     {
         return $this->avatar_url;
     }
@@ -82,7 +82,7 @@ class Avatar {
      *
      * @return  self
      */
-    public function setAvatar_url($avatar_url)
+    public function setAvatar_url(string $avatar_url) :self
     {
         $this->avatar_url = $avatar_url;
 
@@ -94,7 +94,7 @@ class Avatar {
      *
      * @return  mixed
      */
-    public function getAvatar_alt()
+    public function getAvatar_alt() :string
     {
         return $this->avatar_alt;
     }
@@ -106,7 +106,7 @@ class Avatar {
      *
      * @return  self
      */
-    public function setAvatar_alt($avatar_alt)
+    public function setAvatar_alt(string $avatar_alt) :self
     {
         $this->avatar_alt = $avatar_alt;
 

@@ -2,7 +2,7 @@
 
 class ConversationManager extends AbstractManager {
 
-    public function findAllByUserId($user_id) {
+    public function findAllByUserId(int $user_id) :array {
         $query = $this->db->prepare('SELECT * FROM conversation WHERE user1_id = :user_id OR user2_id = :user_id');
         $parameters = [
             "user_id" => $user_id
@@ -20,18 +20,20 @@ class ConversationManager extends AbstractManager {
         }
     }
     
-
-    public function findConversation($user1_id, $user2_id) {
+    //Method find a specific conversation between Users (inverse order if initiation of conversation is by either user)
+    public function findConversation(int $user1_id,int $user2_id) :?Conversation{
         $conversation = $this->findConversationByUsers($user1_id, $user2_id);
     
         if (!$conversation) {
             $conversation = $this->findConversationByUsers($user2_id, $user1_id);
+        } else {
+            return null; 
         }
     
         return $conversation;
     }
     
-    private function findConversationByUsers($user1_id, $user2_id) {
+    private function findConversationByUsers(int $user1_id, int $user2_id) :?Conversation {
         $query = $this->db->prepare('SELECT * FROM conversation WHERE user1_id = :user1_id AND user2_id = :user2_id');
         $parameters = [
             "user1_id" => $user1_id,
@@ -49,7 +51,7 @@ class ConversationManager extends AbstractManager {
         return null;
     }
 
-    public function createConversation($user1_id, $user2_id) {
+    public function createConversation(int $user1_id, int $user2_id) :?Conversation {
         $query = $this->db->prepare('INSERT INTO conversation VALUE(null, :user1_id, :user2_id)');
         $parameters = [
             "user1_id" => $user1_id,
@@ -59,12 +61,7 @@ class ConversationManager extends AbstractManager {
         return $this->findConversation($user1_id, $user2_id);
     }
 
-    public function editConversation(Conversation $conversation) 
-    {
-
-    }
-
-    public function deleteConversation(Conversation $conversation) 
+    public function deleteConversation(Conversation $conversation) :void 
     {
         $query = $this->db->prepare("DELETE FROM conversation WHERE id = :conversation_id");
         $parameters = [

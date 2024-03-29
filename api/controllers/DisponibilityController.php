@@ -13,7 +13,7 @@ class DisponibilityController extends AbstractController
         $this->sm = new SituationManager();
     }
 
-    public function createDisponibilitySlot(array $post) {
+    public function createDisponibilitySlot(array $post) :void {
 
         if ($this->tokenManager->validateCSRFToken($post["csrf_token"])) {
             $slotAvailable = $this->sm->findByUserId($post["user_id"]);
@@ -36,7 +36,7 @@ class DisponibilityController extends AbstractController
         }
     }
 
-    public function deleteDisponibilitySlot($post) {
+    public function deleteDisponibilitySlot(array $post) :void {
         if ($this->tokenManager->validateCSRFToken($post["csrf_token"])) {
             $slotToDelete = $this->dm->findById($post["disponibility_id"]);
             if ($slotToDelete != null) {

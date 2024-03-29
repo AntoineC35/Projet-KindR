@@ -11,7 +11,7 @@ class AddressController extends AbstractController
         $this->am = new AddressManager();
     }
 
-    public function createAddress(array $post) {
+    public function createAddress(array $post) :void {
         $location = [];
 		$lat = json_decode($post["location"])->lat;
 		$long = json_decode($post["location"])->long;

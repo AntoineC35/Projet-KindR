@@ -100,7 +100,7 @@ const ProRegister = () => {
           placeholder="Mot de passe"
           required
           title="Le mot de passe doit contenir au moins un chiffre, une lettre majuscule, une lettre minuscule, un caractère spécial et être d'au moins 8 caractères de longueur."
-          pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$"
+          pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*.]).{8,}$"
           value={formData.password}
           onChange={(e) =>
             setFormData({ ...formData, password: e.target.value })

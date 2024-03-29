@@ -2,14 +2,14 @@
 
 class PostManager extends AbstractManager {
 
-    public function findAll() {
+    public function findAll() :?array {
         $query = $this->db->prepare('SELECT * FROM posts');
         $query->execute();
         $posts = $query->fetchAll(PDO::FETCH_ASSOC);
         return $posts;
     }
 
-    public function findById($post_id) {
+    public function findById(int $post_id) :?array {
         $query = $this->db->prepare('SELECT * FROM posts WHERE id = :id');
         $parameters = [
             "id" => $post_id
@@ -19,9 +19,7 @@ class PostManager extends AbstractManager {
         return $post;
     }
     
-    public function createPost($post) {
-        
-        
+    public function createPost($post) :?array {
         $query = $this->db->prepare('
             INSERT INTO posts 
             (title, date, content, address, link, category, img_url, img_alt)
@@ -43,7 +41,7 @@ class PostManager extends AbstractManager {
         return $this->findById($lastId);
     }
 
-    public function findAllByCategories($category) {
+    public function findAllByCategories(Category $category) :?array {
         $query = $this->db->prepare('SELECT * FROM posts WHERE category = :category');
         $parameters = [
             "category" => $category->getId()
@@ -53,16 +51,12 @@ class PostManager extends AbstractManager {
         return $posts;
     }
 
-    public function deletePost($post) {
+    public function deletePost(Post $post) :void {
         $query = $this->db->prepare("DELETE FROM posts WHERE id = :post_id");
         $parameters = [
             "post_id" => $post->getId()
         ];
         $query->execute($parameters);
-
-    }
-
-    public function editPost ($post) {
 
     }
 }

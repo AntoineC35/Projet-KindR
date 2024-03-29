@@ -4,6 +4,7 @@ import listPlugin from "@fullcalendar/list";
 import { useEffect, useState } from "react";
 import "../styles/calendar.css";
 import { format } from "date-fns";
+import Navigation from "./Navigation";
 
 const Calendar = ({ pro }) => {
   const [calendarEvents, setCalendarEvents] = useState([]);
@@ -51,22 +52,26 @@ const Calendar = ({ pro }) => {
   }, [pro]);
 
   return (
-    <section className="calendar">
-      <FullCalendar
-        plugins={[dayGridPlugin, listPlugin]}
-        headerToolbar={{
-          left: "prev,next",
-          center: "title",
-          right: "today",
-        }}
-        initialView="dayGridMonth"
-        events={calendarEvents}
-        views={{
-          listMonth: { buttonText: "Liste mois" },
-        }}
-        height="auto"
-      />
-    </section>
+    <>
+      <Navigation />
+      <section className="calendar">
+        <h2 hidden>Callendar</h2>
+        <FullCalendar
+          plugins={[dayGridPlugin, listPlugin]}
+          headerToolbar={{
+            left: "prev,next",
+            center: "title",
+            right: "today",
+          }}
+          initialView="dayGridMonth"
+          events={calendarEvents}
+          views={{
+            listMonth: { buttonText: "Liste mois" },
+          }}
+          height="auto"
+        />
+      </section>
+    </>
   );
 };
 

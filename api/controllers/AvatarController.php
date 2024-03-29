@@ -10,7 +10,7 @@ class AvatarController extends AbstractController {
         $this->avm = new AvatarManager;
     }
 
-    public function createAvatar(array $post) {
+    public function createAvatar(array $post) :void {
         if ($this->tokenManager->validateCSRFToken($post["csrf_token"])) {
             $avatar = $this->avm->createAvatar($post);
             if ($avatar != null) {
@@ -21,7 +21,7 @@ class AvatarController extends AbstractController {
         }
     }
 
-    public function findAvatarByUserId($user_id) {
+    public function findAvatarByUserId(int $user_id) :void {
         $avatar = $this->avm->findByUserId($user_id);
         if ($avatar != null) {
             $this->render(["avatar" => $avatar->toArray()]);

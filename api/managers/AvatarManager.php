@@ -2,7 +2,7 @@
 
 class AvatarManager extends AbstractManager {
 
-    public function findByUserId(int $user_id) {
+    public function findByUserId(int $user_id) :?Avatar {
         $query = $this->db->prepare("SELECT * FROM avatar WHERE user_id = :user_id");
         $parameters = [
             "user_id" => $user_id
@@ -13,10 +13,12 @@ class AvatarManager extends AbstractManager {
             $newAvatar = new Avatar($avatar["user_id"], $avatar["avatar_url"], $avatar["avatar_alt"]);
             $newAvatar->setId($avatar["id"]);
             return $newAvatar;
+        } else {
+            return null; 
         }
     }
 
-    public function createAvatar($postData) {
+    public function createAvatar(array $postData) :?User {
         $query = $this->db->prepare("INSERT INTO avatar VALUES(null, :user_id, :avatar_url, :avatar_alt)");
         $parameters = [
             "user_id" => htmlspecialchars($postData["user_id"]),
@@ -27,11 +29,7 @@ class AvatarManager extends AbstractManager {
         return $this->findByUserId($postData["user_id"]);
     }
 
-    public function editAvatar($user_id) {
-
-    }
-
-    public function deleteAvatar(Avatar $avatar) {
+    public function deleteAvatar(Avatar $avatar) :void {
         $query = $this->db->prepare("DELETE FROM avatar WHERE id = :avatar_id");
         $parameters = [
             "avatar_id" => $avatar->getId()

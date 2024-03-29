@@ -1,6 +1,7 @@
 <?php 
 class AddressManager extends AbstractManager {
-    public function findByUserId($user_id) {
+
+    public function findByUserId(int $user_id) :?Address {
     $query = $this->db->prepare('SELECT id, user_id, address, postal_code, city, ST_X(location) as longitude, ST_Y(location) as latitude FROM address WHERE user_id = :user_id');
      $parameters = [
         "user_id" => $user_id
@@ -11,8 +12,10 @@ class AddressManager extends AbstractManager {
             $newAddress = new Address($address["user_id"], $address["address"], $address["postal_code"], $address["city"],["lat"=>$address["latitude"], "long"=>$address["longitude"]]);
             $newAddress->setId($address["id"]);
             return $newAddress;
+        } else {
+            return null;
         }
-    }
+    } 
 
     public function createAddress(Address $address) : Address {
         
@@ -38,19 +41,17 @@ class AddressManager extends AbstractManager {
         return $newAddress;
     }
 
-    public function deleteAddress(Address $address) {
+    public function deleteAddress(Address $address) :void {
         $query = $this->db->prepare("DELETE FROM address WHERE id = :address_id");
         $parameters = [
             "address_id" => $address->getId()
         ];
         $query->execute($parameters);
     }
-    
-    public function editAddress(Address $address) {
 
-    }
 
-    public function findByDistance(Address $address, $distance) : array {
+    //Method to search by Distance Based on Current User Location and distance set in search
+    public function findByDistance(Address $address, int $distance) : array {
         $location = $address->getLocation();
         $distanceToSearch = $distance * 1000;
         try {

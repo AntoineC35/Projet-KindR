@@ -18,7 +18,7 @@ class ConversationController extends AbstractController
         $this->avm = new AvatarManager();
     }
 
-    public function getAllConversationByUser_id($postData) {
+    public function getAllConversationByUser_id(array $postData) :void {
         $user_id = $postData["user_id"];
         $conversations = $this->cm->findAllByUserId($user_id);
     
@@ -56,7 +56,7 @@ class ConversationController extends AbstractController
     }
      
 
-    public function getConversationByUsers($postData) {
+    public function getConversationByUsers(array $postData) :void {
         $user1Id = htmlspecialchars($postData["user1_id"]);
         $user2Id = htmlspecialchars($postData["user2_id"]);
         $conversation = $this->cm->findConversation($user1Id, $user2Id);

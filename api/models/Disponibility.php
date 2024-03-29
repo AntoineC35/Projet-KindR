@@ -6,7 +6,7 @@ class Disponibility {
         
     }
 
-    public function toArray() {
+    public function toArray() :array {
         return [
             "id" => $this->id,
             "user_id" => $this->user_id,
@@ -20,7 +20,7 @@ class Disponibility {
      *
      * @return  mixed
      */
-    public function getId()
+    public function getId() :int 
     {
         return $this->id;
     }
@@ -32,7 +32,7 @@ class Disponibility {
      *
      * @return  self
      */
-    public function setId($id)
+    public function setId(int $id) :self
     {
         $this->id = $id;
 
@@ -44,7 +44,7 @@ class Disponibility {
      *
      * @return  mixed
      */
-    public function getUser_id()
+    public function getUser_id() :int 
     {
         return $this->user_id;
     }
@@ -56,7 +56,7 @@ class Disponibility {
      *
      * @return  self
      */
-    public function setUser_id($user_id)
+    public function setUser_id(int $user_id) :self
     {
         $this->user_id = $user_id;
 
@@ -68,7 +68,7 @@ class Disponibility {
      *
      * @return  mixed
      */
-    public function getStart_datetime()
+    public function getStart_datetime() :string 
     {
         return $this->start_datetime;
     }
@@ -80,7 +80,7 @@ class Disponibility {
      *
      * @return  self
      */
-    public function setStart_datetime($start_datetime)
+    public function setStart_datetime(string $start_datetime) :self
     {
         $this->start_datetime = $start_datetime;
 
@@ -92,7 +92,7 @@ class Disponibility {
      *
      * @return  mixed
      */
-    public function getEnd_datetime()
+    public function getEnd_datetime() :string 
     {
         return $this->end_datetime;
     }
@@ -104,7 +104,7 @@ class Disponibility {
      *
      * @return  self
      */
-    public function setEnd_datetime($end_datetime)
+    public function setEnd_datetime(string $end_datetime) :self
     {
         $this->end_datetime = $end_datetime;
 

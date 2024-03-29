@@ -1,7 +1,9 @@
 <?php 
 
 class SituationManager extends AbstractManager {
-    public function findByUserId($user)
+
+    //Method to find Situation by User ID
+    public function findByUserId(int $user) :?Situation
     {
         $query = $this->db->prepare('SELECT * FROM situation WHERE user_id = :user_id');
         $parameters = [
@@ -23,9 +25,12 @@ class SituationManager extends AbstractManager {
             );
             $newSituation->setId($situation["id"]);
             return $newSituation;
+        } else {
+            return null; 
         }
     }
 
+    //Method to Register a new situation to a User
     public function createSituation(Situation $situation) : Situation {
         $query = $this->db->prepare('INSERT INTO situation VALUES(
             null,
@@ -74,7 +79,8 @@ class SituationManager extends AbstractManager {
         return $newSituation;
     }
 
-    public function deleteSituation(Situation $situation) {
+
+    public function deleteSituation(Situation $situation) :void {
         $query = $this->db->prepare("DELETE FROM situation WHERE id = :situation_id");
         $parameters = [
             "situation_id" => $situation->getId()
@@ -82,7 +88,4 @@ class SituationManager extends AbstractManager {
         $query->execute($parameters);
     }
 
-    public function editSituation(Situation $situation) {
-
-    }
 }

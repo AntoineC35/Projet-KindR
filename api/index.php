@@ -2,7 +2,7 @@
 session_start();
 
 header("Access-Control-Allow-Headers: Authorization, Content-Type");
-header("Access-Control-Allow-Origin: https://projet-kindr.kindr.fr");
+header("Access-Control-Allow-Origin: http://localhost:3000");
 header("Access-Control-Allow-Credentials: true");
 header('content-type: application/json; charset=utf-8');
 

@@ -17,7 +17,8 @@ class User {
         
     }
 
-    public function toArray()
+    //Method to return simple user to array
+    public function toArray() :array
     {
         return [
             "id" => $this->id,
@@ -29,7 +30,8 @@ class User {
         ];
     } 
 
-    public function fullUserToArray()
+    // Method to return complete user information as an array
+    public function fullUserToArray() :array
     {
         $userArray = [
             "id" => $this->id,
@@ -74,7 +76,7 @@ class User {
      *
      * @return  mixed
      */
-    public function getId()
+    public function getId() :?int
     {
         return $this->id;
     }
@@ -86,7 +88,7 @@ class User {
      *
      * @return  self
      */
-    public function setId($id)
+    public function setId(int $id) :self
     {
         $this->id = $id;
 
@@ -98,7 +100,7 @@ class User {
      *
      * @return  mixed
      */
-    public function getFirstname()
+    public function getFirstname() :?string
     {
         return $this->firstname;
     }
@@ -110,7 +112,7 @@ class User {
      *
      * @return  self
      */
-    public function setFirstname($firstname)
+    public function setFirstname(string $firstname) :self
     {
         $this->firstname = $firstname;
 
@@ -122,7 +124,7 @@ class User {
      *
      * @return  mixed
      */
-    public function getLastname()
+    public function getLastname() :?string
     {
         return $this->lastname;
     }
@@ -134,7 +136,7 @@ class User {
      *
      * @return  self
      */
-    public function setLastname($lastname)
+    public function setLastname(string $lastname) :self
     {
         $this->lastname = $lastname;
 
@@ -146,7 +148,7 @@ class User {
      *
      * @return  mixed
      */
-    public function getEmail()
+    public function getEmail() :?string
     {
         return $this->email;
     }
@@ -158,7 +160,7 @@ class User {
      *
      * @return  self
      */
-    public function setEmail($email)
+    public function setEmail(string $email) :self
     {
         $this->email = $email;
 
@@ -170,7 +172,7 @@ class User {
      *
      * @return  mixed
      */
-    public function getPassword()
+    public function getPassword() :?string
     {
         return $this->password;
     }
@@ -182,7 +184,7 @@ class User {
      *
      * @return  self
      */
-    public function setPassword($password)
+    public function setPassword(string $password) :self
     {
         $this->password = $password;
 
@@ -194,7 +196,7 @@ class User {
      *
      * @return  mixed
      */
-    public function getRole()
+    public function getRole() :?string
     {
         return $this->role;
     }
@@ -206,7 +208,7 @@ class User {
      *
      * @return  self
      */
-    public function setRole($role)
+    public function setRole(string $role) :self
     {
         $this->role = $role;
 

@@ -6,7 +6,7 @@ class Post{
 
     }
 
-    public function toArray() 
+    public function toArray() :array
     {
         return [
             "id" => $this->id,
@@ -26,7 +26,7 @@ class Post{
      *
      * @return  mixed
      */
-    public function getId()
+    public function getId() :int
     {
         return $this->id;
     }
@@ -38,7 +38,7 @@ class Post{
      *
      * @return  self
      */
-    public function setId($id)
+    public function setId(int $id) :self
     {
         $this->id = $id;
 
@@ -50,7 +50,7 @@ class Post{
      *
      * @return  mixed
      */
-    public function getTitle()
+    public function getTitle() :string
     {
         return $this->title;
     }
@@ -62,7 +62,7 @@ class Post{
      *
      * @return  self
      */
-    public function setTitle($title)
+    public function setTitle(string $title) :self
     {
         $this->title = $title;
 
@@ -74,7 +74,7 @@ class Post{
      *
      * @return  mixed
      */
-    public function getContent()
+    public function getContent() :string
     {
         return $this->content;
     }
@@ -86,7 +86,7 @@ class Post{
      *
      * @return  self
      */
-    public function setContent($content)
+    public function setContent(string $content) :self
     {
         $this->content = $content;
 
@@ -98,7 +98,7 @@ class Post{
      *
      * @return  mixed
      */
-    public function getAddress()
+    public function getAddress() :string
     {
         return $this->address;
     }
@@ -110,7 +110,7 @@ class Post{
      *
      * @return  self
      */
-    public function setAddress($address)
+    public function setAddress(string $address) :self
     {
         $this->address = $address;
 
@@ -122,7 +122,7 @@ class Post{
      *
      * @return  mixed
      */
-    public function getCategory()
+    public function getCategory() :Category
     {
         return $this->category;
     }
@@ -134,7 +134,7 @@ class Post{
      *
      * @return  self
      */
-    public function setCategory($category)
+    public function setCategory(Category $category) :self
     {
         $this->category = $category;
 
@@ -146,7 +146,7 @@ class Post{
      *
      * @return  mixed
      */
-    public function getImg_url()
+    public function getImg_url() :string
     {
         return $this->img_url;
     }
@@ -158,7 +158,7 @@ class Post{
      *
      * @return  self
      */
-    public function setImg_url($img_url)
+    public function setImg_url(string $img_url) :self
     {
         $this->img_url = $img_url;
 
@@ -170,7 +170,7 @@ class Post{
      *
      * @return  mixed
      */
-    public function getDate()
+    public function getDate() :string
     {
         return $this->date;
     }
@@ -182,7 +182,7 @@ class Post{
      *
      * @return  self
      */
-    public function setDate($date)
+    public function setDate(string $date) :self
     {
         $this->date = $date;
 
@@ -194,7 +194,7 @@ class Post{
      *
      * @return  mixed
      */
-    public function getImg_alt()
+    public function getImg_alt() :string
     {
         return $this->img_alt;
     }
@@ -206,7 +206,7 @@ class Post{
      *
      * @return  self
      */
-    public function setImg_alt($img_alt)
+    public function setImg_alt(string $img_alt) :self
     {
         $this->img_alt = $img_alt;
 
@@ -218,7 +218,7 @@ class Post{
      *
      * @return  mixed
      */
-    public function getLink()
+    public function getLink() :string
     {
         return $this->link;
     }
@@ -230,7 +230,7 @@ class Post{
      *
      * @return  self
      */
-    public function setLink($link)
+    public function setLink(string $link) :self
     {
         $this->link = $link;
 

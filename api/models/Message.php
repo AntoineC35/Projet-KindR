@@ -7,7 +7,7 @@ class Message {
         
     }
 
-    public function toArray() {
+    public function toArray() :array {
         return [
             "id" => $this->id,
             "conversation_id" => $this->conversation_id,
@@ -22,7 +22,7 @@ class Message {
      *
      * @return  mixed
      */
-    public function getConversation_id()
+    public function getConversation_id() :int
     {
         return $this->conversation_id;
     }
@@ -34,7 +34,7 @@ class Message {
      *
      * @return  self
      */
-    public function setConversation_id($conversation_id)
+    public function setConversation_id(int $conversation_id) :self
     {
         $this->conversation_id = $conversation_id;
 
@@ -46,7 +46,7 @@ class Message {
      *
      * @return  mixed
      */
-    public function getUser_id()
+    public function getUser_id() :int
     {
         return $this->user_id;
     }
@@ -58,7 +58,7 @@ class Message {
      *
      * @return  self
      */
-    public function setUser_id($user_id)
+    public function setUser_id(int $user_id) :self
     {
         $this->user_id = $user_id;
 
@@ -70,7 +70,7 @@ class Message {
      *
      * @return  mixed
      */
-    public function getContent()
+    public function getContent() :string
     {
         return $this->content;
     }
@@ -82,7 +82,7 @@ class Message {
      *
      * @return  self
      */
-    public function setContent($content)
+    public function setContent(string $content) :self
     {
         $this->content = $content;
 
@@ -94,7 +94,7 @@ class Message {
      *
      * @return  mixed
      */
-    public function getDate()
+    public function getDate() :string
     {
         return $this->date;
     }
@@ -106,7 +106,7 @@ class Message {
      *
      * @return  self
      */
-    public function setDate($date)
+    public function setDate(string $date) :self
     {
         $this->date = $date;
 
@@ -118,7 +118,7 @@ class Message {
      *
      * @return  mixed
      */
-    public function getId()
+    public function getId() :int
     {
         return $this->id;
     }
@@ -130,7 +130,7 @@ class Message {
      *
      * @return  self
      */
-    public function setId($id)
+    public function setId(int $id) :self
     {
         $this->id = $id;
 

@@ -2,7 +2,7 @@
 
 class CategoryManager extends AbstractManager {
 
-    public function findAllCategory() {
+    public function findAllCategory() :?array {
         $query = $this->db->prepare('SELECT * FROM categories');
         $query->execute();
         $categories = $query->fetchAll(PDO::FETCH_ASSOC);
@@ -15,7 +15,7 @@ class CategoryManager extends AbstractManager {
         return $categoriesArray;
     }
 
-    public function findById($category_id) {
+    public function findById(int $category_id) :?Category {
         $query = $this->db->prepare('SELECT * FROM categories WHERE id = :id');
         $parameters = [
             "id" => $category_id
@@ -26,10 +26,12 @@ class CategoryManager extends AbstractManager {
             $newCategory = new Category($category["type"], $category["description"]);
             $newCategory->setId($category["id"]);
             return $newCategory;
+        } else {
+            return null; 
         }
     }
 
-    public function createCategory(Category $category) {
+    public function createCategory(Category $category) :?Category {
         $query = $this->db->prepare('INSERT INTO categories VALUES(null, :type, :description)');
         $parameters = [
             "type" => $category->getType(),
@@ -40,7 +42,7 @@ class CategoryManager extends AbstractManager {
         return $this->findById($lastId);
     }
 
-    public function deleteCategory(Category $category) {
+    public function deleteCategory(Category $category) :void {
         $query = $this->db->prepare("DELETE FROM category WHERE id = :category_id");
         $parameters = [
             "category_id" => $category->getId()

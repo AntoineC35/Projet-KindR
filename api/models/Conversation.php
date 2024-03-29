@@ -10,7 +10,7 @@ class Conversation {
         
     }
 
-    public function toArray() {
+    public function toArray() :array {
         {
             $conversationArray = [
                 "id" => $this->id,
@@ -36,7 +36,7 @@ class Conversation {
      *
      * @return  mixed
      */
-    public function getId()
+    public function getId() :int
     {
         return $this->id;
     }
@@ -48,7 +48,7 @@ class Conversation {
      *
      * @return  self
      */
-    public function setId($id)
+    public function setId(int $id) :self
     {
         $this->id = $id;
 
@@ -60,7 +60,7 @@ class Conversation {
      *
      * @return  mixed
      */
-    public function getUser1_id()
+    public function getUser1_id() :int
     {
         return $this->user1_id;
     }
@@ -72,7 +72,7 @@ class Conversation {
      *
      * @return  self
      */
-    public function setUser1_id($user1_id)
+    public function setUser1_id(int $user1_id) :self
     {
         $this->user1_id = $user1_id;
 
@@ -84,7 +84,7 @@ class Conversation {
      *
      * @return  mixed
      */
-    public function getUser2_id()
+    public function getUser2_id() :int 
     {
         return $this->user2_id;
     }
@@ -96,7 +96,7 @@ class Conversation {
      *
      * @return  self
      */
-    public function setUser2_id($user2_id)
+    public function setUser2_id(int $user2_id) :self
     {
         $this->user2_id = $user2_id;
 
@@ -108,7 +108,7 @@ class Conversation {
      *
      * @return  mixed
      */
-    public function getMessages()
+    public function getMessages() :array
     {
         return $this->messages;
     }
@@ -120,7 +120,7 @@ class Conversation {
      *
      * @return  self
      */
-    public function setMessages($messages)
+    public function setMessages(array $messages) :self
     {
         $this->messages = $messages;
 
@@ -132,7 +132,7 @@ class Conversation {
      *
      * @return  mixed
      */
-    public function getUser1()
+    public function getUser1() :array
     {
         return $this->user1;
     }
@@ -144,7 +144,7 @@ class Conversation {
      *
      * @return  self
      */
-    public function setUser1($user1)
+    public function setUser1(array $user1) :self
     {
         $this->user1 = $user1;
 
@@ -156,7 +156,7 @@ class Conversation {
      *
      * @return  mixed
      */
-    public function getUser2()
+    public function getUser2() :array 
     {
         return $this->user2;
     }
@@ -168,7 +168,7 @@ class Conversation {
      *
      * @return  self
      */
-    public function setUser2($user2)
+    public function setUser2(array $user2) :self
     {
         $this->user2 = $user2;
 

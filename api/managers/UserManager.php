@@ -2,6 +2,8 @@
 
 class UserManager extends AbstractManager
 {
+
+    // Method to retrieve all users
     public function findAll() : array {
     $query = $this->db->prepare('SELECT * FROM users');
         $query->execute();
@@ -12,10 +14,11 @@ class UserManager extends AbstractManager
             $newUser->setId($user["id"]);
             $usersArray[] = $newUser;
         }
+        // Return the array of users
         return $usersArray;
     }
-
-    public function findById($user_id) {
+    // Method to find a user by their ID
+    public function findById(int $user_id) : ?User {
         $query = $this->db->prepare('SELECT * FROM users WHERE id = :id');
         $parameters = [
             "id" => $user_id
@@ -24,10 +27,11 @@ class UserManager extends AbstractManager
         $user = $query->fetch(PDO::FETCH_ASSOC);
         $newUser = new User($user["firstname"], $user["lastname"], $user["email"], $user["password"], $user["role"]);
         $newUser->setId($user["id"]);
+        // Create a User object from the result and return it
             return $newUser;
     }
-
-    public function findByEmail($email) {
+    // Method to find a user by their email address
+    public function findByEmail(string $email) : ?User {
         $query = $this->db->prepare('SELECT * FROM users WHERE email = :email');
         $parameters = [
             "email" => $email
@@ -37,11 +41,14 @@ class UserManager extends AbstractManager
         if ($user != null) {
         $newUser = new User($user["firstname"], $user["lastname"], $user["email"], $user["password"], $user["role"]);
         $newUser->setId($user["id"]);
+         // If a user is found, create a User object and return it, otherwise return null
             return $newUser;
+        } else {
+            return null; 
         }
     }
-
-    public function findIfProById($user) {
+     // Method to find a professional user by their ID
+    public function findIfProById(User $user) : ?User {
                 $query = $this->db->prepare(
                     "SELECT
                         users.id AS user_id,
@@ -72,8 +79,8 @@ class UserManager extends AbstractManager
                 return $newUser;
             }
     }
-
-    public function findAllPro() {
+    // Method to retrieve all professional users
+    public function findAllPro() : ?array {
         $query = $this->db->prepare(
             "SELECT
                 users.id AS user_id,
@@ -107,6 +114,7 @@ class UserManager extends AbstractManager
         return $usersArray;
     }
 
+    // Method to create a new user
     public function createUser(User $user) : User {
         $query = $this->db->prepare('INSERT INTO users VALUES(null, :firstname, :lastname, :email, :password, :role)');
         $parameters = [
@@ -128,8 +136,8 @@ class UserManager extends AbstractManager
         $newUser->setId($user["id"]);
         return $newUser;
     }
-
-    public function findProByDispo($postData) {
+     // Method to find professional users by availability on a given date
+    public function findProByDispo(array $postData) : ?array {
         $query = $this->db->prepare(
             "SELECT
                 users.id AS user_id,
@@ -169,16 +177,16 @@ class UserManager extends AbstractManager
         return $usersArray;
     }
         
-
-    public function deleteUser(User $user) {
+    // Method to delete a user
+    public function deleteUser(User $user) :void {
         $query = $this->db->prepare("DELETE FROM users WHERE id = :user_id");
         $parameters = [
             "user_id" => $user->getId()
         ];
         $query->execute($parameters);
     }
-
-    public function editUserPassword(User $user) {
+    // Method to edit a user's password
+    public function editUserPassword(User $user) :void {
         $query = $this->db->prepare("UPDATE users SET password = :newPassword WHERE id = :userId");
         $parameters = [
             "newPassword" => $user->getPassword(),
@@ -186,8 +194,8 @@ class UserManager extends AbstractManager
         ];
         $query->execute($parameters);
     }
-
-    public function editUser(User $user) {
+    // Method to edit a user's details
+    public function editUser(User $user) :void {
         $query = $this->db->prepare("UPDATE users SET firstname = :firstname, lastname = :lastname, email = :email, role = :role WHERE id = :userId");
         $parameters = [
             "firstname" => $user->getFirstname(),

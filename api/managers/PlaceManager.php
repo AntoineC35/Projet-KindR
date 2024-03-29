@@ -2,7 +2,7 @@
 
 class PlaceManager extends AbstractManager {
 
-    public function findByUserId($userId) {
+    public function findByUserId(int $userId) :?Place {
         $query = $this->db->prepare('SELECT * FROM place WHERE user_id = :user_id');
         $parameters = [
             "user_id" => $userId
@@ -26,6 +26,8 @@ class PlaceManager extends AbstractManager {
                 $place['near_walk']);
             $newPlace->setId($place['id']);
             return $newPlace;
+        } else {
+            return null; 
         }
         
     }
@@ -93,15 +95,11 @@ class PlaceManager extends AbstractManager {
 
     }
 
-    public function deletePlace(Place $place) {
+    public function deletePlace(Place $place) :void {
         $query = $this->db->prepare("DELETE FROM place WHERE id = :place_id");
         $parameters = [
             "place_id" => $place->getId()
         ];
         $query->execute($parameters);
-    }
-
-    public function editPlace(Place $place) {
-        
     }
 }

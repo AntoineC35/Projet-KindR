@@ -11,7 +11,7 @@ class ActiviteController extends AbstractController
         $this->am = new ActiviteManager();
     }
 
-    public function createActivite(array $post) {
+    public function createActivite(array $post) :void {
         if ($this->tokenManager->validateCSRFToken($post["csrf_token"])) {
             $activite = $this->am->findByUserId($post["user_id"]);
             if ($activite === null) {

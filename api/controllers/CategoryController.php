@@ -7,7 +7,7 @@ class CategoryController extends AbstractController{
         $this->cm = new CategoryManager();    
     }
 
-    public function findAll() {
+    public function findAll() :void {
         $categories = $this->cm->findAllCategory();
         if ($categories != null) {
             $this->render(["success" => true, "categories" => $categories]);
@@ -16,7 +16,7 @@ class CategoryController extends AbstractController{
         }
     }
 
-    public function createCategory($post) {
+    public function createCategory(array $post) :void {
         $type = htmlspecialchars($post["type"]);
         $description = htmlspecialchars($post["description"]);
         $newCategory = new Category($type, $description);

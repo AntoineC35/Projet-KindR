@@ -11,7 +11,7 @@ class PlaceController extends AbstractController
         $this->pm = new PlaceManager();
     }
 
-    public function createPlace(array $post) {
+    public function createPlace(array $post) :void {
 
         if ($this->tokenManager->validateCSRFToken($post["csrf_token"])) {
             $place = $this->pm->findByUserId($post["user_id"]);

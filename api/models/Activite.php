@@ -6,7 +6,7 @@ class Activite {
         
     }
 
-    public function toArray() 
+    public function toArray() :array
     {
         return [
             "id" => $this->id,
@@ -27,7 +27,7 @@ class Activite {
      *
      * @return  mixed
      */
-    public function getCollective_playspace()
+    public function getCollective_playspace() :string
     {
         return $this->collective_playspace;
     }
@@ -39,7 +39,7 @@ class Activite {
      *
      * @return  self
      */
-    public function setCollective_playspace($collective_playspace)
+    public function setCollective_playspace(string $collective_playspace) :self
     {
         $this->collective_playspace = $collective_playspace;
 
@@ -51,7 +51,7 @@ class Activite {
      *
      * @return  mixed
      */
-    public function getCinema()
+    public function getCinema() :string
     {
         return $this->cinema;
     }
@@ -63,7 +63,7 @@ class Activite {
      *
      * @return  self
      */
-    public function setCinema($cinema)
+    public function setCinema(string $cinema) :self
     {
         $this->cinema = $cinema;
 
@@ -75,7 +75,7 @@ class Activite {
      *
      * @return  mixed
      */
-    public function getWalk()
+    public function getWalk() :string
     {
         return $this->walk;
     }
@@ -87,7 +87,7 @@ class Activite {
      *
      * @return  self
      */
-    public function setWalk($walk)
+    public function setWalk(string $walk) :self
     {
         $this->walk = $walk;
 
@@ -99,7 +99,7 @@ class Activite {
      *
      * @return  mixed
      */
-    public function getPlayground()
+    public function getPlayground() :string
     {
         return $this->playground;
     }
@@ -111,7 +111,7 @@ class Activite {
      *
      * @return  self
      */
-    public function setPlayground($playground)
+    public function setPlayground(string $playground) :self
     {
         $this->playground = $playground;
 
@@ -123,7 +123,7 @@ class Activite {
      *
      * @return  mixed
      */
-    public function getPool()
+    public function getPool() :string
     {
         return $this->pool;
     }
@@ -135,7 +135,7 @@ class Activite {
      *
      * @return  self
      */
-    public function setPool($pool)
+    public function setPool(string $pool) :self
     {
         $this->pool = $pool;
 
@@ -147,7 +147,7 @@ class Activite {
      *
      * @return  mixed
      */
-    public function getShow()
+    public function getShow() :string
     {
         return $this->show;
     }
@@ -159,7 +159,7 @@ class Activite {
      *
      * @return  self
      */
-    public function setShow($show)
+    public function setShow(string $show) :self
     {
         $this->show = $show;
 
@@ -171,7 +171,7 @@ class Activite {
      *
      * @return  mixed
      */
-    public function getLibrary()
+    public function getLibrary() :string
     {
         return $this->library;
     }
@@ -183,7 +183,7 @@ class Activite {
      *
      * @return  self
      */
-    public function setLibrary($library)
+    public function setLibrary(string $library) :self
     {
         $this->library = $library;
 
@@ -195,7 +195,7 @@ class Activite {
      *
      * @return  mixed
      */
-    public function getGame_space()
+    public function getGame_space() :string
     {
         return $this->game_space;
     }
@@ -207,7 +207,7 @@ class Activite {
      *
      * @return  self
      */
-    public function setGame_space($game_space)
+    public function setGame_space(string $game_space) :self
     {
         $this->game_space = $game_space;
 
@@ -219,7 +219,7 @@ class Activite {
      *
      * @return  mixed
      */
-    public function getUser_id()
+    public function getUser_id() :int
     {
         return $this->user_id;
     }
@@ -231,7 +231,7 @@ class Activite {
      *
      * @return  self
      */
-    public function setUser_id($user_id)
+    public function setUser_id(int $user_id) :self
     {
         $this->user_id = $user_id;
 
@@ -243,7 +243,7 @@ class Activite {
      *
      * @return  mixed
      */
-    public function getId()
+    public function getId() :int
     {
         return $this->id;
     }
@@ -255,7 +255,7 @@ class Activite {
      *
      * @return  self
      */
-    public function setId($id)
+    public function setId(int $id) :self
     {
         $this->id = $id;
 

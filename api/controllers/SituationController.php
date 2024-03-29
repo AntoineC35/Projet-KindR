@@ -11,7 +11,7 @@ class SituationController extends AbstractController
         $this->sm = new SituationManager();
     }
 
-    public function createSituation(array $post) {
+    public function createSituation(array $post) :void {
 
         if ($this->tokenManager->validateCSRFToken($post["csrf_token"])) {
             $situation = $this->sm->findByUserId($post["user_id"]);

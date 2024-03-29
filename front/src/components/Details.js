@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useParams } from "react-router-dom";
+import { Link, Navigate, useParams } from "react-router-dom";
 import { selectPros } from "../reducers/users.reducer";
 import { getPros } from "../actions/users.action";
 import { useEffect, useState } from "react";
@@ -8,11 +8,14 @@ import ActivitesPro from "./ActivitesPro";
 import Environnement from "./Environnement";
 import "../styles/profil.css";
 import Navigation from "./Navigation";
+import { selectIsLoggedIn } from "../reducers/authUser.reducer";
 
 const Details = () => {
+  const loggedIn = useSelector(selectIsLoggedIn);
   const dispatch = useDispatch();
   const pros = useSelector(selectPros);
   const { pro_id } = useParams();
+
   useEffect(() => {
     if (pro_id) {
       dispatch(getPros());
@@ -29,6 +32,10 @@ const Details = () => {
   const handleTabClick = (tab) => {
     setSelectedTab(tab);
   };
+
+  if (!loggedIn) {
+    return <Navigate to="/register" />;
+  }
 
   return (
     <>

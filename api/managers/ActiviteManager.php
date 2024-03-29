@@ -1,7 +1,7 @@
 <?php 
 class ActiviteManager extends AbstractManager 
 {
-    public function findByUserId($user_id) {
+    public function findByUserId(int $user_id) :?Activite {
         $query = $this->db->prepare('SELECT * FROM activites WHERE user_id = :user_id');
         $parameters = [
             "user_id" => $user_id
@@ -42,11 +42,7 @@ class ActiviteManager extends AbstractManager
         return $newActivite;
     }
 
-    public function editActivite(Activite $activite) {
-
-    }
-
-    public function deleteActivite(Activite $activite) {
+    public function deleteActivite(Activite $activite) :void {
         $query = $this->db->prepare("DELETE FROM activites WHERE id = :activite_id");
         $parameters = [
             "activite_id" => $activite->getId()

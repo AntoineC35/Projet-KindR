@@ -22,6 +22,7 @@ class AuthController extends AbstractController
 		$this->avm = new AvatarManager();
     }
 
+    //I hade trouble with keeping SESSION with CORS Policy 
     // public function appendToSessionCSRF(string $content)
     // {
     //     $sessionFile = "config/fakeSession.json";
@@ -32,13 +33,21 @@ class AuthController extends AbstractController
     //     file_put_contents($sessionFile, $updatedContent);
     // }
 
-    public function getCSRFToken() {
+    public function getCSRFToken() :void {
         $this->render(["data" => $_SESSION]);
     }
 
-    public function createUser(array $post) {
+    public function createUser(array $post) :void {
        
         if ($this->tokenManager->validateCSRFToken($post["csrf_token"])) {
+    
+            
+            $passwordRegex = '/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*.]).{8,}$/';
+            if (!preg_match($passwordRegex, $post["password"])) {
+                $this->render(["success"=> false, "message" => "Password must contain at least one uppercase letter, one lowercase letter, one digit, one special character and be at least 8 characters long"]);
+                return;
+            }
+    
             if ($post["password"] !== $post["verify_password"]) {
                 $this->render(["success"=> false, "message" => "Password does not match"]);
             } else {
@@ -56,9 +65,9 @@ class AuthController extends AbstractController
                     
                     $newNewUser = $this->um->createUser($newUser);
                     $_SESSION["user"] = $newNewUser;
-        
-                    $this->saveUserToSession(json_encode($newNewUser->toArray()));
-        
+    
+                    // $this->saveUserToSession(json_encode($newNewUser->toArray()));
+    
                     $this->render(["success"=> true, "data" => $newNewUser->toArray(), "connected"=> true]);
                 } else {
                     $this->render(["success"=> false, "message" => "Email already exists"]);
@@ -68,8 +77,9 @@ class AuthController extends AbstractController
             $this->render(["success"=> false, "message" => "Token validation failed"]);
         }
     }
+    
 
-    public function signIn(array $post) {
+    public function signIn(array $post) :void {
         if ($this->tokenManager->validateCSRFToken($post["csrf_token"])) {
             if (isset($post["password"]) && isset($post["email"])) {
                 $email = $post["email"];
@@ -117,8 +127,9 @@ class AuthController extends AbstractController
         }
     }
     
-    public function logout() {
-        $this->deleteSession();
+    public function logout() :void {
+        session_destroy();
+        //$this->deleteSession();
         $this->render(["connected"=> false, "message" => "User Logged Out", "data" => []]);
     }
     

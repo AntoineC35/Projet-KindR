@@ -1,6 +1,8 @@
 <?php 
 
 class MessageManager extends AbstractManager {
+
+    //Method to find all Messages by Conversation ID
     public function findAllbyConversation(Conversation $conversation) : array{
         $query = $this->db->prepare('SELECT * FROM messages WHERE conversation_id = :conversation_id' );
         $parameters = [
@@ -17,6 +19,7 @@ class MessageManager extends AbstractManager {
         return $messagesArray;
     }
     
+
     public function createMessage(Message $message) : Message {
         $query = $this->db->prepare('INSERT INTO messages VALUES(null, :conversation_id, :user_id, :content, :date)');
         $parameters = [
@@ -39,16 +42,12 @@ class MessageManager extends AbstractManager {
         return $newMessage;
     }
 
-    public function deleteMessage(Message $message) {
+    public function deleteMessage(Message $message) :void {
         $query = $this->db->prepare("DELETE FROM messages WHERE id = :message_id");
         $parameters = [
             "message_id" => $message->getId()
         ];
         $query->execute($parameters);
 
-    }
-
-    public function editMessage(Message $message) {
-        
     }
 }

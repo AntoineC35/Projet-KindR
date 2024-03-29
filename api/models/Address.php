@@ -7,7 +7,7 @@ class Address {
         
     }
 
-    public function toArray() 
+    public function toArray() :array
     {
         return [
             "id" => $this->id,
@@ -24,7 +24,7 @@ class Address {
      *
      * @return  mixed
      */
-    public function getUser_id()
+    public function getUser_id() :int
     {
         return $this->user_id;
     }
@@ -36,7 +36,7 @@ class Address {
      *
      * @return  self
      */
-    public function setUser_id($user_id)
+    public function setUser_id(int $user_id) :self
     {
         $this->user_id = $user_id;
 
@@ -48,7 +48,7 @@ class Address {
      *
      * @return  mixed
      */
-    public function getAddress()
+    public function getAddress() :string
     {
         return $this->address;
     }
@@ -60,7 +60,7 @@ class Address {
      *
      * @return  self
      */
-    public function setAddress($address)
+    public function setAddress(string $address) :self
     {
         $this->address = $address;
 
@@ -72,7 +72,7 @@ class Address {
      *
      * @return  mixed
      */
-    public function getPostal_code()
+    public function getPostal_code() :int
     {
         return $this->postal_code;
     }
@@ -84,7 +84,7 @@ class Address {
      *
      * @return  self
      */
-    public function setPostal_code($postal_code)
+    public function setPostal_code(int $postal_code) :self
     {
         $this->postal_code = $postal_code;
 
@@ -96,7 +96,7 @@ class Address {
      *
      * @return  mixed
      */
-    public function getCity()
+    public function getCity() :string
     {
         return $this->city;
     }
@@ -108,7 +108,7 @@ class Address {
      *
      * @return  self
      */
-    public function setCity($city)
+    public function setCity(string $city) :self
     {
         $this->city = $city;
 
@@ -120,7 +120,7 @@ class Address {
      *
      * @return  mixed
      */
-    public function getLocation()
+    public function getLocation() :array
     {
         return $this->location;
     }
@@ -132,7 +132,7 @@ class Address {
      *
      * @return  self
      */
-    public function setLocation($location)
+    public function setLocation(array $location) :self
     {
         $this->location = $location;
 
@@ -144,7 +144,7 @@ class Address {
      *
      * @return  mixed
      */
-    public function getId()
+    public function getId() :int
     {
         return $this->id;
     }
@@ -156,7 +156,7 @@ class Address {
      *
      * @return  self
      */
-    public function setId($id)
+    public function setId(int $id) :self
     {
         $this->id = $id;
 

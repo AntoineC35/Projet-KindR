@@ -6,7 +6,7 @@ class Category {
     {
         
     }
-    public function toArray()
+    public function toArray() :array
     {
         return [
             "id" => $this->id,
@@ -20,7 +20,7 @@ class Category {
      *
      * @return  mixed
      */
-    public function getId()
+    public function getId() :int
     {
         return $this->id;
     }
@@ -32,7 +32,7 @@ class Category {
      *
      * @return  self
      */
-    public function setId($id)
+    public function setId(int $id) :self
     {
         $this->id = $id;
 
@@ -44,7 +44,7 @@ class Category {
      *
      * @return  mixed
      */
-    public function getType()
+    public function getType() :string
     {
         return $this->type;
     }
@@ -56,7 +56,7 @@ class Category {
      *
      * @return  self
      */
-    public function setType($type)
+    public function setType(string $type) :self
     {
         $this->type = $type;
 
@@ -68,7 +68,7 @@ class Category {
      *
      * @return  mixed
      */
-    public function getDescription()
+    public function getDescription() :string
     {
         return $this->description;
     }
@@ -80,7 +80,7 @@ class Category {
      *
      * @return  self
      */
-    public function setDescription($description)
+    public function setDescription(string $description) :self
     {
         $this->description = $description;
 

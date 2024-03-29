@@ -10,7 +10,7 @@ class PostController extends AbstractController {
         $this->pm = new PostManager();
     }
 
-    public function findAll() {
+    public function findAll() :void {
         $posts = $this->pm->findAll();
         $postsArray = [];
         if($posts != null) {
@@ -26,7 +26,7 @@ class PostController extends AbstractController {
         }
     }
 
-    public function findById($post_id) {
+    public function findById(int $post_id) :void {
         $post = $this->findById($post_id);
         if ($post != null) {
             $category = $this->cm->findById($post["category"]);
@@ -38,7 +38,7 @@ class PostController extends AbstractController {
         }
     }
 
-    public function createPost($post) {
+    public function createPost(array $post) :null|array {
         $category = $this->cm->findById($post["category"]);
         $newPost = new Post(
             htmlspecialchars($post["title"]),
@@ -53,7 +53,7 @@ class PostController extends AbstractController {
         return $this->pm->createPost($newPost);
     }
 
-    public function findAllByCategories($post) {
+    public function findAllByCategories(array $post) :void {
         $category = $this->cm->findById($post["category"]);
         $posts = $this->pm->findAllByCategories($category);
         if($posts != null) {

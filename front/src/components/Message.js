@@ -13,6 +13,7 @@ import { selectPros } from "../reducers/users.reducer";
 import { getCSRFToken } from "../actions/authUser.action";
 import "../styles/message.css";
 import he from "he";
+import Navigation from "./Navigation";
 
 const Message = () => {
   const conversationRef = useRef(null);
@@ -93,93 +94,98 @@ const Message = () => {
   }
 
   return (
-    <section className="messages">
-      {selectedPro ? (
-        <section className="message-header">
-          <button onClick={goBack}>
-            <em>=</em>
-          </button>
-          <figure>
-            <img
-              src={selectedPro.avatar.avatar_url}
-              alt={selectedPro.avatar.avatar_alt}
-            />
-          </figure>
-          <h3>
-            {selectedPro.firstname} {selectedPro.lastname}
-          </h3>
-          <Link className="detail-button" to={`/details/${selectedPro.id}`}>
-            Voir Profil
-          </Link>
-        </section>
-      ) : (
-        <p>Pas d'utlilisateur trouvé avec cet ID.</p>
-      )}
-      <section className="message-block">
-        {selectedConv && selectedConv.messages ? (
-          selectedConv.messages.length > 0 ? (
-            <div
-              className="message-conversation"
-              ref={conversationRef}
-              onScroll={handleScroll}
-            >
-              {selectedConv.messages.map((message) =>
-                message.user_id === currentUser["id"] ? (
-                  <span key={message.id} className="userMessage">
-                    <p>{he.decode(message.content)}</p>
-                    <figure>
-                      <img
-                        src={currentUser.avatar.avatar_url}
-                        alt={currentUser.avatar.avatar_alt}
-                      ></img>
-                    </figure>
-                  </span>
-                ) : (
-                  <span key={message.id} className="otherMessage">
-                    <figure>
-                      <img
-                        src={selectedPro.avatar.avatar_url}
-                        alt={selectedPro.avatar.avatar_alt}
-                      ></img>
-                    </figure>
-                    <p>{he.decode(message.content)}</p>
-                  </span>
-                )
-              )}
-            </div>
-          ) : (
-            <p>Pas de messages dans cette conversation !</p>
-          )
+    <>
+      <Navigation />
+      <section className="messages">
+        <h2 hidden>Messages</h2>
+        {selectedPro ? (
+          <section className="message-header">
+            <h2 hidden>Conversation</h2>
+            <button onClick={goBack}>
+              <em>=</em>
+            </button>
+            <figure>
+              <img
+                src={selectedPro.avatar.avatar_url}
+                alt={selectedPro.avatar.avatar_alt}
+              />
+            </figure>
+            <h3>
+              {selectedPro.firstname} {selectedPro.lastname}
+            </h3>
+            <Link className="detail-button" to={`/details/${selectedPro.id}`}>
+              Voir Profil
+            </Link>
+          </section>
         ) : (
-          <p>
-            Démarré la conversation ?<br></br> Envoyer votre premier message
-          </p>
+          <p>Pas d'utlilisateur trouvé avec cet ID.</p>
         )}
+        <section className="message-block">
+          {selectedConv && selectedConv.messages ? (
+            selectedConv.messages.length > 0 ? (
+              <div
+                className="message-conversation"
+                ref={conversationRef}
+                onScroll={handleScroll}
+              >
+                {selectedConv.messages.map((message) =>
+                  message.user_id === currentUser["id"] ? (
+                    <span key={message.id} className="userMessage">
+                      <p>{he.decode(message.content)}</p>
+                      <figure>
+                        <img
+                          src={currentUser.avatar.avatar_url}
+                          alt={currentUser.avatar.avatar_alt}
+                        ></img>
+                      </figure>
+                    </span>
+                  ) : (
+                    <span key={message.id} className="otherMessage">
+                      <figure>
+                        <img
+                          src={selectedPro.avatar.avatar_url}
+                          alt={selectedPro.avatar.avatar_alt}
+                        ></img>
+                      </figure>
+                      <p>{he.decode(message.content)}</p>
+                    </span>
+                  )
+                )}
+              </div>
+            ) : (
+              <p>Pas de messages dans cette conversation !</p>
+            )
+          ) : (
+            <p>
+              Démarré la conversation ?<br></br> Envoyer votre premier message
+            </p>
+          )}
 
-        <form className="message-submit" onSubmit={handleSubmit}>
-          <figure>
-            <img
-              src={currentUser.avatar.avatar_url}
-              alt={currentUser.avatar.avatar}
-            ></img>
-          </figure>
-          <textarea
-            placeholder="votre message ..."
-            value={messageContent}
-            onChange={handleChange}
-            onKeyDown={(e) => {
-              if (e.key === "Enter" && !e.shiftKey) {
-                e.preventDefault();
-                handleSubmit(e);
-              }
-            }}
-          />
-          <button type="submit" disabled={isMessageEmpty}>
-            <em>#</em>
-          </button>
-        </form>
+          <form className="message-submit" onSubmit={handleSubmit}>
+            <figure>
+              <img
+                src={currentUser.avatar.avatar_url}
+                alt={currentUser.avatar.avatar}
+              ></img>
+            </figure>
+            <textarea
+              placeholder="votre message ..."
+              value={messageContent}
+              onChange={handleChange}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" && !e.shiftKey) {
+                  e.preventDefault();
+                  handleSubmit(e);
+                }
+              }}
+            />
+            <button type="submit" disabled={isMessageEmpty}>
+              <em>#</em>
+            </button>
+          </form>
+        </section>
       </section>
-    </section>
+    </>
   );
 };
 

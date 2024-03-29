@@ -24,11 +24,10 @@ class UserController extends AbstractController
 		$this->cm = new ConversationManager();
 	}
 
-
-	public function findAll()
+	//Method to find ALL Users
+	public function findAll() :void
 	{
-		
-		$users = $this->um->findAll();
+		$users = $this->um->findAll() ;
 		$list = [];
 		foreach ($users as $user) {
 			$address = $this->am->findByUserId($user->getId());
@@ -88,7 +87,8 @@ class UserController extends AbstractController
 		$this->render(["users" => $list]);
 	}
 
-	public function findAllPro()
+	//Method to find all User but Parents and Admin
+	public function findAllPro() :void
 	{
 		$pros = $this->um->findAllPro();
 		$list = [];
@@ -123,7 +123,8 @@ class UserController extends AbstractController
 		$this->render(["pros" => $list]);
 	}
 
-	public function findProByDispo($postData)
+	//Method to find Only Pro with Disponibility at a specific Datetime
+	public function findProByDispo(array $postData) :void
 	{
 		$pros = $this->um->findProByDispo($postData);
 		$list = [];
@@ -157,7 +158,8 @@ class UserController extends AbstractController
 		$this->render(["pros" => $list]);
 	}
 
-		public function findById($user_id) 
+	//Method to find User by Id
+	public function findById(int $user_id) :void
 	{
 		$user = $this->um->findById($user_id);
 		if ($user !== null) {
@@ -191,7 +193,8 @@ class UserController extends AbstractController
 		}
 	}	
 
-	public function searchAround()
+	//Method to search around User with a specific distance set other Pros
+	public function searchAround() :void
 	{
 		$address = $this->am->findByUserId($_POST["user_id"]);
 		$addressesFilter = $this->am->findByDistance($address, $_POST["distance"]);
@@ -235,7 +238,8 @@ class UserController extends AbstractController
 		$this->render(["pros" => $prosArray]);
 	}
 
-	public function deleteUser() {
+	//Method to Delete One User and associated table entries
+	public function deleteUser() :void {
 		$user = $this->um->findById($_POST["user_id"]);
 		if ($user !== null) {
 			$address = $this->am->findByUserId($user->getId());
@@ -281,7 +285,7 @@ class UserController extends AbstractController
 
 	}
 
-	public function editUserPassword() {
+	public function editUserPassword() :void {
 		$hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
 		$user = $this->um->findById($_POST["user_id"]);
 		$user->setPassword($hash);
@@ -289,7 +293,7 @@ class UserController extends AbstractController
 		$this->render(["message" => "Bien joué !"]);
 	}
 
-	public function editUser() {
+	public function editUser() :void {
 		$user = $this->um->findById($_POST["user_id"]);
 		if ($user !== null) {
 			$user->setFirstname($_POST['firstname']);

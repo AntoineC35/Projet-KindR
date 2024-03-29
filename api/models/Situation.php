@@ -7,7 +7,7 @@ class Situation {
         
     }
 
-    public function toArray() {
+    public function toArray() :array {
         return [
             "id" => $this->id,
             "user_id" => $this->user_id,
@@ -27,7 +27,7 @@ class Situation {
      *
      * @return  mixed
      */
-    public function getUser_id()
+    public function getUser_id() :int
     {
         return $this->user_id;
     }
@@ -39,7 +39,7 @@ class Situation {
      *
      * @return  self
      */
-    public function setUser_id($user_id)
+    public function setUser_id(int $user_id) :self
     {
         $this->user_id = $user_id;
 
@@ -51,7 +51,7 @@ class Situation {
      *
      * @return  mixed
      */
-    public function getAge()
+    public function getAge() :int
     {
         return $this->age;
     }
@@ -63,7 +63,7 @@ class Situation {
      *
      * @return  self
      */
-    public function setAge($age)
+    public function setAge(int $age) :self
     {
         $this->age = $age;
 
@@ -75,7 +75,7 @@ class Situation {
      *
      * @return  mixed
      */
-    public function getFormation()
+    public function getFormation() :string
     {
         return $this->formation;
     }
@@ -87,7 +87,7 @@ class Situation {
      *
      * @return  self
      */
-    public function setFormation($formation)
+    public function setFormation(string $formation) :self
     {
         $this->formation = $formation;
 
@@ -99,7 +99,7 @@ class Situation {
      *
      * @return  mixed
      */
-    public function getSituation()
+    public function getSituation() :string
     {
         return $this->situation;
     }
@@ -111,7 +111,7 @@ class Situation {
      *
      * @return  self
      */
-    public function setSituation($situation)
+    public function setSituation(string $situation) :self
     {
         $this->situation = $situation;
 
@@ -123,7 +123,7 @@ class Situation {
      *
      * @return  mixed
      */
-    public function getExperience()
+    public function getExperience() :string
     {
         return $this->experience;
     }
@@ -135,7 +135,7 @@ class Situation {
      *
      * @return  self
      */
-    public function setExperience($experience)
+    public function setExperience(string $experience) :self
     {
         $this->experience = $experience;
 
@@ -147,7 +147,7 @@ class Situation {
      *
      * @return  mixed
      */
-    public function getKids()
+    public function getKids() :string
     {
         return $this->kids;
     }
@@ -159,7 +159,7 @@ class Situation {
      *
      * @return  self
      */
-    public function setKids($kids)
+    public function setKids(string $kids)
     {
         $this->kids = $kids;
 
@@ -171,7 +171,7 @@ class Situation {
      *
      * @return  mixed
      */
-    public function getDate_agrement()
+    public function getDate_agrement() :string
     {
         return $this->date_agrement;
     }
@@ -183,7 +183,7 @@ class Situation {
      *
      * @return  self
      */
-    public function setDate_agrement($date_agrement)
+    public function setDate_agrement(string $date_agrement) :self
     {
         $this->date_agrement = $date_agrement;
 
@@ -195,7 +195,7 @@ class Situation {
      *
      * @return  mixed
      */
-    public function getOther_adults()
+    public function getOther_adults() :string
     {
         return $this->other_adults;
     }
@@ -207,7 +207,7 @@ class Situation {
      *
      * @return  self
      */
-    public function setOther_adults($other_adults)
+    public function setOther_adults(string $other_adults) :self
     {
         $this->other_adults = $other_adults;
 
@@ -219,7 +219,7 @@ class Situation {
      *
      * @return  mixed
      */
-    public function getTotal_capacity()
+    public function getTotal_capacity() :int
     {
         return $this->total_capacity;
     }
@@ -231,7 +231,7 @@ class Situation {
      *
      * @return  self
      */
-    public function setTotal_capacity($total_capacity)
+    public function setTotal_capacity(int $total_capacity) :self
     {
         $this->total_capacity = $total_capacity;
 
@@ -243,7 +243,7 @@ class Situation {
      *
      * @return  mixed
      */
-    public function getId()
+    public function getId() :int
     {
         return $this->id;
     }
@@ -255,7 +255,7 @@ class Situation {
      *
      * @return  self
      */
-    public function setId($id)
+    public function setId(int $id) :self
     {
         $this->id = $id;
 

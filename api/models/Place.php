@@ -7,7 +7,7 @@ class Place {
         
     }
 
-    public function toArray() {
+    public function toArray() :array {
         return [
             "id" => $this->id,
             "user_id" => $this->user_id,
@@ -31,7 +31,7 @@ class Place {
      *
      * @return  mixed
      */
-    public function getId()
+    public function getId() :int 
     {
         return $this->id;
     }
@@ -43,7 +43,7 @@ class Place {
      *
      * @return  self
      */
-    public function setId($id)
+    public function setId(int $id) :self
     {
         $this->id = $id;
 
@@ -55,7 +55,7 @@ class Place {
      *
      * @return  mixed
      */
-    public function getType()
+    public function getType() :string
     {
         return $this->type;
     }
@@ -67,7 +67,7 @@ class Place {
      *
      * @return  self
      */
-    public function setType($type)
+    public function setType(string $type) :self
     {
         $this->type = $type;
 
@@ -79,7 +79,7 @@ class Place {
      *
      * @return  mixed
      */
-    public function getLevel()
+    public function getLevel() :string
     {
         return $this->level;
     }
@@ -91,7 +91,7 @@ class Place {
      *
      * @return  self
      */
-    public function setLevel($level)
+    public function setLevel(string $level) :self
     {
         $this->level = $level;
 
@@ -103,7 +103,7 @@ class Place {
      *
      * @return  mixed
      */
-    public function getPool()
+    public function getPool() :string
     {
         return $this->pool;
     }
@@ -115,7 +115,7 @@ class Place {
      *
      * @return  self
      */
-    public function setPool($pool)
+    public function setPool(string $pool) :self
     {
         $this->pool = $pool;
 
@@ -127,7 +127,7 @@ class Place {
      *
      * @return  mixed
      */
-    public function getGarden()
+    public function getGarden() :string 
     {
         return $this->garden;
     }
@@ -139,7 +139,7 @@ class Place {
      *
      * @return  self
      */
-    public function setGarden($garden)
+    public function setGarden(string $garden) :self
     {
         $this->garden = $garden;
 
@@ -151,7 +151,7 @@ class Place {
      *
      * @return  mixed
      */
-    public function getElevator()
+    public function getElevator() :string 
     {
         return $this->elevator;
     }
@@ -163,7 +163,7 @@ class Place {
      *
      * @return  self
      */
-    public function setElevator($elevator)
+    public function setElevator(string $elevator) :self
     {
         $this->elevator = $elevator;
 
@@ -175,7 +175,7 @@ class Place {
      *
      * @return  mixed
      */
-    public function getYard()
+    public function getYard() :string
     {
         return $this->yard;
     }
@@ -187,7 +187,7 @@ class Place {
      *
      * @return  self
      */
-    public function setYard($yard)
+    public function setYard(string $yard) :self
     {
         $this->yard = $yard;
 
@@ -199,7 +199,7 @@ class Place {
      *
      * @return  mixed
      */
-    public function getPets()
+    public function getPets() :string
     {
         return $this->pets;
     }
@@ -211,7 +211,7 @@ class Place {
      *
      * @return  self
      */
-    public function setPets($pets)
+    public function setPets(string $pets) :self
     {
         $this->pets = $pets;
 
@@ -223,7 +223,7 @@ class Place {
      *
      * @return  mixed
      */
-    public function getSmoker()
+    public function getSmoker() :string
     {
         return $this->smoker;
     }
@@ -235,7 +235,7 @@ class Place {
      *
      * @return  self
      */
-    public function setSmoker($smoker)
+    public function setSmoker(string $smoker) :self
     {
         $this->smoker = $smoker;
 
@@ -247,7 +247,7 @@ class Place {
      *
      * @return  mixed
      */
-    public function getNear_school()
+    public function getNear_school() :string
     {
         return $this->near_school;
     }
@@ -259,7 +259,7 @@ class Place {
      *
      * @return  self
      */
-    public function setNear_school($near_school)
+    public function setNear_school(string $near_school) :self
     {
         $this->near_school = $near_school;
 
@@ -271,7 +271,7 @@ class Place {
      *
      * @return  mixed
      */
-    public function getNear_park()
+    public function getNear_park() :string
     {
         return $this->near_park;
     }
@@ -283,7 +283,7 @@ class Place {
      *
      * @return  self
      */
-    public function setNear_park($near_park)
+    public function setNear_park(string $near_park) :self
     {
         $this->near_park = $near_park;
 
@@ -295,7 +295,7 @@ class Place {
      *
      * @return  mixed
      */
-    public function getNear_sea()
+    public function getNear_sea() :string
     {
         return $this->near_sea;
     }
@@ -307,7 +307,7 @@ class Place {
      *
      * @return  self
      */
-    public function setNear_sea($near_sea)
+    public function setNear_sea(string $near_sea) :self
     {
         $this->near_sea = $near_sea;
 
@@ -319,7 +319,7 @@ class Place {
      *
      * @return  mixed
      */
-    public function getNear_walk()
+    public function getNear_walk() :string
     {
         return $this->near_walk;
     }
@@ -331,7 +331,7 @@ class Place {
      *
      * @return  self
      */
-    public function setNear_walk($near_walk)
+    public function setNear_walk(string $near_walk) :self
     {
         $this->near_walk = $near_walk;
 
@@ -343,7 +343,7 @@ class Place {
      *
      * @return  mixed
      */
-    public function getUser_id()
+    public function getUser_id() :int
     {
         return $this->user_id;
     }
@@ -355,7 +355,7 @@ class Place {
      *
      * @return  self
      */
-    public function setUser_id($user_id)
+    public function setUser_id(int $user_id) :self
     {
         $this->user_id = $user_id;
 

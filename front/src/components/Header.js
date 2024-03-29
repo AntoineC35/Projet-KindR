@@ -15,52 +15,54 @@ const Header = () => {
   }
 
   return (
-    <nav className="header">
-      <Logo />
-      <ul>
-        <li>
-          <NavLink className="red nav" to="/messages" title="Messages">
-            <em>_</em>
-          </NavLink>
-        </li>
-        <li>
-          {currentUser && currentUser.role === "admin" ? (
-            <NavLink className="admin" to="/admin" title="Admin">
-              Admin
+    <header>
+      <nav className="header">
+        <Logo />
+        <ul>
+          <li>
+            <NavLink className="red nav" to="/messages" title="Messages">
+              <em>_</em>
             </NavLink>
-          ) : (
-            <NavLink className="green nav" to="/profil" title="Profil">
-              <em>^</em>
+          </li>
+          <li>
+            {currentUser && currentUser.role === "admin" ? (
+              <NavLink className="admin" to="/admin" title="Admin">
+                Admin
+              </NavLink>
+            ) : (
+              <NavLink className="green nav" to="/profil" title="Profil">
+                <em>^</em>
+              </NavLink>
+            )}
+          </li>
+          <li>
+            <NavLink className="blue nav" to="/activites" title="Activités">
+              <em>#</em>
             </NavLink>
-          )}
-        </li>
-        <li>
-          <NavLink className="blue nav" to="/activites" title="Activités">
-            <em>#</em>
-          </NavLink>
-        </li>
-        <li>
-          <NavLink className="yellow nav" to="/about" title="À propos">
-            <em>/</em>
-          </NavLink>
-        </li>
-        <li>
-          {!connected ? (
-            <NavLink to="/reg/sign_in" title="Se connecter">
-              Sign In
+          </li>
+          <li>
+            <NavLink className="yellow nav" to="/about" title="À propos">
+              <em>/</em>
             </NavLink>
-          ) : (
-            <button
-              className="logout"
-              onClick={handleLogout}
-              title="Déconnexion"
-            >
-              <em>&gt;</em>
-            </button>
-          )}
-        </li>
-      </ul>
-    </nav>
+          </li>
+          <li>
+            {!connected ? (
+              <NavLink to="/reg/sign_in" title="Se connecter">
+                Sign In
+              </NavLink>
+            ) : (
+              <button
+                className="logout"
+                onClick={handleLogout}
+                title="Déconnexion"
+              >
+                <em>&gt;</em>
+              </button>
+            )}
+          </li>
+        </ul>
+      </nav>
+    </header>
   );
 };
 

@@ -2,7 +2,8 @@
 
 class DisponibilityManager extends AbstractManager {
 
-    public function findAllByUser($user_id) {
+    //Method find all Disponibility by User Id and return an array of Disponibility
+    public function findAllByUser(int $user_id) :array {
         $query = $this->db->prepare('SELECT * FROM disponibility WHERE user_id = :user_id');
         $parameters = [
             "user_id" => $user_id
@@ -51,6 +52,8 @@ class DisponibilityManager extends AbstractManager {
         return $newDisponibility;
     }
 
+
+    //Method delete all disponibility from an array of Disponibility ID
     public function deleteDisponibility(array $disponibilities) : void{
         foreach($disponibilities as $disponibility) {
             $query = $this->db->prepare("DELETE FROM disponibility WHERE id = :disponibility_id");
@@ -61,7 +64,7 @@ class DisponibilityManager extends AbstractManager {
         }
         
     }
-
+    //Method delete disponibility by id 
     public function deleteOneDisponibility(Disponibility $disponibility) : void {
         $query = $this->db->prepare("DELETE FROM disponibility WHERE id = :disponibility_id");
         $parameters = [
@@ -70,9 +73,5 @@ class DisponibilityManager extends AbstractManager {
         $query->execute($parameters);
     }
 
-    public function editDisponibility(Disponibility $disponibility) {
-        
-    }
- 
 }
 
