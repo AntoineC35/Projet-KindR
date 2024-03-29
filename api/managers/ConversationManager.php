@@ -2,7 +2,7 @@
 
 class ConversationManager extends AbstractManager {
 
-    public function findAllByUserId(int $user_id) :array {
+    public function findAllByUserId(int $user_id) :?array {
         $query = $this->db->prepare('SELECT * FROM conversation WHERE user1_id = :user_id OR user2_id = :user_id');
         $parameters = [
             "user_id" => $user_id
@@ -17,6 +17,8 @@ class ConversationManager extends AbstractManager {
                 $conversationsArray[] = $newConversation;
             }
             return $conversationsArray;
+        } else {
+            return null;
         }
     }
     
