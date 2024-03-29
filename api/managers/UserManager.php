@@ -77,6 +77,8 @@ class UserManager extends AbstractManager
                 $newUser->setId($user["user_id"]);
                 $newUser->setAvailableSlot($user["available_slots"]);
                 return $newUser;
+            } else {
+                return null;
             }
     }
     // Method to retrieve all professional users
