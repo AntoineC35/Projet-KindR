@@ -2,6 +2,9 @@
 
 Ce projet, baptisé KindR, est réalisé dans le cadre du projet de fin d'études à la 3WA. Il s'agit d'un site web visant à faciliter la mise en relation entre les parents et les professionnels de la petite enfance pour la garde d'enfants.
 
+Le liens vers une version du site en ligne : https://projet-kindr.kindr.fr/
+Des identifiants de test : zoe@mail.com    P@ssw0rd
+
 ## Description
 
 KindR propose une plateforme intuitive et conviviale, inspirée du concept de Tinder, pour simplifier le processus de recherche et de sélection de services de garde d'enfants. Les parents peuvent parcourir les profils des professionnels de la petite enfance, afficher leurs compétences, leur expérience et leurs disponibilités, puis echanger des messages pour indiquer leur intérêt.
