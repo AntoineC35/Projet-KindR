@@ -1,3 +1,125 @@
+# KindR Project
+
+This project, named KindR, is carried out as part of the final project at 3WA. It is a website aimed at facilitating the connection between parents and early childhood professionals for child care.
+
+The link to an online version of the site: https://projet-kindr.kindr.fr/
+Test credentials: zoe@mail.com    P@ssw0rd
+
+## Description
+
+KindR offers an intuitive and user-friendly platform, inspired by the Tinder concept, to simplify the process of searching and selecting child care services. Parents can browse the profiles of early childhood professionals, view their skills, experience, and availability, and then exchange messages to indicate their interest.
+
+The project specifications
+https://docs.google.com/document/d/1q41JUwsm4D_U5qkc1URUXtV6CLMOo-GUY_6g6VyBxO0/edit?usp=sharing
+
+The wireframes/graphic charter
+https://www.figma.com/file/qSxwGDjPQ633nppuZj51N2/Projet-KindR?type=design&node-id=0%3A1&mode=design&t=tGjCJHgo0SrO6twt-1
+
+The project folder
+https://drive.google.com/file/d/1qsXniabWP7T8i7Cu4iVCUqhixH_tGG6u/view?usp=sharing
+
+## Features
+
+- **Intuitive connection:** Uses geolocation to facilitate the selection of early childhood professionals.
+- **Profile management:** Creation of profiles for parents and professionals, including detailed information on skills, experience, and availability.
+- **Integrated communication:** Ability to initiate conversations between parents and professionals directly from the platform.
+
+## Installation
+
+1. Clone this repository to your local machine:
+
+    ```
+    git clone https://github.com/AntoineC35/Projet-KindR.git
+    ```
+
+2. Navigate to the project directory:
+
+    ```
+    cd KindR
+    ```
+
+3. Install dependencies for the frontend:
+
+    ```
+    cd front
+    npm install
+    ```
+
+4. Install dependencies for the backend:
+
+    ```
+    cd ../back
+    npm install
+    ```
+
+## Usage
+
+1. Start the backend server:
+
+    ```
+    npm start
+    ```
+
+2. Start the frontend development server:
+
+    ```
+    cd ../front
+    npm start
+    ```
+
+The application will be available at `http://localhost:3000`.
+
+## Technologies Used
+
+### Frontend
+
+- **React**: JavaScript library for building user interfaces (v18.2.0).
+- **Redux**: JavaScript library for managing application state (v5.0.1).
+- **Leaflet**: Open-source JavaScript library for interactive maps (v1.9.4).
+- **FullCalendar**: JavaScript library for creating calendars (v6.1.11).
+
+### Backend
+
+- **Node.js**: JavaScript runtime (v20.0.0).
+- **Express.js**: Web application framework for Node.js (v4.18.2).
+- **MongoDB**: NoSQL database for storing data (v5.0.0).
+
+### Dependencies
+
+- **axios**: Promise-based HTTP client for the browser and Node.js (v1.6.7).
+- **he**: JavaScript library for decoding HTML entities in strings (v1.2.0).
+- **react-datepicker**: Date and time picker component for React (v6.4.0).
+- **react-leaflet**: React components for Leaflet (v4.2.1).
+- **web-vitals**: Library for measuring web performance metrics (v2.1.4).
+
+## Contributions
+
+Contributions to the project are welcome. To contribute, please follow these steps:
+
+1. Fork the repository.
+2. Create a branch for your changes (`git checkout -b feature/NewFeature`).
+3. Commit your changes (`git commit -am 'Add a new feature'`).
+4. Push the branch to your fork (`git push origin feature/NewFeature`).
+5. Create a new Pull Request.
+
+## Authors
+
+- Antoine Cormier
+
+## Acknowledgements
+
+Mari D.
+Hugues F.
+Fabrice V.
+3W Academy
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
+
+__________________________________________________________________________
+
 # Projet KindR
 
 Ce projet, baptisé KindR, est réalisé dans le cadre du projet de fin d'études à la 3WA. Il s'agit d'un site web visant à faciliter la mise en relation entre les parents et les professionnels de la petite enfance pour la garde d'enfants.
